@@ -23,6 +23,7 @@
   * [Changelog](developers/python-sdk-brevettiai/changelog.md)
   * [Installation - Try it](developers/python-sdk-brevettiai/installation-try-it.md)
   * [Web API](developers/python-sdk-brevettiai/web-api.md)
+  * [Web API notebook](developers/python-sdk-brevettiai/BrevettiAI_Web_API_example.md)
   * [Job API](developers/python-sdk-brevettiai/job-api/README.md)
     * [Job settings](developers/python-sdk-brevettiai/job-api/job-settings.md)
     * [Interfaces](developers/python-sdk-brevettiai/job-api/visualization.md)

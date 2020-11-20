@@ -30,5 +30,6 @@
     * [Sampling](developers/python-sdk-brevettiai/data-science-tools/sample-integrity.md)
     * [Model export](developers/python-sdk-brevettiai/data-science-tools/model-export.md)
   * [Deployment](developers/python-sdk-brevettiai/deployment.md)
+  * [Devops](developers/python-sdk-brevettiai/devops.md)
 * [Swagger](https://app.criterion.ai/swagger/index.html)
 

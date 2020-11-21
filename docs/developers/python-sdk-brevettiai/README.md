@@ -25,7 +25,7 @@ A way to integrate your normal development workflows with the Brevetti AI platfo
 
 Additionally the Brevetti AI package helps you write code to train models on the platform, by providing interfaces that work with the platform when you are running experiments locally and deploy to run remotely in the cloud. \(Job API\)
 
-![Overview over how a sample application could be implemented with Criterion Core \(grey\)](../../.gitbook/assets/criterion-core-1-.png)
+![Overview over how a sample application could be implemented with Criterion Core \(grey\)](../../../.gitbook/assets/criterion-core-1-.png)
 
 
 

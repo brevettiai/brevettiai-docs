@@ -34,7 +34,7 @@ Add your own custom html reports. All HTML files present in the root of the arti
 
 Use [Facets Dive](https://pair-code.github.io/facets/) to explore your data interactively.
 
-![Example of Facets Dive tool](../../../.gitbook/assets/image.png)
+![Example of Facets Dive tool](../../../../.gitbook/assets/image.png)
 
 Use the facets implementation tool with the image datasets to generate your own facets charts, and put the files in the facets folder in your artifacts.
 

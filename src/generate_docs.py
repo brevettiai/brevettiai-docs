@@ -10,7 +10,7 @@ def split_file_contents(output_buffer, regex_pattern=".*#.*API:(.*)"):
             for index, init_pos in enumerate(section_head_pos[:-1])]
 
 def batch_convert(code_dir="src", generated_dir = "generated",
-                  convert_cmd=r"python -m jupyter nbconvert --to markdown --execute --ExecutePreprocessor.kernel_name=tf2 {notebook} --output-dir {output}"):
+                  convert_cmd=r"python -m jupyter nbconvert --to markdown --execute --ExecutePreprocessor.kernel_name=python {notebook} --output-dir {output}"):
 
     get_output_dir = lambda path: os.path.join(generated_dir, *path.split(os.path.sep)[1:-1])
 

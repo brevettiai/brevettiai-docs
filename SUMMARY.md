@@ -29,7 +29,7 @@
     * [Interfaces](developers/python-sdk-brevettiai/job-api/visualization.md)
   * [Data-science tools](developers/python-sdk-brevettiai/data-science-tools/README.md)
     * [Sampling](developers/python-sdk-brevettiai/data-science-tools/sample-integrity.md)
-    * [Image tools](developers/python-sdk-brevettiai/data-science-tools/brevetti_image_tools.md)
+    * [Image tools](generated/developers/python-sdk-brevettiai/data-science-tools/brevetti_image_tools.md)
     * [Model export](developers/python-sdk-brevettiai/data-science-tools/model-export.md)
   * [Deployment](developers/python-sdk-brevettiai/deployment.md)
   * [Devops](developers/python-sdk-brevettiai/devops.md)

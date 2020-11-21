@@ -1,64 +1,35 @@
 # Brevetti AI package installation
 
+Install brevettiai using the pip package manager. Simply uncomment the
+```
+# !pip install ...
+```
+line below to install/update the brevettiai package if applicable.on e.g. colab
+
 
 ```python
-pip install -U git+https://bitbucket.org/criterionai/core@CORE-22-add-augmentation-to-image-classi
+#!pip install -U git+https://bitbucket.org/criterionai/core
+import brevettiai
+help(brevettiai)
 ```
 
-    Collecting git+https://bitbucket.org/criterionai/core@CORE-22-add-augmentation-to-image-classiNote: you may need to restart the kernel to use updated packages.
-      Cloning https://bitbucket.org/criterionai/core (to revision CORE-22-add-augmentation-to-image-classi) to c:\users\michae~1\appdata\local\temp\pip-req-build-abo0yofa
-    Requirement already satisfied, skipping upgrade: backoff>=1.10 in c:\libs\tf2\lib\site-packages (from brevetti-ai==1.0) (1.10.0)
-    Requirement already satisfied, skipping upgrade: numpy>=1.18 in c:\libs\tf2\lib\site-packages (from brevetti-ai==1.0) (1.18.5)
-    Requirement already satisfied, skipping upgrade: pandas>=1.0.2 in c:\libs\tf2\lib\site-packages (from brevetti-ai==1.0) (1.1.2)
-    Requirement already satisfied, skipping upgrade: configparser in c:\libs\tf2\lib\site-packages (from brevetti-ai==1.0) (5.0.0)
-    Requirement already satisfied, skipping upgrade: minio>=5.0.10 in c:\libs\tf2\lib\site-packages (from brevetti-ai==1.0) (6.0.0)
-    Requirement already satisfied, skipping upgrade: requests>=2.23.0 in c:\users\michael sass hansen\appdata\local\programs\python\python37\lib\site-packages (from brevetti-ai==1.0) (2.24.0)
-    Requirement already satisfied, skipping upgrade: altair==4.1.0 in c:\libs\tf2\lib\site-packages (from brevetti-ai==1.0) (4.1.0)
-    Requirement already satisfied, skipping upgrade: tqdm in c:\libs\tf2\lib\site-packages (from brevetti-ai==1.0) (4.48.2)
-    Requirement already satisfied, skipping upgrade: scikit-learn>=0.22 in c:\libs\tf2\lib\site-packages (from brevetti-ai==1.0) (0.23.2)
-    Requirement already satisfied, skipping upgrade: plotly>=4.6.0 in c:\libs\tf2\lib\site-packages (from brevetti-ai==1.0) (4.10.0)
-    Requirement already satisfied, skipping upgrade: tensorflow-addons>=0.11.2 in c:\libs\tf2\lib\site-packages (from brevetti-ai==1.0) (0.11.2)
-    Requirement already satisfied, skipping upgrade: pytz>=2017.2 in c:\libs\tf2\lib\site-packages (from pandas>=1.0.2->brevetti-ai==1.0) (2020.1)
-    Requirement already satisfied, skipping upgrade: python-dateutil>=2.7.3 in c:\libs\tf2\lib\site-packages (from pandas>=1.0.2->brevetti-ai==1.0) (2.8.1)
-    Requirement already satisfied, skipping upgrade: certifi in c:\users\michael sass hansen\appdata\local\programs\python\python37\lib\site-packages (from minio>=5.0.10->brevetti-ai==1.0) (2020.6.20)
-    Requirement already satisfied, skipping upgrade: urllib3 in c:\users\michael sass hansen\appdata\local\programs\python\python37\lib\site-packages (from minio>=5.0.10->brevetti-ai==1.0) (1.25.10)
-    Requirement already satisfied, skipping upgrade: idna<3,>=2.5 in c:\users\michael sass hansen\appdata\local\programs\python\python37\lib\site-packages (from requests>=2.23.0->brevetti-ai==1.0) (2.10)
-    Requirement already satisfied, skipping upgrade: chardet<4,>=3.0.2 in c:\users\michael sass hansen\appdata\local\programs\python\python37\lib\site-packages (from requests>=2.23.0->brevetti-ai==1.0) (3.0.4)
-    Requirement already satisfied, skipping upgrade: toolz in c:\libs\tf2\lib\site-packages (from altair==4.1.0->brevetti-ai==1.0) (0.10.0)
-    Requirement already satisfied, skipping upgrade: jsonschema in c:\libs\tf2\lib\site-packages (from altair==4.1.0->brevetti-ai==1.0) (3.2.0)
-    Requirement already satisfied, skipping upgrade: entrypoints in c:\libs\tf2\lib\site-packages (from altair==4.1.0->brevetti-ai==1.0) (0.3)
-    Requirement already satisfied, skipping upgrade: jinja2 in c:\libs\tf2\lib\site-packages (from altair==4.1.0->brevetti-ai==1.0) (2.11.2)
-    Requirement already satisfied, skipping upgrade: joblib>=0.11 in c:\libs\tf2\lib\site-packages (from scikit-learn>=0.22->brevetti-ai==1.0) (0.16.0)
-    Requirement already satisfied, skipping upgrade: threadpoolctl>=2.0.0 in c:\libs\tf2\lib\site-packages (from scikit-learn>=0.22->brevetti-ai==1.0) (2.1.0)
-    Requirement already satisfied, skipping upgrade: scipy>=0.19.1 in c:\users\michael sass hansen\appdata\local\programs\python\python37\lib\site-packages (from scikit-learn>=0.22->brevetti-ai==1.0) (1.4.1)
-    Requirement already satisfied, skipping upgrade: retrying>=1.3.3 in c:\libs\tf2\lib\site-packages (from plotly>=4.6.0->brevetti-ai==1.0) (1.3.3)
-    Requirement already satisfied, skipping upgrade: six in c:\users\michael sass hansen\appdata\local\programs\python\python37\lib\site-packages (from plotly>=4.6.0->brevetti-ai==1.0) (1.15.0)
-    Requirement already satisfied, skipping upgrade: typeguard>=2.7 in c:\libs\tf2\lib\site-packages (from tensorflow-addons>=0.11.2->brevetti-ai==1.0) (2.9.1)
-    Requirement already satisfied, skipping upgrade: pyrsistent>=0.14.0 in c:\libs\tf2\lib\site-packages (from jsonschema->altair==4.1.0->brevetti-ai==1.0) (0.16.0)
-    Requirement already satisfied, skipping upgrade: attrs>=17.4.0 in c:\libs\tf2\lib\site-packages (from jsonschema->altair==4.1.0->brevetti-ai==1.0) (19.3.0)
-    Requirement already satisfied, skipping upgrade: importlib-metadata; python_version < "3.8" in c:\users\michael sass hansen\appdata\local\programs\python\python37\lib\site-packages (from jsonschema->altair==4.1.0->brevetti-ai==1.0) (1.7.0)
-    Requirement already satisfied, skipping upgrade: setuptools in c:\libs\tf2\lib\site-packages (from jsonschema->altair==4.1.0->brevetti-ai==1.0) (49.3.2)
-    Requirement already satisfied, skipping upgrade: MarkupSafe>=0.23 in c:\libs\tf2\lib\site-packages (from jinja2->altair==4.1.0->brevetti-ai==1.0) (1.1.1)
-    Requirement already satisfied, skipping upgrade: zipp>=0.5 in c:\users\michael sass hansen\appdata\local\programs\python\python37\lib\site-packages (from importlib-metadata; python_version < "3.8"->jsonschema->altair==4.1.0->brevetti-ai==1.0) (3.1.0)
-    Building wheels for collected packages: brevetti-ai
-      Building wheel for brevetti-ai (setup.py): started
-      Building wheel for brevetti-ai (setup.py): finished with status 'done'
-      Created wheel for brevetti-ai: filename=brevetti_ai-1.0-py3-none-any.whl size=77973 sha256=ddcd28cd8eef78a0840f510d8fceb1aad04b546bd7018eb52b5ef07148774c4d
+    Help on package brevettiai:
+    
+    NAME
+        brevettiai
+    
+    PACKAGE CONTENTS
+        data (package)
+        interfaces (package)
+        io (package)
+        platform (package)
+        tests (package)
+        utils (package)
+    
+    FILE
+        c:\libs\tf2\lib\site-packages\brevettiai\__init__.py
     
     
-
-    WARNING: You are using pip version 20.2.2; however, version 20.2.4 is available.
-    You should consider upgrading via the 'C:\libs\tf2\Scripts\python.exe -m pip install --upgrade pip' command.
-    
-
-      Stored in directory: C:\Users\MICHAE~1\AppData\Local\Temp\pip-ephem-wheel-cache-c6kho4g8\wheels\ff\55\b4\2886963ba68be1cc1be8f0598be20c08ecc22a6bef06d0bf3f
-    Successfully built brevetti-ai
-    Installing collected packages: brevetti-ai
-      Attempting uninstall: brevetti-ai
-        Found existing installation: brevetti-ai 1.0
-        Uninstalling brevetti-ai-1.0:
-          Successfully uninstalled brevetti-ai-1.0
-    Successfully installed brevetti-ai-1.0
     
 
 # Get images from public dataset
@@ -116,7 +87,7 @@ samples = ds.get_image_samples()
 print("Sample: ", samples.sample(1).iloc[0].to_dict())
 ```
 
-    Sample:  {'category': ('good',), 'folder': 'good', 'path': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/11_1543412102711.bmp', 'etag': 'af62217c68ea1dd97a3423d914eeba13', 'bucket': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced', 'dataset': '', 'dataset_id': '', 'url': 'https://platform.brevetti.ai/download?path=lic.data.criterion.ai%2Fdata%2FNeurIPS_2018_reduced%2Fgood%2F11_1543412102711.bmp'}
+    Sample:  {'category': ('bad_cap',), 'folder': 'bad_cap', 'path': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/7_1543413267987.bmp', 'etag': '7fb008c2b971f020eed368f427c583ca', 'bucket': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced', 'dataset': '', 'dataset_id': '', 'url': 'https://platform.brevetti.ai/download?path=lic.data.criterion.ai%2Fdata%2FNeurIPS_2018_reduced%2Fbad_cap%2F7_1543413267987.bmp'}
     
 
 samples now holds the image samples in a pandas dataframe object. We can investigate the distribution of the different classes
@@ -229,11 +200,11 @@ samples.groupby(["folder", "purpose"]).count()
     
 
 
-    array(['s3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/1_1543413257224.bmp',
-           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/1_1543413266824.bmp',
-           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/9_1543413258829.bmp',
-           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/9_1543413268396.bmp',
-           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/16_1543412094105.bmp'],
+    array(['s3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/0_1543413169486.bmp',
+           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/0_1543413189854.bmp',
+           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/8_1543413181805.bmp',
+           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/8_1543413191421.bmp',
+           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/14_1543412093702.bmp'],
           dtype=object)
 
 
@@ -241,10 +212,10 @@ samples.groupby(["folder", "purpose"]).count()
     
 
 
-    array(['s3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/0_1543413169486.bmp',
-           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/0_1543413189854.bmp',
-           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/10_1543413182213.bmp',
+    array(['s3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/10_1543413182213.bmp',
            's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/10_1543413191789.bmp',
+           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/1_1543413257224.bmp',
+           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/1_1543413266824.bmp',
            's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/2_1543413180595.bmp'],
           dtype=object)
 
@@ -382,15 +353,15 @@ for sample in generator.get_dataset().take(2):
 ```
 
     tf.Tensor(
-    [b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/33_1543412164698.bmp'
-     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/28_1543412163686.bmp'
-     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/7_1543413267987.bmp'
-     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/27_1543412096276.bmp'], shape=(4,), dtype=string)
+    [b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/missing_cap/2_1543412677681.bmp'
+     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/missing_cap/3_1543412745124.bmp'
+     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/18_1543412104125.bmp'
+     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/30_1543412106484.bmp'], shape=(4,), dtype=string)
     tf.Tensor(
-    [b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/1_1543413266824.bmp'
-     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/30_1543412164091.bmp'
-     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/missing_cap/2_1543412677681.bmp'
-     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/25_1543412095870.bmp'], shape=(4,), dtype=string)
+    [b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/missing_cap/0_1543412686920.bmp'
+     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/8_1543413191421.bmp'
+     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/1_1543412100699.bmp'
+     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/17_1543412094300.bmp'], shape=(4,), dtype=string)
     
 
 The data generator uses stratified sampling across a grouping on "folder" and with a weight determined by the square root of number of samples.
@@ -455,27 +426,27 @@ drawn_samples.groupby("folder").count()
   <tbody>
     <tr>
       <th>bad_cap</th>
-      <td>52</td>
-      <td>52</td>
-      <td>52</td>
-      <td>52</td>
-      <td>52</td>
-      <td>52</td>
-      <td>52</td>
-      <td>52</td>
-      <td>52</td>
+      <td>37</td>
+      <td>37</td>
+      <td>37</td>
+      <td>37</td>
+      <td>37</td>
+      <td>37</td>
+      <td>37</td>
+      <td>37</td>
+      <td>37</td>
     </tr>
     <tr>
       <th>good</th>
-      <td>104</td>
-      <td>104</td>
-      <td>104</td>
-      <td>104</td>
-      <td>104</td>
-      <td>104</td>
-      <td>104</td>
-      <td>104</td>
-      <td>104</td>
+      <td>119</td>
+      <td>119</td>
+      <td>119</td>
+      <td>119</td>
+      <td>119</td>
+      <td>119</td>
+      <td>119</td>
+      <td>119</td>
+      <td>119</td>
     </tr>
     <tr>
       <th>missing_cap</th>
@@ -556,5 +527,5 @@ for ii in range(batch_size):
 ```
 
 
-![png](brevetti_image_tools_files/brevetti_image_tools_19_0.png)
+![png](brevetti_image_tools_files/brevetti_image_tools_20_0.png)
 

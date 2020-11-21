@@ -6,7 +6,9 @@ name: Python package
 on:
   #push:
   #  branches: [ master ]
-  pull_request:
+  #pull_request:
+  #  branches: [ master ]
+  workflow_dispatch:
     branches: [ master ]
 
 jobs:
@@ -26,10 +28,10 @@ jobs:
         pip install -U git+https://bitbucket.org/criterionai/core
     - name: Execute jupyter notebook
       run: |
-        git rm generated/.
+        git rm generated/. -r
         python -m jupyter nbconvert --to markdown --execute --ExecutePreprocessor.kernel_name=python ./code/developers/python-sdk-brevettiai/data-science-tools/brevetti_image_tools.ipynb  --output-dir ./notebook_test
         git add generated/.
-        git commit -m "Automatic push by github action"
+        git commit -m "Push by workflow_dispatch action"
         git push
     - name: Archive markdown file
       uses: actions/upload-artifact@v2

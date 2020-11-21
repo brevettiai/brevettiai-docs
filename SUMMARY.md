@@ -10,7 +10,7 @@
 
 ## Model Training and Testing
 
-* [Introduction](model-training-and-testing/intro.md)
+* [Introduction](docs/model-training-and-testing/intro.md)
 
 ## Device Management
 

@@ -16,7 +16,7 @@ The documentation of the Platform is organized into four sections: one for each 
 Go to one of the sections of the documentation to learn more about the Platform:
 
 * [Data management](data-management/intro.md)
-* [Model training and testing](model-training-and-testing/intro.md)
+* [Model training and testing](docs/model-training-and-testing/intro.md)
 * [Device management](device-management/intro.md)
 * [Technical documentation \(for data scientists\)](developers/intro.md)
 

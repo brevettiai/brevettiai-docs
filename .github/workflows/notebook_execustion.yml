@@ -26,7 +26,7 @@ jobs:
         pip install -U git+https://bitbucket.org/criterionai/core
     - name: Execute jupyter notebook
       run: |
-        python -m jupyter nbconvert --to markdown --execute --ExecutePreprocessor.kernel_name=python developers/python-sdk-brevettiai/data-science-tools/brevetti_image_tools.ipynb  --output-dir ./notebook_test
+        python -m jupyter nbconvert --to markdown --execute --ExecutePreprocessor.kernel_name=python ./code/developers/python-sdk-brevettiai/data-science-tools/brevetti_image_tools.ipynb  --output-dir ./notebook_test
     - name: Archive markdown file
       uses: actions/upload-artifact@v2
       with:

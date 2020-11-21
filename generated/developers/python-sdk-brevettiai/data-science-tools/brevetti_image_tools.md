@@ -90,7 +90,7 @@ print("Sample: ", samples.sample(1).iloc[0].to_dict())
     CV2 not available
 
 
-    Sample:  {'category': ('good',), 'folder': 'good', 'path': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/23_1543412162714.bmp', 'etag': '2aa002361ab3e2280f1af757521423e7', 'bucket': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced', 'dataset': '', 'dataset_id': '', 'url': 'https://platform.brevetti.ai/download?path=lic.data.criterion.ai%2Fdata%2FNeurIPS_2018_reduced%2Fgood%2F23_1543412162714.bmp'}
+    Sample:  {'category': ('good',), 'folder': 'good', 'path': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/28_1543412106084.bmp', 'etag': '4373c527d575bc0290bcd3702abb55b7', 'bucket': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced', 'dataset': '', 'dataset_id': '', 'url': 'https://platform.brevetti.ai/download?path=lic.data.criterion.ai%2Fdata%2FNeurIPS_2018_reduced%2Fgood%2F28_1543412106084.bmp'}
 
 
 samples now holds the image samples in a pandas dataframe object. We can investigate the distribution of the different classes

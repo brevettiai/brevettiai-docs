@@ -27,10 +27,10 @@ help(brevettiai)
         utils (package)
     
     FILE
-        c:\libs\tf2\lib\site-packages\brevettiai\__init__.py
+        /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/brevettiai/__init__.py
     
     
-    
+
 
 # Get images from public dataset
 Load publicly available dataset
@@ -87,8 +87,11 @@ samples = ds.get_image_samples()
 print("Sample: ", samples.sample(1).iloc[0].to_dict())
 ```
 
-    Sample:  {'category': ('bad_cap',), 'folder': 'bad_cap', 'path': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/7_1543413267987.bmp', 'etag': '7fb008c2b971f020eed368f427c583ca', 'bucket': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced', 'dataset': '', 'dataset_id': '', 'url': 'https://platform.brevetti.ai/download?path=lic.data.criterion.ai%2Fdata%2FNeurIPS_2018_reduced%2Fbad_cap%2F7_1543413267987.bmp'}
-    
+    CV2 not available
+
+
+    Sample:  {'category': ('good',), 'folder': 'good', 'path': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/23_1543412162714.bmp', 'etag': '2aa002361ab3e2280f1af757521423e7', 'bucket': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced', 'dataset': '', 'dataset_id': '', 'url': 'https://platform.brevetti.ai/download?path=lic.data.criterion.ai%2Fdata%2FNeurIPS_2018_reduced%2Fgood%2F23_1543412162714.bmp'}
+
 
 samples now holds the image samples in a pandas dataframe object. We can investigate the distribution of the different classes
 
@@ -187,7 +190,7 @@ from IPython.display import display
 
 uniqueness_regex = r"/(\d*)_\d*.bmp"
 
-samples = SampleSplit(stratification=["folder"], uniqueness=uniqueness_regex, split=0.8).assign(samples, remainder="devel")
+samples = SampleSplit(stratification=["folder"], uniqueness=uniqueness_regex, split=0.8, seed=42).assign(samples, remainder="devel")
 print("Devel samples")
 display(samples[samples["purpose"] == "devel"][:5].path.values)
 print("Train samples")
@@ -197,26 +200,26 @@ samples.groupby(["folder", "purpose"]).count()
 ```
 
     Devel samples
-    
 
 
-    array(['s3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/0_1543413169486.bmp',
-           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/0_1543413189854.bmp',
-           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/8_1543413181805.bmp',
-           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/8_1543413191421.bmp',
-           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/14_1543412093702.bmp'],
+
+    array(['s3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/2_1543413180595.bmp',
+           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/2_1543413190226.bmp',
+           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/5_1543413258015.bmp',
+           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/5_1543413267597.bmp',
+           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/6_1543413181402.bmp'],
           dtype=object)
 
 
     Train samples
-    
 
 
-    array(['s3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/10_1543413182213.bmp',
+
+    array(['s3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/0_1543413169486.bmp',
+           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/0_1543413189854.bmp',
+           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/10_1543413182213.bmp',
            's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/10_1543413191789.bmp',
-           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/1_1543413257224.bmp',
-           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/1_1543413266824.bmp',
-           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/2_1543413180595.bmp'],
+           's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/1_1543413257224.bmp'],
           dtype=object)
 
 
@@ -266,44 +269,44 @@ samples.groupby(["folder", "purpose"]).count()
     <tr>
       <th rowspan="2" valign="top">bad_cap</th>
       <th>devel</th>
-      <td>4</td>
-      <td>4</td>
-      <td>4</td>
-      <td>4</td>
-      <td>4</td>
-      <td>4</td>
-      <td>4</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>train</th>
-      <td>18</td>
-      <td>18</td>
-      <td>18</td>
-      <td>18</td>
-      <td>18</td>
-      <td>18</td>
-      <td>18</td>
+      <td>16</td>
+      <td>16</td>
+      <td>16</td>
+      <td>16</td>
+      <td>16</td>
+      <td>16</td>
+      <td>16</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">good</th>
       <th>devel</th>
-      <td>30</td>
-      <td>30</td>
-      <td>30</td>
-      <td>30</td>
-      <td>30</td>
-      <td>30</td>
-      <td>30</td>
+      <td>28</td>
+      <td>28</td>
+      <td>28</td>
+      <td>28</td>
+      <td>28</td>
+      <td>28</td>
+      <td>28</td>
     </tr>
     <tr>
       <th>train</th>
-      <td>116</td>
-      <td>116</td>
-      <td>116</td>
-      <td>116</td>
-      <td>116</td>
-      <td>116</td>
-      <td>116</td>
+      <td>118</td>
+      <td>118</td>
+      <td>118</td>
+      <td>118</td>
+      <td>118</td>
+      <td>118</td>
+      <td>118</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">missing_cap</th>
@@ -341,28 +344,27 @@ the method get_dataset() returns a tensorflow dataset object with the above ment
 
 
 ```python
-from brevettiai.data.data_generator import DataGenerator
-from brevettiai.data import data_generator
+from brevettiai.data.data_generator import StratifiedSampler
 
 batch_size = 4
 # creating a data generator with stratification across a grouping on "folder" and with a weight determined by the square root of number of samples
-generator = DataGenerator(samples, batch_size=batch_size, shuffle=True, repeat=True, sampling_groupby=["folder"], sampling_group_weighing="square root")
+generator = StratifiedSampler(batch_size=batch_size, groupby=["folder"], group_weighing="square root").get(samples, shuffle=True, repeat=True, seed=0)
 
 for sample in generator.get_dataset().take(2):
     print(sample["path"])
 ```
 
     tf.Tensor(
-    [b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/missing_cap/2_1543412677681.bmp'
-     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/missing_cap/3_1543412745124.bmp'
-     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/18_1543412104125.bmp'
-     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/30_1543412106484.bmp'], shape=(4,), dtype=string)
+    [b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/12_1543412160501.bmp'
+     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/31_1543412097087.bmp'
+     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/10_1543412092892.bmp'
+     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/20_1543412104513.bmp'], shape=(4,), dtype=string)
     tf.Tensor(
-    [b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/missing_cap/0_1543412686920.bmp'
-     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/8_1543413191421.bmp'
-     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/1_1543412100699.bmp'
-     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/17_1543412094300.bmp'], shape=(4,), dtype=string)
-    
+    [b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/1_1543413266824.bmp'
+     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/missing_cap/5_1543412764666.bmp'
+     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/24_1543412105328.bmp'
+     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/46_1543412109676.bmp'], shape=(4,), dtype=string)
+
 
 The data generator uses stratified sampling across a grouping on "folder" and with a weight determined by the square root of number of samples.
 We can investigate the frequency of samples vs the frequency of actual samples in the dataset
@@ -377,7 +379,7 @@ drawn_samples.groupby("folder").count()
 ```
 
     Data generator sample frequency
-    
+
 
 
 
@@ -426,39 +428,39 @@ drawn_samples.groupby("folder").count()
   <tbody>
     <tr>
       <th>bad_cap</th>
-      <td>37</td>
-      <td>37</td>
-      <td>37</td>
-      <td>37</td>
-      <td>37</td>
-      <td>37</td>
-      <td>37</td>
-      <td>37</td>
-      <td>37</td>
+      <td>45</td>
+      <td>45</td>
+      <td>45</td>
+      <td>45</td>
+      <td>45</td>
+      <td>45</td>
+      <td>45</td>
+      <td>45</td>
+      <td>45</td>
     </tr>
     <tr>
       <th>good</th>
-      <td>119</td>
-      <td>119</td>
-      <td>119</td>
-      <td>119</td>
-      <td>119</td>
-      <td>119</td>
-      <td>119</td>
-      <td>119</td>
-      <td>119</td>
+      <td>102</td>
+      <td>102</td>
+      <td>102</td>
+      <td>102</td>
+      <td>102</td>
+      <td>102</td>
+      <td>102</td>
+      <td>102</td>
+      <td>102</td>
     </tr>
     <tr>
       <th>missing_cap</th>
-      <td>24</td>
-      <td>24</td>
-      <td>24</td>
-      <td>24</td>
-      <td>24</td>
-      <td>24</td>
-      <td>24</td>
-      <td>24</td>
-      <td>24</td>
+      <td>33</td>
+      <td>33</td>
+      <td>33</td>
+      <td>33</td>
+      <td>33</td>
+      <td>33</td>
+      <td>33</td>
+      <td>33</td>
+      <td>33</td>
     </tr>
   </tbody>
 </table>
@@ -486,10 +488,10 @@ imgs_gen = next(iter(img_generator))
 # imgs_gen now holds samples with an added image
 ```
 
-    WARNING:tensorflow:From C:\libs\tf2\lib\site-packages\tensorflow\python\util\deprecation.py:574: calling map_fn_v2 (from tensorflow.python.ops.map_fn) with dtype is deprecated and will be removed in a future version.
+    WARNING:tensorflow:From /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:574: calling map_fn_v2 (from tensorflow.python.ops.map_fn) with dtype is deprecated and will be removed in a future version.
     Instructions for updating:
     Use fn_output_signature instead
-    
+
 
 # Image augmentation
 * transformation augmentation (e.g. flip / rotate / sheare)
@@ -527,5 +529,7 @@ for ii in range(batch_size):
 ```
 
 
+    
 ![png](brevetti_image_tools_files/brevetti_image_tools_20_0.png)
+    
 

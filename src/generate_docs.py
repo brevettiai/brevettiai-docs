@@ -51,7 +51,7 @@ def batch_convert(code_dir="src", generated_dir = "generated",
                     out_name = output_file.replace(".md", f"-{ii}.md")
                     open(out_name, "w").write("\n".join(["# "+out_part[0], *out_part[1].values.tolist()[1:]]))
                     new_lines.append("  " + summary_doc.loc[summary_line.index[0]][0].replace(summary_line.values[0,0], out_part[0]).replace(output_file_key, output_file_key.replace(".md", f"-{ii}.md")))
-                summary_doc = pd.concat((summary_doc[:summary_line.index[0]+1], pd.DataFrame(data={"lines": new_lines}), summary_doc[summary_line.index[0]+1:]))
+                summary_doc = pd.concat((summary_doc[:summary_line.index[0]+1], pd.DataFrame(data={"lines": new_lines}), summary_doc[summary_line.index[0]+1:]), ignore_index=True)
 
                 colab_link = f"[{os.path.splitext(os.path.basename(notebook))[0].replace('_', ' ').title()}](https://githubtocolab.com/criterion-ai/brevettiai-docs/blob/master/{'/'.join(notebook.split(os.path.sep))})"
                 tutorial_links.append(colab_link)

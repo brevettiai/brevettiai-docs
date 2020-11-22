@@ -27,6 +27,11 @@ jobs:
         pip install pytest nbconvert tensorflow jupyter matplotlib
         pip install -U git+https://bitbucket.org/criterionai/core
     - name: Execute jupyter notebook
+      env: # Set environment variable
+        BREVETTI_AI_PW: ${{ secrets.BREVETTI_AI_PW }}
+        BREVETTI_AI_USER: ${{ secrets.BREVETTI_AI_PW }}
+        job_id: ${{ secrets.DEMO_MODEL_ID }}
+        api_key: ${{ secrets.DEMO_API_KEY }}
       run: |
         git rm generated/. -r
         python -m src.generate_docs

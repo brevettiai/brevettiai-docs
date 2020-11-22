@@ -37,5 +37,6 @@
     * [Model export](../docs/developers/python-sdk-brevettiai/data-science-tools/model-export.md)
   * [Deployment](../docs/developers/python-sdk-brevettiai/deployment.md)
   * [Devops](../docs/developers/python-sdk-brevettiai/devops.md)
+* [Tutorials](../generated/developers/tutorials/tutorials.md)
 * [Swagger](https://app.criterion.ai/swagger/index.html)
 

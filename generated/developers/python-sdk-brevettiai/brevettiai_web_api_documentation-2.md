@@ -38,9 +38,9 @@ print(f"Model id: {model_def['id']}")
 print(f"Model api key: {model_def['apiKey']}")
 ```
 
-    Model url: https://platform.brevetti.ai/models/4e141523-b2f9-442d-996b-10324e1609f0 (Please check it out :)
+    Model url: https://platform.brevetti.ai/models/f4028e4c-34bd-495a-9a86-e33824a63ee7 (Please check it out :)
     
     To access data and model through python SDK use the following
-    Model id: 4e141523-b2f9-442d-996b-10324e1609f0
-    Model api key: d7gvrfN2d8K2V5851QJP8OQU
+    Model id: f4028e4c-34bd-495a-9a86-e33824a63ee7
+    Model api key: U5Ykf0Bv8U3RwT24kn52v7DV
 

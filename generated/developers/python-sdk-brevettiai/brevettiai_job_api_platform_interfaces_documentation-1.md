@@ -25,7 +25,8 @@ job.upload_job_output()
 
 
 
-## Remote monitoring
+## Progress monitoring (Models only)
+Add progress metrics to monitor your models while it is running, by adding the RemoteMonitor callback to your keras training loop or call it yourself in your training code.
 
 
 ```python
@@ -62,7 +63,10 @@ print(f"Pivot table visible on {job.host_name}/models/{model_id}")
 
 
 ## Facets
-Create facet dives to explore your data in depth by creating a dataset outputting thumbnails of size (64x64) per sample
+Create facet dives to explore your data in depth by creating a dataset outputting thumbnails of size (64x64) per sample. 
+![Facet example](https://gblobscdn.gitbook.com/assets%2F-LY12YhLSCDWlqNaQqWT%2F-MIdFH6dqJxgrYtQH83E%2F-MIdJ3qn1kPxLh6K0YI0%2Fimage.png?alt=media&token=d59993dc-9dd0-4f97-a548-4d6ceddf257d)
+
+Put the files in the facets folder in your artifacts. To use the built-in tools you need to supply a DataGenerator which outputs a 64x64 thumbnail image, and category.
 
 
 ```python
@@ -74,9 +78,37 @@ fds = DataGenerator(samples, shuffle=True, output_structure=("img", "category"))
 build_facets(fds, job.artifact_path("facets", dir=True), count=32)
 
 print(f"Facets visible on {job.host_name}/models/{model_id}")
+
+build_facets(fds, job.artifact_path("facets", dir=True), count=32)
 ```
 
     Facets visible on https://platform.brevetti.ai/models/ae03ff72-b7a2-444d-8fe9-623f61dc4c71
+
+
+
+
+
+    True
+
+
+
+## Vega-lite charts
+Vega-Lite charts
+Add Vega-Lite charts to your model page by calling upload_chart on the configuration object. Some different standard charts are available under brevettiai.interfaces.vegalite_charts
+
+
+```python
+from brevettiai.interfaces import vegalite_charts
+
+vegalite_json = vegalite_charts.dataset_summary(samples)
+job.upload_chart("demo", vegalite_json)
+```
+
+
+
+
+    <Response [204]>
+
 
 
 # Complete job to update the following on the platform

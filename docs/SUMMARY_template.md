@@ -25,7 +25,6 @@
   * [Web API](../generated/developers/python-sdk-brevettiai/brevettiai_web_api_documentation.md)
   * [Job API](../generated/developers/python-sdk-brevettiai/brevettiai_job_api_platform_interfaces_documentation.md)
   * [Job API](../docs/developers/python-sdk-brevettiai/job-api/README.md)
-    * [Job settings](../docs/developers/python-sdk-brevettiai/job-api/job-settings.md)
     * [Interfaces](../docs/developers/python-sdk-brevettiai/job-api/visualization.md)
   * [Data-science tools](../docs/developers/python-sdk-brevettiai/data-science-tools/README.md)
     * [Sampling](../docs/developers/python-sdk-brevettiai/data-science-tools/sample-integrity.md)

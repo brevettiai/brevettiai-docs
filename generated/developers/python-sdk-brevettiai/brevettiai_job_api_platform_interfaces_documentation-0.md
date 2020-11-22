@@ -10,7 +10,7 @@ samples = get_image_samples(job.datasets)
 ```
 
     INFO:brevettiai.platform.dataset:Getting image samples from dataset 'NeurIPS vials TRAIN' [https://platform.brevetti.ai/data/cb14b6e3-b4b9-45bb-955f-47aa6489a192]
-    INFO:brevettiai.platform.dataset:Contents: {('good',): 20, ('missing_cap',): 20, ('failed_cap',): 19, ('unknown',): 1}
+    INFO:brevettiai.platform.dataset:Contents: {('missing_cap',): 20, ('good',): 20, ('failed_cap',): 19, ('unknown',): 1}
 
 
 
@@ -185,8 +185,8 @@ ds.get_samples_numpy(), ds.get_dataset_numpy()
 
 
 
-    (<brevettiai.data.tf_utils.NumpyStringIterator at 0x7fb2a45f0cd0>,
-     <brevettiai.data.tf_utils.NumpyStringIterator at 0x7fb2a45f4250>)
+    (<brevettiai.data.tf_utils.NumpyStringIterator at 0x7fb5781e8cd0>,
+     <brevettiai.data.tf_utils.NumpyStringIterator at 0x7fb5781ed750>)
 
 
 
@@ -229,7 +229,7 @@ plt.colorbar()
 
 
 
-    <matplotlib.colorbar.Colorbar at 0x7fb2a41b3150>
+    <matplotlib.colorbar.Colorbar at 0x7fb55b7ddf50>
 
 
 
@@ -249,7 +249,7 @@ plt.imshow(tile2d(x, (2,4))[...,0])
 
 
 
-    <matplotlib.image.AxesImage at 0x7fb2a43bf590>
+    <matplotlib.image.AxesImage at 0x7fb57817fd90>
 
 
 
@@ -286,7 +286,7 @@ plt.imshow(tile2d(x[0], (2,4))[...,0])
 
 
 
-    <matplotlib.image.AxesImage at 0x7fb28e51acd0>
+    <matplotlib.image.AxesImage at 0x7fb55b35c990>
 
 
 

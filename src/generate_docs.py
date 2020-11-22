@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import numpy as np
+
 style_dummy = """<style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -14,6 +15,8 @@ style_dummy = """<style scoped>
         text-align: right;
     }
 </style>"""
+
+
 def split_file_contents(output_buffer, regex_pattern=".*#.*API:(.*)"):
     content = pd.DataFrame(data={"lines": output_buffer.split("\n")})
     content["section_head"] = content.lines.str.extract(regex_pattern)
@@ -21,13 +24,14 @@ def split_file_contents(output_buffer, regex_pattern=".*#.*API:(.*)"):
     return [(content.loc[init_pos, "section_head"], content["lines"][init_pos:section_head_pos[index+1]])
             for index, init_pos in enumerate(section_head_pos[:-1])]
 
+
 def batch_convert(code_dir="src", generated_dir = "generated",
                   convert_cmd=r"python -m jupyter nbconvert --to markdown --execute --ExecutePreprocessor.kernel_name=python {notebook} --output-dir {output}"):
 
     get_output_dir = lambda path: os.path.join(generated_dir, *path.split(os.path.sep)[1:-1])
 
     summary_doc = pd.DataFrame(data={"lines": open(os.path.join("docs", "SUMMARY_template.md"), "r").read().split("\n")})
-
+    tutorial_links = []
     for root, dir, files in os.walk(code_dir):
         for file_name in files:
             if os.path.splitext(file_name)[1] == ".ipynb":
@@ -50,11 +54,16 @@ def batch_convert(code_dir="src", generated_dir = "generated",
                 summary_doc = pd.concat((summary_doc[:summary_line.index[0]+1], pd.DataFrame(data={"lines": new_lines}), summary_doc[summary_line.index[0]+1:]))
 
                 colab_link = f"[{os.path.basename(notebook)}](https://githubtocolab.com/criterion-ai/brevettiai-docs/blob/master/{'/'.join(notebook.split(os.path.sep))})"
-
+                tutorial_links.append(colab_link)
                 new_intro = output_buffer[:np.where(np.array(list(output_buffer))=="#")[0][1]]
                 outro = f"""To explore the code by examples, please run the in the notebook that can be found on colab on this link {colab_link}"""
                 open(output_file, "w").write(new_intro + outro)
     open(os.path.join("generated", "SUMMARY.md"), "w").write("\n".join(summary_doc.lines.values.tolist()))
+
+    tutorial_buffer = open(os.path.join("..", "docs", "developers", "tutorials", "tutorial_template.md"), "r").read()
+    with open(os.path.join("..", generated_dir, "developers", "tutorials", "tutorials.md"), "w") as tut_file:
+        tut_file.write(tutorial_buffer + "\n".join([] + [f"* {link}" for link in tutorial_links]))
+
 
 if __name__ == "__main__":
     batch_convert()

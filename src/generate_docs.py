@@ -26,7 +26,7 @@ def split_file_contents(output_buffer, regex_pattern=".*#.*API:(.*)"):
 
 
 def batch_convert(code_dir="src", generated_dir = "generated",
-                  convert_cmd=r"python -m jupyter nbconvert --to markdown --execute --ExecutePreprocessor.kernel_name=tf2 {notebook} --output-dir {output}"):
+                  convert_cmd=r"python -m jupyter nbconvert --to markdown --execute --ExecutePreprocessor.kernel_name={kernel} {notebook} --output-dir {output}"):
 
     get_output_dir = lambda path: os.path.join(generated_dir, *path.split(os.path.sep)[1:-1])
 
@@ -37,7 +37,7 @@ def batch_convert(code_dir="src", generated_dir = "generated",
             if os.path.splitext(file_name)[1] == ".ipynb":
                 notebook = os.path.join(root, file_name)
 
-                os.system(convert_cmd.format(notebook=notebook, output=get_output_dir(notebook)))
+                os.system(convert_cmd.format(kernel=os.getenv("KERNEL", "python"), notebook=notebook, output=get_output_dir(notebook)))
                 output_file = os.path.join(get_output_dir(notebook), os.path.basename(notebook).replace("ipynb", "md"))
                 output_file_key = '/'.join(output_file.split(os.path.sep))
                 output_buffer = open(output_file, "r").read().replace(style_dummy, "")

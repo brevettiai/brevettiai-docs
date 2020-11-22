@@ -26,7 +26,7 @@ def batch_convert(code_dir="src", generated_dir = "generated",
 
     get_output_dir = lambda path: os.path.join(generated_dir, *path.split(os.path.sep)[1:-1])
 
-    summary_doc = pd.DataFrame(data={"lines": open(os.path.join("docs", "SUMMARY.md"), "r").read().split("\n")})
+    summary_doc = pd.DataFrame(data={"lines": open(os.path.join("docs", "SUMMARY_template.md"), "r").read().split("\n")})
 
     for root, dir, files in os.walk(code_dir):
         for file_name in files:

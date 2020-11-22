@@ -11,23 +11,23 @@ from brevettiai.data.data_generator import StratifiedSampler, DataGenerator
 
 batch_size = 4
 # creating a data generator with stratification across a grouping on "folder" and with a weight determined by the square root of number of samples
-generator = StratifiedSampler(batch_size=batch_size, groupby=["folder"], group_weighing="square root")\
-        .get(samples, shuffle=True, repeat=True, seed=0)
+generator = StratifiedSampler(batch_size=batch_size, groupby=["folder"], group_weighing="square root", seed=1)\
+        .get(samples, shuffle=True, repeat=True)
 
 for sample in generator.get_dataset().take(2):
     print(sample["path"])
 ```
 
     tf.Tensor(
-    [b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/12_1543412160501.bmp'
-     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/31_1543412097087.bmp'
-     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/10_1543412092892.bmp'
-     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/20_1543412104513.bmp'], shape=(4,), dtype=string)
+    [b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/2_1543412100881.bmp'
+     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/44_1543412166931.bmp'
+     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/missing_cap/1_1543412754274.bmp'
+     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/missing_cap/4_1543412678089.bmp'], shape=(4,), dtype=string)
     tf.Tensor(
-    [b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/1_1543413266824.bmp'
-     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/missing_cap/5_1543412764666.bmp'
-     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/24_1543412105328.bmp'
-     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/46_1543412109676.bmp'], shape=(4,), dtype=string)
+    [b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/24_1543412105328.bmp'
+     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/18_1543412104125.bmp'
+     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/9_1543413268396.bmp'
+     b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/missing_cap/3_1543412754682.bmp'], shape=(4,), dtype=string)
 
 
 The data generator uses stratified sampling across a grouping on "folder" and with a weight determined by the square root of number of samples.
@@ -80,39 +80,39 @@ drawn_samples.groupby("folder").count()
   <tbody>
     <tr>
       <th>bad_cap</th>
-      <td>45</td>
-      <td>45</td>
-      <td>45</td>
-      <td>45</td>
-      <td>45</td>
-      <td>45</td>
-      <td>45</td>
-      <td>45</td>
-      <td>45</td>
+      <td>39</td>
+      <td>39</td>
+      <td>39</td>
+      <td>39</td>
+      <td>39</td>
+      <td>39</td>
+      <td>39</td>
+      <td>39</td>
+      <td>39</td>
     </tr>
     <tr>
       <th>good</th>
-      <td>102</td>
-      <td>102</td>
-      <td>102</td>
-      <td>102</td>
-      <td>102</td>
-      <td>102</td>
-      <td>102</td>
-      <td>102</td>
-      <td>102</td>
+      <td>112</td>
+      <td>112</td>
+      <td>112</td>
+      <td>112</td>
+      <td>112</td>
+      <td>112</td>
+      <td>112</td>
+      <td>112</td>
+      <td>112</td>
     </tr>
     <tr>
       <th>missing_cap</th>
-      <td>33</td>
-      <td>33</td>
-      <td>33</td>
-      <td>33</td>
-      <td>33</td>
-      <td>33</td>
-      <td>33</td>
-      <td>33</td>
-      <td>33</td>
+      <td>29</td>
+      <td>29</td>
+      <td>29</td>
+      <td>29</td>
+      <td>29</td>
+      <td>29</td>
+      <td>29</td>
+      <td>29</td>
+      <td>29</td>
     </tr>
   </tbody>
 </table>

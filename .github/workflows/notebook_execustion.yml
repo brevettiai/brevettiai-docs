@@ -38,6 +38,7 @@ jobs:
     - name: Add generated output
       run: |
         git add generated/.
+        git add SUMMARY.md
     - name: Commit to git
       run: |
         git config --local user.email "action@github.com"

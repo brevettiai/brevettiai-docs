@@ -26,7 +26,7 @@ def split_file_contents(output_buffer, regex_pattern=".*#.*API:(.*)"):
 
 
 def batch_convert(code_dir="src", generated_dir = "generated",
-                  convert_cmd=r"python -m jupyter nbconvert --to markdown --execute --ExecutePreprocessor.kernel_name=python {notebook} --output-dir {output}"):
+                  convert_cmd=r"python -m jupyter nbconvert --to markdown --execute --ExecutePreprocessor.kernel_name=tf2 {notebook} --output-dir {output}"):
 
     get_output_dir = lambda path: os.path.join(generated_dir, *path.split(os.path.sep)[1:-1])
 
@@ -55,8 +55,8 @@ def batch_convert(code_dir="src", generated_dir = "generated",
 
                 colab_link = f"[{os.path.splitext(os.path.basename(notebook))[0].replace('_', ' ').title()}](https://githubtocolab.com/criterion-ai/brevettiai-docs/blob/master/{'/'.join(notebook.split(os.path.sep))})"
                 tutorial_links.append(colab_link)
-                new_intro = output_buffer[:np.where(np.array(list(output_buffer))=="\n# ")[0][1]]
-                outro = f"""To explore the code by examples, please run the in the notebook that can be found on colab on this link {colab_link}"""
+                new_intro = output_buffer[:output_buffer.find("\n# ")]
+                outro = f"""\n\nTo explore the code by examples, please run the in the notebook that can be found on colab on this link {colab_link}"""
                 open(output_file, "w").write(new_intro + outro)
     open("SUMMARY.md", "w").write("\n".join(summary_doc.lines.values.tolist()))
 

@@ -60,7 +60,7 @@ def batch_convert(code_dir="src", generated_dir = "generated",
                 open(output_file, "w").write(new_intro + outro)
     open(os.path.join("generated", "SUMMARY.md"), "w").write("\n".join(summary_doc.lines.values.tolist()))
 
-    tutorial_buffer = open(os.path.join("..", "docs", "developers", "tutorials", "tutorial_template.md"), "r").read()
+    tutorial_buffer = open(os.path.join("..", "docs", "developers", "tutorials", "tutorials_template.md"), "r").read()
     with open(os.path.join("..", generated_dir, "developers", "tutorials", "tutorials.md"), "w") as tut_file:
         tut_file.write(tutorial_buffer + "\n".join([] + [f"* {link}" for link in tutorial_links]))
 

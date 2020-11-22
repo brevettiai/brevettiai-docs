@@ -1,7 +1,19 @@
 import os
 import pandas as pd
 import numpy as np
+style_dummy = """<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>"""
 def split_file_contents(output_buffer, regex_pattern=".*#.*API:(.*)"):
     content = pd.DataFrame(data={"lines": output_buffer.split("\n")})
     content["section_head"] = content.lines.str.extract(regex_pattern)
@@ -24,7 +36,9 @@ def batch_convert(code_dir="src", generated_dir = "generated",
                 os.system(convert_cmd.format(notebook=notebook, output=get_output_dir(notebook)))
                 output_file = os.path.join(get_output_dir(notebook), os.path.basename(notebook).replace("ipynb", "md"))
                 output_file_key = '/'.join(output_file.split(os.path.sep))
-                output_buffer = open(output_file, "r").read()
+                output_buffer = open(output_file, "r").read().replace(style_dummy, "")
+
+
                 output_parts = split_file_contents(output_buffer)
 
                 summary_line = summary_doc.lines.str.extract(fr"\[(.*)\].*{output_file_key}").dropna()

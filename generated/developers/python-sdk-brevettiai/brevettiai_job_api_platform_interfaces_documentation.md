@@ -1,8 +1,7 @@
+---
+description: This section documents through examples the simple usage the job api's to access a model training job's artifacts, datasets and lots of other stuff  in a development context
+---
 # Introduction to Brevetti AI Job API
----
-description: >-
-  This section documents through examples the simple usage the job api's to access a model training job's artifacts, datasets and lots of other stuff  in a development context
----
 The brevettiai Job API is your execution context when running a job on the platform. A job being defined as a model training process, or the process of creating a test report. The brevettiai package is a lightweight api for interfacing with the cloud ressources.
 
 It provides a python interface to the website, and keeps track of the resources you have available there, and parsing of input in the form of settings to your code.
@@ -49,8 +48,6 @@ On completion, complete the job on the platform to signal that you are done with
 
 ```text
 job.complete_job(path_to_artifact_with_model_archive)
-```
-
-
+``
 
 To explore the code by examples, please run the in the notebook that can be found on colab on this link [Brevettiai Job Api Platform Interfaces Documentation](https://githubtocolab.com/criterion-ai/brevettiai-docs/blob/master/src/developers/python-sdk-brevettiai/brevettiai_job_api_platform_interfaces_documentation.ipynb)

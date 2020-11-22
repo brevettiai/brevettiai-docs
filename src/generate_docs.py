@@ -58,7 +58,7 @@ def batch_convert(code_dir="src", generated_dir = "generated",
                 new_intro = output_buffer[:np.where(np.array(list(output_buffer))=="#")[0][1]]
                 outro = f"""To explore the code by examples, please run the in the notebook that can be found on colab on this link {colab_link}"""
                 open(output_file, "w").write(new_intro + outro)
-    open(os.path.join("generated", "SUMMARY.md"), "w").write("\n".join(summary_doc.lines.values.tolist()))
+    open("SUMMARY.md", "w").write("\n".join(summary_doc.lines.values.tolist()))
 
     tutorial_buffer = open(os.path.join("docs", "developers", "tutorials", "tutorials_template.md"), "r").read()
     generated_tutorials_dir = os.path.join(generated_dir, "developers", "tutorials")

@@ -15,10 +15,10 @@ The documentation of the Platform is organized into four sections: one for each 
 
 Go to one of the sections of the documentation to learn more about the Platform:
 
-* [Data management](docs/data-management/intro.md)
-* [Model training and testing](docs/model-training-and-testing/intro.md)
-* [Device management](docs/device-management/intro.md)
-* [Technical documentation \(for data scientists\)](docs/developers/intro.md)
+* [Data management]()
+* [Model training and testing]()
+* [Device management]()
+* [Technical documentation \(for data scientists\)]()
 
 If you have any questions about the Platform that is not answered by our documentation, please do not hesitate to reach out to our support team: [support@brevetti.ai](mailto:support@brevetti.ai)
 

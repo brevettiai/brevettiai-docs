@@ -6,7 +6,7 @@ def split_file_contents(output_buffer, regex_pattern=".*#.*API:(.*)"):
     content = pd.DataFrame(data={"lines": output_buffer.split("\n")})
     content["section_head"] = content.lines.str.extract(regex_pattern)
     section_head_pos = content.index[~content["section_head"].isna()].values.tolist() + [1000000]
-    return [("#"+content.loc[init_pos, "section_head"], content["lines"][init_pos:section_head_pos[index+1]])
+    return [(content.loc[init_pos, "section_head"], content["lines"][init_pos:section_head_pos[index+1]])
             for index, init_pos in enumerate(section_head_pos[:-1])]
 
 def batch_convert(code_dir="src", generated_dir = "generated",
@@ -31,7 +31,7 @@ def batch_convert(code_dir="src", generated_dir = "generated",
                 new_lines = []
                 for ii, out_part in enumerate(output_parts):
                     out_name = output_file.replace(".md", f"-{ii}.md")
-                    open(out_name, "w").write("".join(out_part[1].values.tolist()))
+                    open(out_name, "w").write("\n".join(["# "+out_part[0], *out_part[1].values.tolist()[1:]]))
                     new_lines.append("  " + summary_doc.loc[summary_line.index[0]][0].replace(summary_line.values[0,0], out_part[0]).replace(output_file_key, output_file_key.replace(".md", f"-{ii}.md")))
                 summary_doc = pd.concat((summary_doc[:summary_line.index[0]+1], pd.DataFrame(data={"lines": new_lines}), summary_doc[summary_line.index[0]+1:]))
 

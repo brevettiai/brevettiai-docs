@@ -48,7 +48,7 @@ help(web)
      |      :param application:
      |      :return:
      |  
-     |  create_model(self, name, model_type, settings, datasets, tags=[], application=None, schema=None)
+     |  create_model(self, name, model_type, settings, datasets, tags=[], application=None)
      |      Create new model
      |      :param name:
      |      :param model_type:
@@ -69,6 +69,11 @@ help(web)
      |      Create new test report
      |      :param model_id:
      |      :param datasets:
+     |      :return:
+     |  
+     |  delete_model(self, id=None)
+     |      Get model or list of all models
+     |      :param id: Guid of model (available in the url), or None
      |      :return:
      |  
      |  delete_tag(self, id)

@@ -35,9 +35,25 @@ print(f"Model id: {model_def['id']}")
 print(f"Model api key: {model_def['apiKey']}")
 ```
 
-    Model url: https://platform.brevetti.ai/models/db0f968b-507e-4a02-baaf-91e62e259b05 (Please check it out :)
+    Model url: https://platform.brevetti.ai/models/c4a7166d-272a-44b7-b6cc-f01a89927303 (Please check it out :)
     
     To access data and model through python SDK use the following
-    Model id: db0f968b-507e-4a02-baaf-91e62e259b05
-    Model api key: 64iq1fkq8N8iDubnzRD119YF
+    Model id: c4a7166d-272a-44b7-b6cc-f01a89927303
+    Model api key: rYYDwdPyZcAN5K0gN7AQ5GEP
+
+
+## NB: Delete job
+If the job has not been deployed, and you are e.g. just testing interfaces, you may delete a job
+
+
+```python
+# NB: delete model, there is no simple "undo" funcionality for this
+web.delete_model(id=model_def['id'])
+```
+
+
+
+
+    <Response [204]>
+
 

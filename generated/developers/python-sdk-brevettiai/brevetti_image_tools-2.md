@@ -11,8 +11,8 @@ from brevettiai.data.data_generator import StratifiedSampler, DataGenerator
 
 batch_size = 4
 # creating a data generator with stratification across a grouping on "folder" and with a weight determined by the square root of number of samples
-generator = StratifiedSampler(batch_size=batch_size, groupby=["folder"], group_weighing="square root")\
-        .get(samples, shuffle=True, repeat=True, seed=0)
+generator = StratifiedSampler(batch_size=batch_size, groupby=["folder"], group_weighing="square root", seed=0)\
+        .get(samples, shuffle=True, repeat=True)
 
 for sample in generator.get_dataset().take(2):
     print(sample["path"])

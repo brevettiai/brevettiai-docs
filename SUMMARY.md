@@ -38,7 +38,6 @@
     * [ Data generator and stratified sampler](generated/developers/python-sdk-brevettiai/brevetti_image_tools-2.md)
     * [ Image pipeline](generated/developers/python-sdk-brevettiai/brevetti_image_tools-3.md)
     * [ Image augmentation](generated/developers/python-sdk-brevettiai/brevetti_image_tools-4.md)
-  * [Sampling](docs/developers/python-sdk-brevettiai/data-science-tools/sample-integrity.md)
   * [Model export](docs/developers/python-sdk-brevettiai/data-science-tools/model-export.md)
   * [Deployment](docs/developers/python-sdk-brevettiai/deployment.md)
   * [Devops](docs/developers/python-sdk-brevettiai/devops.md)

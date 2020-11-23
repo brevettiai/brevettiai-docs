@@ -25,7 +25,6 @@
   * [Web API](generated/developers/python-sdk-brevettiai/brevettiai_web_api_documentation.md)
   * [Job API](generated/developers/python-sdk-brevettiai/brevettiai_job_api_platform_interfaces_documentation.md)
   * [Data science tools](generated/developers/python-sdk-brevettiai/brevetti_image_tools.md)
-  * [Model export](docs/developers/python-sdk-brevettiai/data-science-tools/model-export.md)
   * [Deployment](docs/developers/python-sdk-brevettiai/deployment.md)
   * [Devops](docs/developers/python-sdk-brevettiai/devops.md)
 * [Tutorials](generated/developers/tutorials/tutorials.md)

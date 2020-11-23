@@ -1,5 +1,5 @@
 ---
-description: >-
+description:
   This section shows you how to deploy code to the model zoo, to be available
   for other users in your organization.
 ---

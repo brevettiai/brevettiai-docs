@@ -1,7 +1,8 @@
 # Table of contents
 
 * [Overview](README.md)
-* [Changelog](docs/changelog.md)
+
+## Platform Access
 * [Identity and Access Management](docs/identity-and-access-management.md)
 
 ## Data Management

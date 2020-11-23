@@ -1,4 +1,4 @@
-#  Create Job
+#  Create Model Training Job
 To enter the job context you can either create a model on the platform or programatically via the web api.
 
 The following code finds the firs dataset and creates a model (job) with access to this model.
@@ -35,11 +35,11 @@ print(f"Model id: {model_def['id']}")
 print(f"Model api key: {model_def['apiKey']}")
 ```
 
-    Model url: https://platform.brevetti.ai/models/da37fc55-0f69-4d67-b471-e49b81687558 (Please check it out :)
+    Model url: https://platform.brevetti.ai/models/b2ce45c2-6e27-4f83-8244-52e045fad699 (Please check it out :)
     
     To access data and model through python SDK use the following
-    Model id: da37fc55-0f69-4d67-b471-e49b81687558
-    Model api key: 3YJ0j72s6fLWicOJpjnn643G
+    Model id: b2ce45c2-6e27-4f83-8244-52e045fad699
+    Model api key: V0ESRYM4vNdw21V5A9rY0GmO
 
 
 ## NB: Delete job

@@ -1,4 +1,6 @@
 #  Image augmentation
+Primarily based on the tensorflow augmentation options this api provides an augmentation pipeline that produces repeatable result. It provides two major types of augmentations
+
 * transformation augmentation (e.g. flip / rotate / sheare)
 * image noise augmentation
 

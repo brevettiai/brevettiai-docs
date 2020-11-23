@@ -185,8 +185,8 @@ ds.get_samples_numpy(), ds.get_dataset_numpy()
 
 
 
-    (<brevettiai.data.tf_utils.NumpyStringIterator at 0x7f2cd42db110>,
-     <brevettiai.data.tf_utils.NumpyStringIterator at 0x7f2cd422ebd0>)
+    (<brevettiai.data.tf_utils.NumpyStringIterator at 0x7fa74ff81850>,
+     <brevettiai.data.tf_utils.NumpyStringIterator at 0x7fa74ffaccd0>)
 
 
 
@@ -229,7 +229,7 @@ plt.colorbar()
 
 
 
-    <matplotlib.colorbar.Colorbar at 0x7f2cb6faf190>
+    <matplotlib.colorbar.Colorbar at 0x7fa74ff1ef90>
 
 
 
@@ -249,7 +249,7 @@ plt.imshow(tile2d(x, (2,4))[...,0])
 
 
 
-    <matplotlib.image.AxesImage at 0x7f2cd404b090>
+    <matplotlib.image.AxesImage at 0x7fa74f52e390>
 
 
 
@@ -267,7 +267,7 @@ from brevettiai.data.data_generator import build_image_data_generator
 ds = build_image_data_generator(samples, batch_size=8, image=dict(target_size=(224, 224), antialias=True, rescale="imagenet"))
 ```
 
-The standard modules of TfDataset are deterministic and randomness may be seeded. Thus multiple runs of the same dataset object will result in the same output sequence. By application of the `seed` parameter, this can be true across multiple similar TfDataset objects.
+The standard modules of Dataset are deterministic and randomness may be seeded. Thus multiple runs of the same dataset object will result in the same output sequence. By application of the `seed` parameter, this can be true across multiple similar TfDataset objects.
 
 
 ```python
@@ -286,7 +286,7 @@ plt.imshow(tile2d(x[0], (2,4))[...,0])
 
 
 
-    <matplotlib.image.AxesImage at 0x7f2cb7358cd0>
+    <matplotlib.image.AxesImage at 0x7fa777e40b50>
 
 
 

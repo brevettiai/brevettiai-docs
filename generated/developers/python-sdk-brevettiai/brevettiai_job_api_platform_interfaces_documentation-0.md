@@ -54,7 +54,7 @@ job.io.write_file(temp_path, "Valuable information")
 print(str(job.io.read_file(temp_path), "utf-8"))
 ```
 
-    /tmp/config-id-ae03ff72-b7a2-444d-8fe9-623f61dc4c71-da11z0xy/something_i_want_to_save_temporarily.txt
+    /tmp/config-id-ae03ff72-b7a2-444d-8fe9-623f61dc4c71-4lyhtq3g/something_i_want_to_save_temporarily.txt
     Valuable information
 
 

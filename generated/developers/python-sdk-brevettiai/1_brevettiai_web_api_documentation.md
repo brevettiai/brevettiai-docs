@@ -11,4 +11,4 @@ This document shows how this api can be used to get access to datasets and creat
 
 Web access is granted with your website user, allowing you to automate tasks on the platform. In Python this is achieved through the **BrevettiAI** objec
 
-To explore the code by examples, please run the in the notebook that can be found on colab on this link [Brevettiai Web Api Documentation](https://githubtocolab.com/brevettiai/brevettiai-docs/blob/master/src/developers/python-sdk-brevettiai/brevettiai_web_api_documentation.ipynb)
+To explore the code by examples, please run the in the notebook that can be found on colab on this link [1 Brevettiai Web Api Documentation](https://githubtocolab.com/brevettiai/brevettiai-docs/blob/master/src/developers/python-sdk-brevettiai/1_brevettiai_web_api_documentation.ipynb)

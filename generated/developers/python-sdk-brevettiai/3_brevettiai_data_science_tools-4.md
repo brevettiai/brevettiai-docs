@@ -37,6 +37,6 @@ for ii in range(batch_size):
 
 
     
-![png](brevetti_image_tools_files/brevetti_image_tools_20_0.png)
+![png](3_brevettiai_data_science_tools_files/3_brevettiai_data_science_tools_20_0.png)
     
 

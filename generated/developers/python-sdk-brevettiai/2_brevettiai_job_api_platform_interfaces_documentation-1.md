@@ -185,8 +185,8 @@ ds.get_samples_numpy(), ds.get_dataset_numpy()
 
 
 
-    (<brevettiai.data.tf_utils.NumpyStringIterator at 0x7f6daff2c210>,
-     <brevettiai.data.tf_utils.NumpyStringIterator at 0x7f6daff0a110>)
+    (<brevettiai.data.tf_utils.NumpyStringIterator at 0x7f1d5c15b9d0>,
+     <brevettiai.data.tf_utils.NumpyStringIterator at 0x7f1d5c1730d0>)
 
 
 
@@ -229,13 +229,13 @@ plt.colorbar()
 
 
 
-    <matplotlib.colorbar.Colorbar at 0x7f6daf4a6dd0>
+    <matplotlib.colorbar.Colorbar at 0x7f1d3ed83e90>
 
 
 
 
     
-![png](brevettiai_job_api_platform_interfaces_documentation_files/brevettiai_job_api_platform_interfaces_documentation_24_1.png)
+![png](2_brevettiai_job_api_platform_interfaces_documentation_files/2_brevettiai_job_api_platform_interfaces_documentation_24_1.png)
     
 
 
@@ -249,13 +249,13 @@ plt.imshow(tile2d(x, (2,4))[...,0])
 
 
 
-    <matplotlib.image.AxesImage at 0x7f6daf48e7d0>
+    <matplotlib.image.AxesImage at 0x7f1d5c072e90>
 
 
 
 
     
-![png](brevettiai_job_api_platform_interfaces_documentation_files/brevettiai_job_api_platform_interfaces_documentation_25_1.png)
+![png](2_brevettiai_job_api_platform_interfaces_documentation_files/2_brevettiai_job_api_platform_interfaces_documentation_25_1.png)
     
 
 
@@ -286,18 +286,18 @@ plt.imshow(tile2d(x[0], (2,4))[...,0])
 
 
 
-    <matplotlib.image.AxesImage at 0x7f6dafa2ca90>
+    <matplotlib.image.AxesImage at 0x7f1d3ee55c10>
 
 
 
 
     
-![png](brevettiai_job_api_platform_interfaces_documentation_files/brevettiai_job_api_platform_interfaces_documentation_29_1.png)
+![png](2_brevettiai_job_api_platform_interfaces_documentation_files/2_brevettiai_job_api_platform_interfaces_documentation_29_1.png)
     
 
 
 
     
-![png](brevettiai_job_api_platform_interfaces_documentation_files/brevettiai_job_api_platform_interfaces_documentation_29_2.png)
+![png](2_brevettiai_job_api_platform_interfaces_documentation_files/2_brevettiai_job_api_platform_interfaces_documentation_29_2.png)
     
 

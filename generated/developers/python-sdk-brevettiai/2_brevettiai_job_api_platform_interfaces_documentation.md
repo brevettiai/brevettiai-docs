@@ -50,4 +50,4 @@ On completion, complete the job on the platform to signal that you are done with
 job.complete_job(path_to_artifact_with_model_archive)
 ``
 
-To explore the code by examples, please run the in the notebook that can be found on colab on this link [Brevettiai Job Api Platform Interfaces Documentation](https://githubtocolab.com/brevettiai/brevettiai-docs/blob/master/src/developers/python-sdk-brevettiai/brevettiai_job_api_platform_interfaces_documentation.ipynb)
+To explore the code by examples, please run the in the notebook that can be found on colab on this link [2 Brevettiai Job Api Platform Interfaces Documentation](https://githubtocolab.com/brevettiai/brevettiai-docs/blob/master/src/developers/python-sdk-brevettiai/2_brevettiai_job_api_platform_interfaces_documentation.ipynb)

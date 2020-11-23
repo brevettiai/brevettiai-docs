@@ -33,7 +33,7 @@ def batch_convert(code_dir="src", generated_dir = "generated",
     summary_doc = pd.DataFrame(data={"lines": open(os.path.join("docs", "SUMMARY_template.md"), "r").read().split("\n")})
     tutorial_links = []
     for root, dir, files in os.walk(code_dir):
-        for file_name in files:
+        for file_name in sorted(files):
             if os.path.splitext(file_name)[1] == ".ipynb":
                 notebook = os.path.join(root, file_name)
 

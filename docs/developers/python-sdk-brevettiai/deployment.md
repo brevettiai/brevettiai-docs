@@ -21,9 +21,9 @@ Containers running on the platform have few requirements.
 
 
 
-Start from the example application Telescope
+Start from the **Telescope** example application
 
-[https://bitbucket.org/criterionai/telescope/src/master/](https://bitbucket.org/criterionai/telescope/src/master/)
+[Telescope application bitbucket repository](https://bitbucket.org/criterionai/telescope/src/master/)
 
 
 

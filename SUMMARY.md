@@ -22,7 +22,7 @@
 * [Python SDK - Brevetti AI package](docs/developers/python-sdk-brevettiai/README.md)
   * [Changelog](docs/developers/python-sdk-brevettiai/changelog.md)
   * [Installation - Try it](docs/developers/python-sdk-brevettiai/installation-try-it.md)
-  * [Web API](generated/developers/python-sdk-brevettiai/web-api.md)
+  * [Web API](docs/developers/python-sdk-brevettiai/web-api.md)
   * [Web API](generated/developers/python-sdk-brevettiai/brevettiai_web_api_documentation.md)
     * [ BrevettiAI Access](generated/developers/python-sdk-brevettiai/brevettiai_web_api_documentation-0.md)
     * [ List datasets, tags, models...](generated/developers/python-sdk-brevettiai/brevettiai_web_api_documentation-1.md)

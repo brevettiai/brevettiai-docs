@@ -16,15 +16,15 @@ pip install git+https://bitbucket.org/criterionai/core
 Running in a Jupyter Notebook? add a '!' in front of the commando to run a shell command
 {% endhint %}
 
-## Try it in Google Colab
+## Try it in Google Colab hosted Jupyter Notebooks 
 
-We have made a simple Notebook to run your experiments on the platform
+We have made a couple of simple Notebooks to run your experiments on the platform. They are in the tutorials section.
 
-[https://colab.research.google.com/drive/1H\_SirsM\_4xNRa2SIcFawjKjcDP0J8oMO](https://colab.research.google.com/drive/1H_SirsM_4xNRa2SIcFawjKjcDP0J8oMO)
+[Jupyter notebook tutorials](../../../generated/developers/tutorials/tutorials.md)
 
 ## Build your own
 
 We have made a small application sample you can use as base when developing model and report types to the platform, including an example CI pipeline for bitbucket.
 
- [https://bitbucket.org/criterionai/telescope/src/master/](https://bitbucket.org/criterionai/telescope/src/master/)
+ [Telescope application bitbucket repository](https://bitbucket.org/criterionai/telescope/src/master/)
 

@@ -2,7 +2,6 @@ import tensorflow as tf
 
 # Platform features useful for accessing the job parameters
 from brevettiai.platform import Job, get_image_samples
-from brevettiai.interfaces import vue_schema_utils as vue
 from brevettiai.interfaces.remote_monitor import RemoteMonitor
 # packages model for upload
 from brevettiai.utils.model_version import package_saved_model
@@ -32,7 +31,7 @@ def build_image_classifier(classes: list, image_shape: tuple):
 
 
 class TrainingJob(Job):
-    class Settings(vue.VueSettingsModule):
+    class Settings(Job.Settings):
         def __init__(self, image_pipeline: ImagePipeline, epochs: int = 10):
             self.image_pipeline = image_pipeline # object to read image and resize to specified shape
             self.epochs = epochs # number of training epochs

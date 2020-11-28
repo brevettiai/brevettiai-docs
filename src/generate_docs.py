@@ -55,7 +55,7 @@ def batch_convert(code_dir="src", generated_dir = "generated",
 
                 colab_link = f"[{os.path.splitext(os.path.basename(notebook))[0].replace('_', ' ').title()}](https://githubtocolab.com/brevettiai/brevettiai-docs/blob/master/{'/'.join(notebook.split(os.path.sep))})"
                 tutorial_links.append(colab_link)
-                new_intro = output_buffer[:output_buffer.find(re.findall("[^-]{3}\n# Brevetti AI package installation", output_buffer).extend("\n# Brevetti AI package installation")[0])]
+                new_intro = output_buffer[:output_buffer.find([*re.findall("[^-]{3}\n# Brevetti AI package installation", output_buffer), "\n# Brevetti AI package installation"][0])]
                 outro = f"""\n\nTo explore the code by examples, please run the in the notebook that can be found on colab on this link {colab_link}"""
                 open(output_file, "w").write(new_intro + outro)
     open("SUMMARY.md", "w").write("\n".join(summary_doc.lines.values.tolist()))

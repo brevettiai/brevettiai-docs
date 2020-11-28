@@ -14,7 +14,7 @@ samples = ds.get_image_samples()
 print("Sample: ", samples.sample(1).iloc[0].to_dict())
 ```
 
-    Sample:  {'category': ('good',), 'folder': 'good', 'path': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/25_1543412105512.bmp', 'etag': 'ce21dee23411bfe2e9c9170a59ef29bb', 'bucket': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced', 'dataset': '', 'dataset_id': '', 'url': 'https://platform.brevetti.ai/download?path=lic.data.criterion.ai%2Fdata%2FNeurIPS_2018_reduced%2Fgood%2F25_1543412105512.bmp'}
+    Sample:  {'category': ('good',), 'folder': 'good', 'path': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/22_1543412104919.bmp', 'etag': '82312d07d163eb6cc7d4adbe344560ff', 'bucket': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced', 'dataset': '', 'dataset_id': '', 'url': 'https://platform.brevetti.ai/download?path=lic.data.criterion.ai%2Fdata%2FNeurIPS_2018_reduced%2Fgood%2F22_1543412104919.bmp'}
 
 
 Samples now holds the image samples in a pandas dataframe object. We can e.g. investigate the distribution of the different classes

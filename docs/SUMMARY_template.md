@@ -28,5 +28,6 @@
   * [Deployment](docs/developers/python-sdk-brevettiai/deployment.md)
   * [Devops](docs/developers/python-sdk-brevettiai/devops.md)
 * [Tutorials](generated/developers/tutorials/tutorials.md)
+  * [Image classifier 101 training job](generated/developers/python-sdk-brevettiai/a_brevetti_AI_Image_classifier_101.md)
 * [Swagger](https://platform.brevetti.ai/swagger/index.html)
 

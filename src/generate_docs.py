@@ -34,7 +34,7 @@ def batch_convert(code_dir="src", generated_dir = "generated",
     tutorial_links = []
     for root, dir, files in os.walk(code_dir):
         for file_name in sorted(files):
-            if os.path.splitext(file_name)[1] == ".ipynb":
+            if os.path.splitext(file_name)[1] == ".ipynb" and ".ipynb_checkpoints" not in root:
                 notebook = os.path.join(root, file_name)
 
                 os.system(convert_cmd.format(kernel=os.getenv("KERNEL", "python"), notebook=notebook, output=get_output_dir(notebook)))

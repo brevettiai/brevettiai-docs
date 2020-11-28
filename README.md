@@ -20,5 +20,4 @@ Go to one of the sections of the documentation to learn more about the Platform:
 * [Device management](docs/device-management/intro.md)
 * [Technical documentation \(for data scientists\)](docs/developers/intro.md)
 
-[Test README.md location](README.md)
 If you have any questions about the Platform that is not answered by our documentation, please do not hesitate to reach out to our support team: [support@brevetti.ai](mailto:support@brevetti.ai)

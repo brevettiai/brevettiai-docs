@@ -3,7 +3,7 @@
 High level access for automation of tasks on the platform, tagging, dataset management, models, etc...
 
 ## Platform Login
-As on the web page you have 15 minutes of access before needing to log back in.
+As on the web page you have 60 minutes of access before needing to log back in.
 
 
 ```python

@@ -18,7 +18,11 @@ models = web.get_model()
 
 
 
-    ['NeurIPS 2018', 'NeurIPS vials TRAIN']
+    ['NeurIPS 2018',
+     'NeurIPS 2018 large',
+     'Blood Cell Images',
+     'Agar plates',
+     'NeurIPS vials TRAIN']
 
 
 

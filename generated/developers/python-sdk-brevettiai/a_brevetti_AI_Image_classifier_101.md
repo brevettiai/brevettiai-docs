@@ -73,56 +73,9 @@ To train and export the model, construct a training object that uses the followi
 
 
 ```python
-pip install -U git+https://bitbucket.org/criterionai/core
+pip install -U -q git+https://bitbucket.org/criterionai/core
 ```
 
-    Collecting git+https://bitbucket.org/criterionai/core
-      Cloning https://bitbucket.org/criterionai/core to /tmp/pip-req-build-dwo0msuf
-    Requirement already satisfied, skipping upgrade: backoff>=1.10 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from brevettiai==1.0) (1.10.0)
-    Requirement already satisfied, skipping upgrade: numpy>=1.18 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from brevettiai==1.0) (1.18.5)
-    Requirement already satisfied, skipping upgrade: pandas>=1.0.2 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from brevettiai==1.0) (1.1.4)
-    Requirement already satisfied, skipping upgrade: configparser in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from brevettiai==1.0) (5.0.1)
-    Requirement already satisfied, skipping upgrade: minio>=5.0.10 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from brevettiai==1.0) (6.0.2)
-    Requirement already satisfied, skipping upgrade: requests>=2.23.0 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from brevettiai==1.0) (2.25.0)
-    Requirement already satisfied, skipping upgrade: altair==4.1.0 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from brevettiai==1.0) (4.1.0)
-    Requirement already satisfied, skipping upgrade: tqdm in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from brevettiai==1.0) (4.54.0)
-    Requirement already satisfied, skipping upgrade: scikit-learn>=0.22 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from brevettiai==1.0) (0.23.2)
-    Requirement already satisfied, skipping upgrade: plotly>=4.6.0 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from brevettiai==1.0) (4.13.0)
-    Requirement already satisfied, skipping upgrade: tensorflow-addons>=0.11.2 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from brevettiai==1.0) (0.11.2)
-    Requirement already satisfied, skipping upgrade: opencv-python-headless>=4.1.2 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from brevettiai==1.0) (4.4.0.46)
-    Requirement already satisfied, skipping upgrade: pytz>=2017.2 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from pandas>=1.0.2->brevettiai==1.0) (2020.4)
-    Requirement already satisfied, skipping upgrade: python-dateutil>=2.7.3 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from pandas>=1.0.2->brevettiai==1.0) (2.8.1)
-    Requirement already satisfied, skipping upgrade: urllib3 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from minio>=5.0.10->brevettiai==1.0) (1.26.2)
-    Requirement already satisfied, skipping upgrade: certifi in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from minio>=5.0.10->brevettiai==1.0) (2020.11.8)
-    Requirement already satisfied, skipping upgrade: chardet<4,>=3.0.2 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from requests>=2.23.0->brevettiai==1.0) (3.0.4)
-    Requirement already satisfied, skipping upgrade: idna<3,>=2.5 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from requests>=2.23.0->brevettiai==1.0) (2.10)
-    Requirement already satisfied, skipping upgrade: entrypoints in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from altair==4.1.0->brevettiai==1.0) (0.3)
-    Requirement already satisfied, skipping upgrade: toolz in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from altair==4.1.0->brevettiai==1.0) (0.11.1)
-    Requirement already satisfied, skipping upgrade: jinja2 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from altair==4.1.0->brevettiai==1.0) (2.11.2)
-    Requirement already satisfied, skipping upgrade: jsonschema in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from altair==4.1.0->brevettiai==1.0) (3.2.0)
-    Requirement already satisfied, skipping upgrade: joblib>=0.11 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from scikit-learn>=0.22->brevettiai==1.0) (0.17.0)
-    Requirement already satisfied, skipping upgrade: threadpoolctl>=2.0.0 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from scikit-learn>=0.22->brevettiai==1.0) (2.1.0)
-    Requirement already satisfied, skipping upgrade: scipy>=0.19.1 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from scikit-learn>=0.22->brevettiai==1.0) (1.5.4)
-    Requirement already satisfied, skipping upgrade: retrying>=1.3.3 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from plotly>=4.6.0->brevettiai==1.0) (1.3.3)
-    Requirement already satisfied, skipping upgrade: six in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from plotly>=4.6.0->brevettiai==1.0) (1.15.0)
-    Requirement already satisfied, skipping upgrade: typeguard>=2.7 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from tensorflow-addons>=0.11.2->brevettiai==1.0) (2.10.0)
-    Requirement already satisfied, skipping upgrade: MarkupSafe>=0.23 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from jinja2->altair==4.1.0->brevettiai==1.0) (1.1.1)
-    Requirement already satisfied, skipping upgrade: setuptools in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from jsonschema->altair==4.1.0->brevettiai==1.0) (47.1.0)
-    Requirement already satisfied, skipping upgrade: pyrsistent>=0.14.0 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from jsonschema->altair==4.1.0->brevettiai==1.0) (0.17.3)
-    Requirement already satisfied, skipping upgrade: importlib-metadata; python_version < "3.8" in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from jsonschema->altair==4.1.0->brevettiai==1.0) (3.1.0)
-    Requirement already satisfied, skipping upgrade: attrs>=17.4.0 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from jsonschema->altair==4.1.0->brevettiai==1.0) (20.3.0)
-    Requirement already satisfied, skipping upgrade: zipp>=0.5 in /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages (from importlib-metadata; python_version < "3.8"->jsonschema->altair==4.1.0->brevettiai==1.0) (3.4.0)
-    Building wheels for collected packages: brevettiai
-      Building wheel for brevettiai (setup.py) ... [?25l- done
-    [?25h  Created wheel for brevettiai: filename=brevettiai-1.0-py3-none-any.whl size=77721 sha256=ae7bf99d958d55b6d8d12ced9633c175738298d01d1a554782ebae5b9de3a50d
-      Stored in directory: /tmp/pip-ephem-wheel-cache-vmk6hcx8/wheels/ad/09/fd/07681ea80b6ceafcd05ce57a017536396309793b66fb80d2a6
-    Successfully built brevettiai
-    Installing collected packages: brevettiai
-      Attempting uninstall: brevettiai
-        Found existing installation: brevettiai 1.0
-        Uninstalling brevettiai-1.0:
-          Successfully uninstalled brevettiai-1.0
-    Successfully installed brevettiai-1.0
     Note: you may need to restart the kernel to use updated packages.
 
 

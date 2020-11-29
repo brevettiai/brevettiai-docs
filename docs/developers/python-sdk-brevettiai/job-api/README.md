@@ -10,7 +10,7 @@ The Job API is your execution context when running a job on the platform. A job 
 
 It provides a python interface to the website, and keeps track of the resources you have available there, and parsing of input in the form of settings to your code.
 
-![](../../../../.gitbook/assets/brevetti-ai-job-api.png)
+![](BrevettiAI_Job_API.png)
 
 From the platform, a job \(model or test report\) is an input configuration with a storage space attached. The storage space freely available to use by the job, but following a few conventions, allows the platform to parse specific content for display on the model page.
 

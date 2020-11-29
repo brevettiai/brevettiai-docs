@@ -11,4 +11,4 @@ Most notably the platform
 * Configures and tracks experiments and gives a managed artifact repository
 * Provides a seamless switch to *operations/production* once the model design phase is over
 
-The documentation has three main sections detailing the platform REST interfaces, and python code that can be used for task automation. It details the training job API's and features, and, finally, there are a number of tuturials that may assist in getting familiar with the python package.    
+The documentation has three main sections detailing the platform REST interfaces, and python code that can be used for task automation. It details the training job API's and features, and, finally, there are a number of tutorials that may assist in getting familiar with the python package and a public repository with a small application sample [Telescope application bitbucket repository](https://bitbucket.org/criterionai/telescope/src/master/).    

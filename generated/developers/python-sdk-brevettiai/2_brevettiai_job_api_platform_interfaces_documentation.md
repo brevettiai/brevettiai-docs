@@ -6,7 +6,7 @@ The brevettiai Job API is your execution context when running a job on the platf
 
 It provides a python interface to the website, and keeps track of the resources you have available there, and parsing of input in the form of settings to your code.
 
-![](https://gblobscdn.gitbook.com/assets%2F-LY12YhLSCDWlqNaQqWT%2F-MLS25T5O8TMjrIOO-mp%2F-MLS4pcymGOrWAUXcIDC%2FBrevetti%20AI%20Job%20API.png)
+![Job API](https://gblobscdn.gitbook.com/assets%2F-LY12YhLSCDWlqNaQqWT%2Fsync%2F5bd21284c912c0d6b26828d4d36358c7445f44fd.png)
 
 From the platform, a job \(model or test report\) is an input configuration with a storage space attached. The storage space freely available to use by the job, but following a few conventions, allows the platform to parse specific content for display on the model page.
 

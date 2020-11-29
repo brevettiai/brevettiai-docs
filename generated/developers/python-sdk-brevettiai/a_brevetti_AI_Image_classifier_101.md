@@ -175,8 +175,8 @@ The training script needs to be packaged in a way that the platform can create n
 
 [Model Zoo: https://platform.brevetti.ai/models/zoo](https://platform.brevetti.ai/models/zoo)
 
-![Create model](create_model_type.PNG)
-![Model zoo](model_zoo.PNG)
+![Create model](https://raw.githubusercontent.com/brevettiai/brevettiai-docs/825b6607ee2de6c0c061f503576842f357377792/src/developers/python-sdk-brevettiai/create_model_type.PNG)
+![Model zoo](https://raw.githubusercontent.com/brevettiai/brevettiai-docs/825b6607ee2de6c0c061f503576842f357377792/src/developers/python-sdk-brevettiai/model_zoo.PNG)
 
 ## A basic docker file
 This Dockerfile sets up an environment with tensorflow and install the required ```brevettiai``` package. Furthermore it sets the entrypoint so it will run using sagemaker called by the Brevetti AI platform.

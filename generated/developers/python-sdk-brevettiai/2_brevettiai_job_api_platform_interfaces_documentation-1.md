@@ -185,8 +185,8 @@ ds.get_samples_numpy(), ds.get_dataset_numpy()
 
 
 
-    (<brevettiai.data.tf_utils.NumpyStringIterator at 0x7f2b58f0cf10>,
-     <brevettiai.data.tf_utils.NumpyStringIterator at 0x7f2b58ee2dd0>)
+    (<brevettiai.data.tf_utils.NumpyStringIterator at 0x7f3d740b6790>,
+     <brevettiai.data.tf_utils.NumpyStringIterator at 0x7f3d64f8ff90>)
 
 
 
@@ -229,7 +229,7 @@ plt.colorbar()
 
 
 
-    <matplotlib.colorbar.Colorbar at 0x7f2b58fad750>
+    <matplotlib.colorbar.Colorbar at 0x7f3d6436a0d0>
 
 
 
@@ -249,7 +249,7 @@ plt.imshow(tile2d(x, (2,4))[...,0])
 
 
 
-    <matplotlib.image.AxesImage at 0x7f2b58c20390>
+    <matplotlib.image.AxesImage at 0x7f3d64ce3bd0>
 
 
 
@@ -286,7 +286,7 @@ plt.imshow(tile2d(x[0], (2,4))[...,0])
 
 
 
-    <matplotlib.image.AxesImage at 0x7f2b585b1e90>
+    <matplotlib.image.AxesImage at 0x7f3d645c2250>
 
 
 

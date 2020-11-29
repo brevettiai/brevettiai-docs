@@ -23,6 +23,7 @@
 * [Python SDK - Brevetti AI package](docs/developers/python-sdk-brevettiai/README.md)
   * [Installation - Try it](docs/developers/python-sdk-brevettiai/installation-try-it.md)
   * [Job API](docs/developers/python-sdk-brevettiai/job-api/README.md)
+    * [Job platform interfaces](docs/developers/python-sdk-brevettiai/job-api/job_interfaces.md)
   * [Data science tools](generated/developers/python-sdk-brevettiai/3_brevettiai_data_science_tools.md)
   * [Model operations](docs/developers/python-sdk-brevettiai/deployment.md)
 * [Tutorials](generated/developers/tutorials/tutorials.md)

@@ -22,7 +22,7 @@ If everything goes well, you will eventually start seeing epochs and evaluation 
 
 ## Troubleshooting common problems
 
-### ...No known parent package
+### ...no known parent package
 When running the above command, you may encounter the following error message:
 
 ```

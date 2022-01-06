@@ -10,6 +10,7 @@ To run a model training locally, the following open-source repositories must fir
 
 * https://bitbucket.org/criterionai/core/src/development/
 * https://github.com/brevettiai/tensorflow-onnx
+
 If using the image-segmentation repository
 * https://bitbucket.org/criterionai/image-segmentation/src/development/
 

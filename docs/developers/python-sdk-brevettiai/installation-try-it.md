@@ -1,5 +1,5 @@
 ---
-description: How to install the criterion core package
+Description: How to install the criterion core package
 ---
 
 # Installation - Try it

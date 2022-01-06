@@ -1,9 +1,9 @@
 #  Create Model Training Job
 To enter the job context you can either create a model on the platform or programatically via the web api.
 
-The following code finds the firs dataset and creates a model (job) with access to this model.
+The following code finds the first dataset and creates a model (job) with access to this model.
 The model context type is the id of a model type on the platform to use.
-After running the model is available on the website, along with an s3 bucket for artifacts for your job outputs
+After running the model is available on the website, along with an s3 bucket for artifacts for your job outputs.
 
 
 When creating a model you have the option to include datasets and tags and settings defining your model.

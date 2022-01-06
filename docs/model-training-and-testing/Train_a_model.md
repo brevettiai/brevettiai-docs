@@ -16,6 +16,7 @@ The model training may finally be started either through a python IDE or in a co
 python -m image_segmentation.train --model_id yy --api_key xx
 
 ```
+where yy and xx are the respective keys.
 
 If everything goes well, you will eventually start seeing epochs and evaluation metrics being displayed in the terminal. Once the training is done, you can access the training metrics on the Brevetti AI platform. 
 

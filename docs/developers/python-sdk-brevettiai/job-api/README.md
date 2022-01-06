@@ -1,7 +1,6 @@
 ---
-description: >-
-  This section aims to describe the use of the Job API, through a number of
-  guides
+Description: >-
+  This section contains a number of guides that aims to describe the use of the Job API.
 ---
 
 # Job API

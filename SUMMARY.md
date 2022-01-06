@@ -12,6 +12,7 @@
 ## Model Training and Testing
 
 * [Introduction](docs/model-training-and-testing/intro.md)
+* [Create a model](docs/model-training-and-testing/Create_a_model.md)
 
 ## Device Management
 

@@ -1,9 +1,9 @@
 ---
-description: This section describes the platform features that are exposed by the ```brevettiai``` Job object.
+Description: This section describes the platform features that are exposed by the ```brevettiai``` Job object.
 ---
 # Job API Interfaces
 
-The Job object works as a link between the platform and the python training/testing application code - all provided by essentially two lines of code.
+The Job aoe object works as a link between the platform and the python training/testing application code - all provided by essentially two lines of code.
 * The platform provides user interface and meta data for a user to select datasets for a Job - the data is accessible through the job object.
 * The platform let's the user select the training job settings such as image resolution.
 * Models and reports support a number of different visualization types on the platform.

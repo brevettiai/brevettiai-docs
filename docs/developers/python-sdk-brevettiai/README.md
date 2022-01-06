@@ -4,7 +4,7 @@ Description: Introduction to the Python SDK Criterion Core and why you should us
 
 # Python SDK - Brevetti AI package
 
-## Who should use brevettiai package?
+## Who should use the brevettiai package?
 
 * You are a data scientist who works with the Brevetti AI platform
 * You are managing data on Brevetti AI platform and want to automate parts of your workflow

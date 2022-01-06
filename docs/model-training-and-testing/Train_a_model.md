@@ -1,5 +1,5 @@
 # Model training
-Once your model has been set up and your virtual environment is correctly set up, you may start a model training using a command prompt.
+Once your model and your virtual environment is correctly set up, you may start a model training using a command prompt.
 
 To start a model training, you first need to provide the prompt with an API key and job ID for the model you wish to use. These can be extracted from the Brevetti AI platform.
 

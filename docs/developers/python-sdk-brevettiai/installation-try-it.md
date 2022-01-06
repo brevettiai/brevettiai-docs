@@ -18,7 +18,7 @@ Running in a Jupyter Notebook? add a '!' in front of the commando to run a shell
 
 ## Try it in Google Colab hosted Jupyter Notebooks 
 
-We have made a couple of simple Notebooks to run your experiments on the platform. They are in the tutorials section.
+We have made a couple of simple Notebooks to run your experiments on the platform. They can be found in the tutorials section.
 
 [Jupyter notebook tutorials](../../../generated/developers/tutorials/tutorials.md)
 

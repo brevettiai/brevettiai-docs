@@ -20,7 +20,7 @@ where yy and xx are the respective keys.
 
 If everything goes well, you will eventually start seeing epochs and evaluation metrics being displayed in the terminal. Once the training is done, you can access the training metrics on the Brevetti AI platform. 
 
-# Common problems
+# Troubleshooting common problems
 When running the above command, you may encounter the following error message:
 
 ```

@@ -21,6 +21,17 @@ When the repositories are cloned to your virtual environment, they should follow
 - python/criterionai/tensorflow-onnx
 - ...
 
+Then the repositories are pip installed, and it is important to do it in the following order, or it may not work:
+(remember to use the -e flag if possible when pip installing the repo's).
+1. pip install nose coverage
+2. pip install -e ./core
+3. pip install -e ./tensorflow-onnx
+4. pip install -e ./image-segmentation
+
+If using the image-segmentation repo, it may fail when trying to import brevettiai package, if your associated account do not have access. This will also cause it to fail installing some libraries correctly, which it would otherwise do automatically, such as seaborn and shapely. These will have to be installed manually in that case. The brevettiai package is already installed through core, so that is alright.
+
+There might also be pip dependency conflicts between the packages, such as the angus package requiring a more modern version of scikit-learn for example, while brevettiai-1.0 requiring an earlier version. If this causes problems later on, try playing around with upgrading or backrolling the packages whose current version gives cause of error.
+
 ## Create a model
 To set up a model in the platform...
 

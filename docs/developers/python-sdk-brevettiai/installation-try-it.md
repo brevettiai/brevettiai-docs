@@ -1,12 +1,12 @@
 ---
-description: How to install criterion core
+description: How to install the criterion core package
 ---
 
 # Installation - Try it
 
 ## Via git
 
-Installing is criterion core via git is done with pip
+Installing criterion core via git is done with pip
 
 ```bash
 pip install git+https://bitbucket.org/criterionai/core
@@ -24,7 +24,7 @@ We have made a couple of simple Notebooks to run your experiments on the platfor
 
 ## Build your own
 
-We have made a small application sample you can use as base when developing model and report types to the platform, including an example CI pipeline for bitbucket.
+We have made a small application sample that you can use as a starting point when you are developing models and reporting types to the platform, including an example CI pipeline for bitbucket.
 
  [Telescope application bitbucket repository](https://bitbucket.org/criterionai/telescope/src/master/)
 

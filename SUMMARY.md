@@ -13,6 +13,8 @@
 
 * [Introduction](docs/model-training-and-testing/intro.md)
 * [Create a model](docs/model-training-and-testing/Create_a_model.md)
+* [Train a model](docs/model-training-and-testing/Train_a_model.md)
+* [Test a model](docs/model-training-and-testing/Test_a_model.md)
 
 ## Device Management
 

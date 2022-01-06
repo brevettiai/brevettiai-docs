@@ -1,5 +1,5 @@
 #  Customized Job Settings
-Settings are esstentially the serialized configuration of a training job algorithm.
+Settings are essentially the serialized configuration of a training job algorithm.
 Settings can be used for a training job configuration by letting a user change settings, and settings are included in the default job output, such that the parameters of a training job can be saved and tracked for comparison and audit purposes.
 
 

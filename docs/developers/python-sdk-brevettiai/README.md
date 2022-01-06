@@ -1,5 +1,5 @@
 ---
-description: Introduction to the Python SDK Criterion Core and why you should use it
+Description: Introduction to the Python SDK Criterion Core and why you should use it
 ---
 
 # Python SDK - Brevetti AI package

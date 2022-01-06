@@ -31,7 +31,7 @@ Additionally the Brevetti AI package helps you write code to train models on the
 
 The Brevetti AI package contains 3 parts.
 
-* Web API Python interface on top of the web page to automate the task you can perform on the website.
-* Job API Lower level API for running experiments and developing model / test report code.
-* Data-science tools A nuber of prebuilt tools to help you work faster with the data. Data loading, splitting, sampling, augmentation, etc.
+* Web API - Python interface on top of the web page to automate the task you can perform on the website.
+* Job API - Lower level API for running experiments and developing model / test report code.
+* Data-science tools - A number of prebuilt tools to help you work faster with the data. Data loading, splitting, sampling, augmentation, etc.
 

@@ -21,7 +21,7 @@ When the repositories are cloned to your virtual environment, they should follow
 - python/criterionai/tensorflow-onnx
 - ...
 
-Then the repositories are pip installed, and it is important to do it in the following order, or it may not work:
+Now the repositories are pip installed, and it is important to do it in the following order, or it may not work:
 (remember to use the -e flag if possible when pip installing the repo's).
 1. pip install nose coverage
 2. pip install -e ./core

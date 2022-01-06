@@ -4,7 +4,7 @@ Once your model and your virtual environment is correctly set up, you may start 
 To start a model training, you first need to provide the prompt with an API key and job ID for the model you wish to use. These can be extracted from the Brevetti AI platform.
 
 ### Job ID
-To extract the job ID, navigate to your model in the platform. The Job ID is found in your browser address field, being the code listed after the last '/'.
+To extract the job ID, navigate to your model in the Brevetti AI platform. The Job ID is found in your browser address field, being the code listed after the last '/'.
 (F.ex. "https://platform.brevetti.ai/models/**806fd8f4-6675-45d0-a143-5807a7a50741**")
 
 ### API key

@@ -6,6 +6,7 @@ Description: 'This section describes how to create, train, and test models in th
 The model-training-and-testing section describes how to set up a model, train it and finally test it using the Brevetti AI platform.
 This tutorial will be based on the use of Brevetti AI's internal repository, image-segmentation, aswell as the open-source library Criterion-core and tensorflow-onnx.
 
+## Set up in a virtual environment
 To run a model training locally, the following open-source repositories must first be cloned locally, preferably to a virtual environment, and subsequently pip installed. Remember to use the branch "development" if you want to test locally.
 
 * https://bitbucket.org/criterionai/core/src/development/

@@ -1,3 +1,3 @@
-## Create a model
+# Create a model
 To set up a model in the platform...
 

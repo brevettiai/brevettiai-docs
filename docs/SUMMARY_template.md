@@ -24,6 +24,7 @@
   * [Installation - Try it](docs/developers/python-sdk-brevettiai/installation-try-it.md)
   * [Job API](docs/developers/python-sdk-brevettiai/job-api/README.md)
     * [Job platform interfaces](docs/developers/python-sdk-brevettiai/job-api/job_interfaces.md)
+  * [Settings and object serialization](generated/developers/python-sdk-brevettiai/5_serialization.md)
   * [Data science tools](generated/developers/python-sdk-brevettiai/3_brevettiai_data_science_tools.md)
   * [Model operations](docs/developers/python-sdk-brevettiai/deployment.md)
 * [Platform web interface](docs/developers/web-api-introduction.md)
@@ -32,4 +33,6 @@
 * [Tutorials](generated/developers/tutorials/tutorials.md)
   * [Image classifier 101 training job](generated/developers/python-sdk-brevettiai/a_brevetti_AI_Image_classifier_101.md)
   * [Job API tutorial](generated/developers/python-sdk-brevettiai/2_brevettiai_job_api_platform_interfaces_documentation.md)
-
+* [Contributors](docs/developers/contributors/introduction.md)
+  * [brevettiai installation steps](docs/developers/contributors/introduction.md#brevettiai-installation-steps)
+  * [Release procedure](docs/developers/contributors/introduction.md#brevettiai-library-releases)

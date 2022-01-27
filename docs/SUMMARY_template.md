@@ -33,6 +33,7 @@
 * [Tutorials](generated/developers/tutorials/tutorials.md)
   * [Image classifier 101 training job](generated/developers/python-sdk-brevettiai/a_brevetti_AI_Image_classifier_101.md)
   * [Job API tutorial](generated/developers/python-sdk-brevettiai/2_brevettiai_job_api_platform_interfaces_documentation.md)
+  * [Basic BrevettiAI data acces](generated/tutorials/BrevettiAI_data_access.md)
 * [Contributors](docs/developers/contributors/introduction.md)
   * [brevettiai installation steps](docs/developers/contributors/introduction.md#brevettiai-installation-steps)
   * [Release procedure](docs/developers/contributors/introduction.md#brevettiai-library-releases)

@@ -9,25 +9,34 @@ As on the web page you have 60 minutes of access before needing to log back in.
 ```python
 # Imports and setup
 from brevettiai.platform import BrevettiAI
+import os
+
+model_id = os.getenv("job_id") or input("Training job model id (can be read from url https://platform.brevetti.ai/models/{model_id})")
+api_key = os.getenv("api_key")
 web = BrevettiAI()
-```
 
-
-```python
 help(web)
 ```
+
+    2022-01-28 14:19:25.911963: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
+    2022-01-28 14:19:25.911998: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+    DEBUG:h5py._conv:Creating converter from 7 to 5
+    DEBUG:h5py._conv:Creating converter from 5 to 7
+    DEBUG:h5py._conv:Creating converter from 7 to 5
+    DEBUG:h5py._conv:Creating converter from 5 to 7
+
 
     Help on PlatformAPI in module brevettiai.platform.web_api object:
     
     class PlatformAPI(builtins.object)
-     |  PlatformAPI(username=None, password=None, host=None)
+     |  PlatformAPI(username=None, password=None, host=None, remember_me=False)
      |  
      |  Methods defined here:
      |  
-     |  __init__(self, username=None, password=None, host=None)
+     |  __init__(self, username=None, password=None, host=None, remember_me=False)
      |      Initialize self.  See help(type(self)) for accurate signature.
      |  
-     |  create_dataset(self, name, tag_ids=None, application=None)
+     |  create_dataset(self, name, reference='', notes='', tag_ids=None, application=None)
      |      Create dataset on platform
      |      :param name: Name of dataset
      |      :param tag_ids:
@@ -62,6 +71,8 @@ help(web)
      |      :param id: Guid of model (available in the url), or None
      |      :return:
      |  
+     |  delete_sftp_user(self, dataset, user)
+     |  
      |  delete_tag(self, id)
      |      Delete a tag by id
      |      :param id:
@@ -69,9 +80,9 @@ help(web)
      |  
      |  download_url(self, url, dst=None, headers=None)
      |  
-     |  get_application(self, id)
+     |  get_application(self, id=None, model_id=None)
      |      Get application by id
-     |      :param id:
+     |      :param id: either application id or model id
      |      :return:
      |  
      |  get_artifacts(self, model_id, prefix='', type='models')
@@ -85,11 +96,13 @@ help(web)
      |      List all available model types
      |      :return:
      |  
-     |  get_dataset(self, id=None, raw=True)
+     |  get_dataset(self, id=None, raw=False, write_access=False)
      |      Get dataset, or list of all datasets
      |      :param id: guid of dataset (accessible from url on platform) or None for all dataset
      |      :param raw: get as dict, or attempt parsing to Criterion Dataset
      |      :return:
+     |  
+     |  get_dataset_sts_assume_role_response(self, guid)
      |  
      |  get_devices(self, id=None)
      |  
@@ -117,6 +130,8 @@ help(web)
      |      :param modeltype: model type or guid
      |      :return:
      |  
+     |  get_sftp_user(self, dataset, **kwargs)
+     |  
      |  get_tag(self, id=None)
      |      Get tag or list of all tags
      |      :param id: tag guid
@@ -126,7 +141,7 @@ help(web)
      |      Get info on user
      |      :return:
      |  
-     |  login(self, username, password)
+     |  login(self, username, password, remember_me=False)
      |  
      |  start_model_training(self, model, submitCloudJob=False)
      |      Start training flow
@@ -135,7 +150,7 @@ help(web)
      |      :return: updated model
      |  
      |  stop_model_training(self, model, submitCloudJob=False)
-     |      Start training flow
+     |      Stop training flow
      |      :param model: model or model id
      |      :param submitCloudJob: submit training to google cloud
      |      :return: updated model
@@ -170,6 +185,8 @@ help(web)
      |  antiforgery_headers
      |      Get anti forgery headers from platform
      |      :return:
+     |  
+     |  backend
      |  
      |  host
     

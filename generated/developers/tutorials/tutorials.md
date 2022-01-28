@@ -17,3 +17,4 @@ The notebook are linked directly to Google Colab instances that can be used to r
 * [2 Brevettiai Job Api Platform Interfaces Documentation](https://githubtocolab.com/brevettiai/brevettiai-docs/blob/master/src/developers/python-sdk-brevettiai/2_brevettiai_job_api_platform_interfaces_documentation.ipynb)
 * [3 Brevettiai Data Science Tools](https://githubtocolab.com/brevettiai/brevettiai-docs/blob/master/src/developers/python-sdk-brevettiai/3_brevettiai_data_science_tools.ipynb)
 * [A Brevetti Ai Image Classifier 101](https://githubtocolab.com/brevettiai/brevettiai-docs/blob/master/src/developers/python-sdk-brevettiai/a_brevetti_AI_Image_classifier_101.ipynb)
+* [Brevettiai Data Access](https://githubtocolab.com/brevettiai/brevettiai-docs/blob/master/src/tutorials/BrevettiAI_data_access.ipynb)

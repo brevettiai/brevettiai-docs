@@ -37,7 +37,7 @@ jobs:
     - name: Add generated output
       run: |
         git add generated/.
-        git add SUMMARY.md  deploy:
+        git add SUMMARY.md
 
     - name: Setup git ssh
       run: |

@@ -39,9 +39,6 @@ jobs:
         git add generated/.
         git add SUMMARY.md  deploy:
 
-  deployment:
-    runs-on: ubuntu-latest
-    steps:
     - name: Setup git ssh
       run: |
         git config --local user.email "action@github.com"

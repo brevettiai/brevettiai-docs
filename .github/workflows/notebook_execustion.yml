@@ -26,6 +26,7 @@ jobs:
         python-version: '3.7'
     - name: Install dependencies
       run: |
+        ssh-keyscan -t rsa bitbucket.org >> ~/.ssh/known_hosts
         python -m pip install --upgrade pip
         pip install pytest nbconvert tensorflow jupyter matplotlib opencv-python altair==4.1.0
         git clone --single-branch --branch ${{ github.ref }} ssh://bitbucket.org/criterionai/core.git .libs/core

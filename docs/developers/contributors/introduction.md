@@ -1,12 +1,30 @@
 ---
 The *contributors* section describes how a *data scientist* should use available tools and conform to coding standards to contribute to the API's and tools of the Brevetti AI platform.
 ---
-## Coding guidelines
+# Coding guidelines
 
+## Coding style
 * Refer to [Google Python Stule Guide](https://google.github.io/styleguide/pyguide.html) 
 * Comments: Add comments to make the code readable. **NB: Elaborate!**
 * Use PEP-8 to guide you in writing beautiful code. Read and apply the PyCharm tips found here: [Code Quality Assistance Tips and Tricks, or How to Make Your Code Look Pretty?](https://www.jetbrains.com/help/pycharm/tutorial-code-quality-assistance-tips-and-tricks.html)
 * Create a serializable training pipeline: derive classes from <code>brevettiai.interfaces.vue_schema_utils.VueSettingsModule</code>
+
+## brevettiai merge to feature branches to development
+* Ensure that pipeline tests passes: https://bitbucket.org/criterionai/core/addon/pipelines/
+* Create pull request
+* Have a reviewer approve the pull request
+* test that documentation works after the merge: https://github.com/brevettiai/brevettiai-docs/actions/workflows/test_documentation_notebooks.yml
+
+## brevettiai merge to master requirements
+* Ensure that pipeline tests passes: https://bitbucket.org/criterionai/core/addon/pipelines/
+* test that documentation works: https://github.com/brevettiai/brevettiai-docs/actions/workflows/test_documentation_notebooks.yml
+* merge fast-forward into master
+
+## brevettiai release to pypi requirements
+* Version increment (etc)
+* pipeline
+* documentation push
+
 
 ## Brevettiai development environment setup
 

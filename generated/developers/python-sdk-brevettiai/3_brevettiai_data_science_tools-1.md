@@ -68,11 +68,13 @@ samples.groupby(["folder", "purpose"]).count()
       <th>bucket</th>
       <th>dataset</th>
       <th>dataset_id</th>
+      <th>reference</th>
       <th>url</th>
     </tr>
     <tr>
       <th>folder</th>
       <th>purpose</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -93,9 +95,11 @@ samples.groupby(["folder", "purpose"]).count()
       <td>6</td>
       <td>6</td>
       <td>6</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>train</th>
+      <td>16</td>
       <td>16</td>
       <td>16</td>
       <td>16</td>
@@ -114,9 +118,11 @@ samples.groupby(["folder", "purpose"]).count()
       <td>28</td>
       <td>28</td>
       <td>28</td>
+      <td>28</td>
     </tr>
     <tr>
       <th>train</th>
+      <td>118</td>
       <td>118</td>
       <td>118</td>
       <td>118</td>
@@ -135,9 +141,11 @@ samples.groupby(["folder", "purpose"]).count()
       <td>2</td>
       <td>2</td>
       <td>2</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>train</th>
+      <td>10</td>
       <td>10</td>
       <td>10</td>
       <td>10</td>

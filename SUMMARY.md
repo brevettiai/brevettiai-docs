@@ -12,9 +12,6 @@
 ## Model Training and Testing
 
 * [Introduction](docs/model-training-and-testing/intro.md)
-* [Create a model](docs/model-training-and-testing/Create_a_model.md)
-* [Train a model](docs/model-training-and-testing/Train_a_model.md)
-* [Test a model](docs/model-training-and-testing/Test_a_model.md)
 
 ## Device Management
 
@@ -27,6 +24,7 @@
   * [Installation - Try it](docs/developers/python-sdk-brevettiai/installation-try-it.md)
   * [Job API](docs/developers/python-sdk-brevettiai/job-api/README.md)
     * [Job platform interfaces](docs/developers/python-sdk-brevettiai/job-api/job_interfaces.md)
+  * [Settings and object serialization](generated/developers/python-sdk-brevettiai/5_serialization.md)
   * [Data science tools](generated/developers/python-sdk-brevettiai/3_brevettiai_data_science_tools.md)
     * [ Brevetti AI Dataset](generated/developers/python-sdk-brevettiai/3_brevettiai_data_science_tools-0.md)
     * [ Sample split - sample integrity module](generated/developers/python-sdk-brevettiai/3_brevettiai_data_science_tools-1.md)
@@ -48,4 +46,9 @@
     * [ Accessing datasets and downloading samples](generated/developers/python-sdk-brevettiai/2_brevettiai_job_api_platform_interfaces_documentation-1.md)
     * [ Interfaces / integrations](generated/developers/python-sdk-brevettiai/2_brevettiai_job_api_platform_interfaces_documentation-2.md)
     * [ Complete job](generated/developers/python-sdk-brevettiai/2_brevettiai_job_api_platform_interfaces_documentation-3.md)
-
+  * [Basic BrevettiAI data acces](generated/tutorials/BrevettiAI_data_access.md)
+    * [ Accessing the training job from python](generated/tutorials/BrevettiAI_data_access-0.md)
+* [Contributors](docs/developers/contributors/introduction.md)
+  * [Coding guidelines](docs/developers/contributors/introduction.md#coding-guidelines) 
+  * [brevettiai installation steps](docs/developers/contributors/introduction.md#brevettiai-installation-steps)
+  * [Release procedure](docs/developers/contributors/introduction.md#brevettiai-library-releases)

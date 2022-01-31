@@ -5,12 +5,11 @@ Sample integrity and purpose management can be done easily through the sample in
 
 
 ```python
-from brevettiai.platform import get_image_samples
-samples = get_image_samples(job.datasets)
+samples = job.datasets[0].get_image_samples()
 ```
 
     INFO:brevettiai.platform.dataset:Getting image samples from dataset 'NeurIPS vials TRAIN' [https://platform.brevetti.ai/data/cb14b6e3-b4b9-45bb-955f-47aa6489a192]
-    INFO:brevettiai.platform.dataset:Contents: {('missing_cap',): 20, ('good',): 20, ('failed_cap',): 19, ('unknown',): 1}
+    INFO:brevettiai.platform.dataset:Contents: {('good',): 20, ('missing_cap',): 20, ('failed_cap',): 19, ('unknown',): 1}
 
 
 
@@ -44,6 +43,7 @@ samples.head(5)
       <th>bucket</th>
       <th>dataset</th>
       <th>dataset_id</th>
+      <th>reference</th>
       <th>url</th>
       <th>purpose</th>
     </tr>
@@ -58,7 +58,8 @@ samples.head(5)
       <td>s3://data.criterion.ai/cb14b6e3-b4b9-45bb-955f...</td>
       <td>NeurIPS vials TRAIN</td>
       <td>cb14b6e3-b4b9-45bb-955f-47aa6489a192</td>
-      <td>https://platform.brevetti.ai/download?path=a.c...</td>
+      <td>N/A</td>
+      <td>https://platform.brevetti.ai/download?path=cb1...</td>
       <td>train</td>
     </tr>
     <tr>
@@ -70,8 +71,9 @@ samples.head(5)
       <td>s3://data.criterion.ai/cb14b6e3-b4b9-45bb-955f...</td>
       <td>NeurIPS vials TRAIN</td>
       <td>cb14b6e3-b4b9-45bb-955f-47aa6489a192</td>
-      <td>https://platform.brevetti.ai/download?path=a.c...</td>
-      <td>devel</td>
+      <td>N/A</td>
+      <td>https://platform.brevetti.ai/download?path=cb1...</td>
+      <td>train</td>
     </tr>
     <tr>
       <th>2</th>
@@ -82,7 +84,8 @@ samples.head(5)
       <td>s3://data.criterion.ai/cb14b6e3-b4b9-45bb-955f...</td>
       <td>NeurIPS vials TRAIN</td>
       <td>cb14b6e3-b4b9-45bb-955f-47aa6489a192</td>
-      <td>https://platform.brevetti.ai/download?path=a.c...</td>
+      <td>N/A</td>
+      <td>https://platform.brevetti.ai/download?path=cb1...</td>
       <td>train</td>
     </tr>
     <tr>
@@ -94,7 +97,8 @@ samples.head(5)
       <td>s3://data.criterion.ai/cb14b6e3-b4b9-45bb-955f...</td>
       <td>NeurIPS vials TRAIN</td>
       <td>cb14b6e3-b4b9-45bb-955f-47aa6489a192</td>
-      <td>https://platform.brevetti.ai/download?path=a.c...</td>
+      <td>N/A</td>
+      <td>https://platform.brevetti.ai/download?path=cb1...</td>
       <td>train</td>
     </tr>
     <tr>
@@ -106,7 +110,8 @@ samples.head(5)
       <td>s3://data.criterion.ai/cb14b6e3-b4b9-45bb-955f...</td>
       <td>NeurIPS vials TRAIN</td>
       <td>cb14b6e3-b4b9-45bb-955f-47aa6489a192</td>
-      <td>https://platform.brevetti.ai/download?path=a.c...</td>
+      <td>N/A</td>
+      <td>https://platform.brevetti.ai/download?path=cb1...</td>
       <td>train</td>
     </tr>
   </tbody>
@@ -153,6 +158,13 @@ from brevettiai.data.image import ImagePipeline, ImageAugmenter, SegmentationLoa
 ds = StratifiedSampler().get(samples, shuffle=True, batch_size=8, output_structure=("path", "folder"))
 ```
 
+    2022-01-28 14:19:46.979730: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/cv2/../../lib64:/opt/hostedtoolcache/Python/3.7.12/x64/lib
+    2022-01-28 14:19:46.979768: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+    2022-01-28 14:19:46.979793: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az202-546): /proc/driver/nvidia/version does not exist
+    2022-01-28 14:19:46.980112: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+    To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+
+
 The DataGenerator has four methods to iterate over data.
 
 First returning tensorflow datasets:
@@ -171,7 +183,7 @@ ds.get_samples(), ds.get_dataset()
 
 
 
-    (<BatchDataset shapes: {category: (None, None), folder: (None,), path: (None,), etag: (None,), bucket: (None,), dataset: (None,), dataset_id: (None,), url: (None,), purpose: (None,)}, types: {category: tf.string, folder: tf.string, path: tf.string, etag: tf.string, bucket: tf.string, dataset: tf.string, dataset_id: tf.string, url: tf.string, purpose: tf.string}>,
+    (<BatchDataset shapes: {category: (None, None), folder: (None,), path: (None,), etag: (None,), bucket: (None,), dataset: (None,), dataset_id: (None,), reference: (None,), url: (None,), purpose: (None,)}, types: {category: tf.string, folder: tf.string, path: tf.string, etag: tf.string, bucket: tf.string, dataset: tf.string, dataset_id: tf.string, reference: tf.string, url: tf.string, purpose: tf.string}>,
      <PrefetchDataset shapes: ((None,), (None,)), types: (tf.string, tf.string)>)
 
 
@@ -185,8 +197,8 @@ ds.get_samples_numpy(), ds.get_dataset_numpy()
 
 
 
-    (<brevettiai.data.tf_utils.NumpyStringIterator at 0x7f6b743c5350>,
-     <brevettiai.data.tf_utils.NumpyStringIterator at 0x7f6b7435da90>)
+    (<brevettiai.data.tf_utils.NumpyStringIterator at 0x7f0978828bd0>,
+     <brevettiai.data.tf_utils.NumpyStringIterator at 0x7f0978827f10>)
 
 
 
@@ -203,7 +215,7 @@ ds = ds.map(ImagePipeline(target_size=(64,64), antialias=True, rescale="imagenet
 ds.get_dataset(structure=("path", "img", "onehot"))
 ```
 
-    WARNING:tensorflow:From /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:574: calling map_fn_v2 (from tensorflow.python.ops.map_fn) with dtype is deprecated and will be removed in a future version.
+    WARNING:tensorflow:From /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:620: calling map_fn_v2 (from tensorflow.python.ops.map_fn) with dtype is deprecated and will be removed in a future version.
     Instructions for updating:
     Use fn_output_signature instead
 
@@ -211,7 +223,7 @@ ds.get_dataset(structure=("path", "img", "onehot"))
 
 
 
-    <PrefetchDataset shapes: ((None,), (None, None, None, None), (None, 4)), types: (tf.string, tf.float32, tf.float32)>
+    <PrefetchDataset shapes: ((None,), (None, 64, 64, 3), (None, None, 4)), types: (tf.string, tf.float32, tf.float32)>
 
 
 
@@ -229,13 +241,13 @@ plt.colorbar()
 
 
 
-    <matplotlib.colorbar.Colorbar at 0x7f6b5d76a9d0>
+    <matplotlib.colorbar.Colorbar at 0x7f097840fbd0>
 
 
 
 
     
-![png](2_brevettiai_job_api_platform_interfaces_documentation_files/2_brevettiai_job_api_platform_interfaces_documentation_24_1.png)
+![png](2_brevettiai_job_api_platform_interfaces_documentation_files/2_brevettiai_job_api_platform_interfaces_documentation_31_1.png)
     
 
 
@@ -249,13 +261,13 @@ plt.imshow(tile2d(x, (2,4))[...,0])
 
 
 
-    <matplotlib.image.AxesImage at 0x7f6b5dd862d0>
+    <matplotlib.image.AxesImage at 0x7f097809f050>
 
 
 
 
     
-![png](2_brevettiai_job_api_platform_interfaces_documentation_files/2_brevettiai_job_api_platform_interfaces_documentation_25_1.png)
+![png](2_brevettiai_job_api_platform_interfaces_documentation_files/2_brevettiai_job_api_platform_interfaces_documentation_32_1.png)
     
 
 
@@ -286,18 +298,18 @@ plt.imshow(tile2d(x[0], (2,4))[...,0])
 
 
 
-    <matplotlib.image.AxesImage at 0x7f6b7447c350>
+    <matplotlib.image.AxesImage at 0x7f096cf74f10>
 
 
 
 
     
-![png](2_brevettiai_job_api_platform_interfaces_documentation_files/2_brevettiai_job_api_platform_interfaces_documentation_29_1.png)
+![png](2_brevettiai_job_api_platform_interfaces_documentation_files/2_brevettiai_job_api_platform_interfaces_documentation_36_1.png)
     
 
 
 
     
-![png](2_brevettiai_job_api_platform_interfaces_documentation_files/2_brevettiai_job_api_platform_interfaces_documentation_29_2.png)
+![png](2_brevettiai_job_api_platform_interfaces_documentation_files/2_brevettiai_job_api_platform_interfaces_documentation_36_2.png)
     
 

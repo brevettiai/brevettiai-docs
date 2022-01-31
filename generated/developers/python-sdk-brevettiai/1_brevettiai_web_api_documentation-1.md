@@ -12,7 +12,7 @@ tags = web.get_tag()
 models = web.get_model()
 
 # List 10 first dataset names
-[d["name"] for d in datasets][:10]
+[d.name for d in datasets][:10]
 ```
 
 
@@ -30,21 +30,13 @@ For a single dataset, model or ... use the get_... functions with an id
 
 
 ```python
-dataset = web.get_dataset(datasets[0]["id"])
+dataset = web.get_dataset(datasets[0].id)
 dataset
 ```
 
 
 
 
-    {'id': '21263db3-1c9b-456b-be1d-ecfa2afb5d99',
-     'created': '2019-01-17T16:07:44.307313',
-     'name': 'NeurIPS 2018',
-     'reference': 'Batch HW0001',
-     'notes': '',
-     'folderName': '21263db3-1c9b-456b-be1d-ecfa2afb5d99.datasets.criterion.ai',
-     'locked': False,
-     'folders': [],
-     'tagIds': []}
+    <brevettiai.platform.dataset.Dataset at 0x7f096ff8f210>
 
 

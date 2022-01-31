@@ -14,7 +14,7 @@ samples = ds.get_image_samples()
 print("Sample: ", samples.sample(1).iloc[0].to_dict())
 ```
 
-    Sample:  {'category': ('good',), 'folder': 'good', 'path': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/5_1543412101485.bmp', 'etag': 'e8f7804d245dc625a0976deae5aa85fe', 'bucket': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced', 'dataset': '', 'dataset_id': '', 'url': 'https://platform.brevetti.ai/download?path=lic.data.criterion.ai%2Fdata%2FNeurIPS_2018_reduced%2Fgood%2F5_1543412101485.bmp'}
+    Sample:  {'category': ('good',), 'folder': 'good', 'path': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/39_1543412108300.bmp', 'etag': '2568ac3a6d5f17eee0869201d386e65f', 'bucket': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced', 'dataset': '', 'dataset_id': '', 'reference': 'N/A', 'url': 'https://platform.brevetti.ai/download?path=data%2FNeurIPS_2018_reduced%2Fgood%2F39_1543412108300.bmp'}
 
 
 Samples now holds the image samples in a pandas dataframe object. We can e.g. investigate the distribution of the different classes
@@ -39,10 +39,12 @@ samples.groupby("folder").count()
       <th>bucket</th>
       <th>dataset</th>
       <th>dataset_id</th>
+      <th>reference</th>
       <th>url</th>
     </tr>
     <tr>
       <th>folder</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -62,6 +64,7 @@ samples.groupby("folder").count()
       <td>22</td>
       <td>22</td>
       <td>22</td>
+      <td>22</td>
     </tr>
     <tr>
       <th>good</th>
@@ -72,9 +75,11 @@ samples.groupby("folder").count()
       <td>146</td>
       <td>146</td>
       <td>146</td>
+      <td>146</td>
     </tr>
     <tr>
       <th>missing_cap</th>
+      <td>12</td>
       <td>12</td>
       <td>12</td>
       <td>12</td>

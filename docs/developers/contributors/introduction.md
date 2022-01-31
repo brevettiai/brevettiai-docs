@@ -1,6 +1,7 @@
 ---
 The *contributors* section describes how a *data scientist* should use available tools and conform to coding standards to contribute to the API's and tools of the Brevetti AI platform.
 ---
+
 # Coding guidelines
 
 ## Coding style
@@ -9,21 +10,29 @@ The *contributors* section describes how a *data scientist* should use available
 * Use PEP-8 to guide you in writing beautiful code. Read and apply the PyCharm tips found here: [Code Quality Assistance Tips and Tricks, or How to Make Your Code Look Pretty?](https://www.jetbrains.com/help/pycharm/tutorial-code-quality-assistance-tips-and-tricks.html)
 * Create a serializable training pipeline: derive classes from <code>brevettiai.interfaces.vue_schema_utils.VueSettingsModule</code>
 
+# Code managment: git branches and releases
+When building new features to the code base, use the JIRA task to create a new feature branch. When committing to the feature branch add the tag '#JIRA-task-ID' to the commit message to ensure updates are tracked in JIRA.  
+
 ## brevettiai merge to feature branches to development
-* Ensure that pipeline tests passes: https://bitbucket.org/criterionai/core/addon/pipelines/
+* [Ensure that bitbucket pipeline tests passes](https://bitbucket.org/criterionai/core/addon/pipelines/)
 * Create pull request
 * Have a reviewer approve the pull request
-* test that documentation works after the merge: https://github.com/brevettiai/brevettiai-docs/actions/workflows/test_documentation_notebooks.yml
+* test that documentation works after the merge: [test_documentation_notebooks](https://github.com/brevettiai/brevettiai-docs/actions/workflows/test_documentation_notebooks.yml)
 
 ## brevettiai merge to master requirements
-* Ensure that pipeline tests passes: https://bitbucket.org/criterionai/core/addon/pipelines/
-* test that documentation works: https://github.com/brevettiai/brevettiai-docs/actions/workflows/test_documentation_notebooks.yml
+* [Ensure that bitbucket pipeline tests passes](https://bitbucket.org/criterionai/core/addon/pipelines/)
+* test that documentation works: [test_documentation_notebooks](https://github.com/brevettiai/brevettiai-docs/actions/workflows/test_documentation_notebooks.yml)
 * merge fast-forward into master
 
 ## brevettiai release to pypi requirements
-* Version increment (etc)
-* pipeline
-* documentation push
+**Manage the release number, following [https://semver.org/](https://semver.org/):**
+* Given a version number MAJOR.MINOR.PATCH, increment the:
+  * MAJOR version when you make incompatible API changes,
+  * MINOR version when you add functionality in a backwards compatible manner, and
+  * PATCH version when you make backwards compatible bug fixes.
+  * Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format
+* [The bibucket pipeline tests and manages the release](https://bitbucket.org/criterionai/core/addon/pipelines/)
+* [Push the updated documentation](https://github.com/brevettiai/brevettiai-docs/actions/workflows/build_and_commit_documentation.yml)
 
 
 ## Brevettiai development environment setup

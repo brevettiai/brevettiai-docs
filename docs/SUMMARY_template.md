@@ -35,6 +35,7 @@
   * [Job API tutorial](generated/developers/python-sdk-brevettiai/2_brevettiai_job_api_platform_interfaces_documentation.md)
   * [Basic BrevettiAI data acces](generated/tutorials/BrevettiAI_data_access.md)
 * [Contributors](docs/developers/contributors/introduction.md)
-  * [Coding guidelines](docs/developers/contributors/introduction.md#coding-guidelines) 
+  * [Coding guidelines](docs/developers/contributors/introduction.md#coding-guidelines)
+  * [Code managment: git branches and releases](docs/developers/contributors/introduction.md#code-managment-git-branches-and-releases)
   * [brevettiai installation steps](docs/developers/contributors/introduction.md#brevettiai-installation-steps)
   * [Release procedure](docs/developers/contributors/introduction.md#brevettiai-library-releases)

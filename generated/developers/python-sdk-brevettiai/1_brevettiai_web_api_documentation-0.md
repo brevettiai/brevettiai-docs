@@ -18,8 +18,8 @@ web = BrevettiAI()
 help(web)
 ```
 
-    2022-01-28 14:19:25.911963: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
-    2022-01-28 14:19:25.911998: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+    2022-02-01 09:53:27.403080: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
+    2022-02-01 09:53:27.403116: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
     DEBUG:h5py._conv:Creating converter from 7 to 5
     DEBUG:h5py._conv:Creating converter from 5 to 7
     DEBUG:h5py._conv:Creating converter from 7 to 5

@@ -11,9 +11,14 @@ The *contributors* section describes how a *data scientist* should use available
 * Create a serializable training pipeline: derive classes from <code>brevettiai.interfaces.vue_schema_utils.VueSettingsModule</code>
 
 # Code managment: git branches and releases
-When building new features to the code base, use the JIRA task to create a new feature branch. When committing to the feature branch add the tag '#JIRA-task-ID' to the commit message to ensure updates are tracked in JIRA.  
+When building new features to the code base, use the JIRA task to create a new feature branch. When committing to the feature branch add the tag '#JIRA-task-ID' to the commit message to ensure updates are tracked in JIRA. 
 
-## brevettiai merge to feature branches to development
+[Smart commands](https://confluence.atlassian.com/bitbucketserver/use-smart-commits-802599018.html)
+* <ignored text> ISSUE_KEY <ignored text> #comment <comment_string>
+Example	
+* JRA-34 #comment corrected indent issue
+
+## brevettiai merge feature branches to development
 * [Ensure that bitbucket pipeline tests passes](https://bitbucket.org/criterionai/core/addon/pipelines/)
 * Create pull request
 * Have a reviewer approve the pull request

@@ -7,8 +7,8 @@ from brevettiai.platform import Job
 job = Job.init(job_id=model_id, api_key=api_key)
 ```
 
-    2022-01-28 14:20:45.515485: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
-    2022-01-28 14:20:45.515523: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+    2022-02-01 09:54:55.886674: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
+    2022-02-01 09:54:55.886710: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 
 
     kwargs <class 'NoneType'> not known
@@ -34,7 +34,7 @@ samples.head(5)
 
     INFO:brevettiai.platform.dataset:Getting image samples from dataset 'NeurIPS vials TRAIN' [https://platform.brevetti.ai/data/cb14b6e3-b4b9-45bb-955f-47aa6489a192]
     INFO:brevettiai.platform.dataset:Getting annotations from dataset 'NeurIPS vials TRAIN' [https://platform.brevetti.ai/data/cb14b6e3-b4b9-45bb-955f-47aa6489a192] with filter: None
-    INFO:brevettiai.platform.dataset:Contents: {('good',): 3, ('failed_cap',): 2, ('missing_cap',): 2}
+    INFO:brevettiai.platform.dataset:Contents: {('good',): 3, ('missing_cap',): 2, ('failed_cap',): 2}
 
 
 

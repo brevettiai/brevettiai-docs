@@ -52,16 +52,16 @@ def batch_convert(code_dir="src", generated_dir = "generated",
                     md_content.append("\n".join(["# "+out_part[0], *out_part[1].values.tolist()[1:]]))
                     new_lines.append("  " + summary_doc.loc[summary_line.index[0]][0]\
                                      .replace(summary_line.values[0,0], out_part[0])\
-                                     .replace(output_file_key, output_file_key + "#" + "-".join(out_part[0].strip(" ").lower().split(" "))))
+                                     .replace(output_file_key, output_file_key + "#" + "-".join(re.sub("[^a-zA-Z0-9 ]", "", out_part[0].strip(" ").lower()).split(" "))))
                 summary_doc = pd.concat((summary_doc[:summary_line.index[0]+1],
                                          pd.DataFrame(data={"lines": new_lines}),
                                          summary_doc[summary_line.index[0]+1:]), ignore_index=True)
 
                 colab_link = f"[{os.path.splitext(os.path.basename(notebook))[0].replace('_', ' ').title()}](https://githubtocolab.com/brevettiai/brevettiai-docs/blob/master/{'/'.join(notebook.split(os.path.sep))})"
                 tutorial_links.append(colab_link)
-                new_intro = output_buffer[:output_buffer.find([*re.findall("[^-]{3}\n# Brevetti AI package installation", output_buffer), "\n# Brevetti AI package installation"][0])]
+                new_intro = output_buffer[:output_buffer.find([*re.findall("[^-]{2}\n# Brevetti AI package installation", output_buffer), "\n# Brevetti AI package installation"][0])]
                 outro = f"""\n\nTo explore the code by examples, please run the in the notebook that can be found on colab on this link {colab_link}"""
-                open(output_file, "w").write(new_intro + "\n".join(md_content)  + outro)
+                open(output_file, "w").write("\n".join([new_intro] + md_content + [outro]))
     open("SUMMARY.md", "w").write("\n".join(summary_doc.lines.values.tolist()))
 
     tutorial_buffer = open(os.path.join("docs", "developers", "tutorials", "tutorials_template.md"), "r").read()

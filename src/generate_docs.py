@@ -52,7 +52,9 @@ def batch_convert(code_dir="src", generated_dir = "generated",
                     md_content.append("\n".join(["# "+out_part[0], *out_part[1].values.tolist()[1:]]))
                     new_lines.append("  " + summary_doc.loc[summary_line.index[0]][0]\
                                      .replace(summary_line.values[0,0], out_part[0])\
-                                     .replace(output_file_key, output_file_key + "#" + "-".join(re.sub("[^a-zA-Z0-9 ]", "", out_part[0].strip(" ").lower()).split(" "))))
+                                     .replace(output_file_key, output_file_key + "#" + "-".join(re.sub("[^a-zA-Z0-9 ]", "", out_part[0].strip(" ").lower()).split(" ")))\
+                                     .replace(".md", "")\
+                                     .replace( '/'.join(get_output_dir(notebook).split(os.path.sep)), "https://docs.brevetti.ai/developers/tutorials"))
                 summary_doc = pd.concat((summary_doc[:summary_line.index[0]+1],
                                          pd.DataFrame(data={"lines": new_lines}),
                                          summary_doc[summary_line.index[0]+1:]), ignore_index=True)

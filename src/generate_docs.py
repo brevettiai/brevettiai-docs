@@ -53,8 +53,6 @@ def batch_convert(code_dir="src", generated_dir = "generated",
                     new_lines.append("  " + summary_doc.loc[summary_line.index[0]][0]\
                                      .replace(summary_line.values[0,0], out_part[0])\
                                      .replace(output_file_key, output_file_key + "#" + "-".join(out_part[0].strip(" ").lower().split(" "))))
-                with open(output_file, "w") as md_file:
-                    md_file.write("\n".join(md_content))
                 summary_doc = pd.concat((summary_doc[:summary_line.index[0]+1],
                                          pd.DataFrame(data={"lines": new_lines}),
                                          summary_doc[summary_line.index[0]+1:]), ignore_index=True)
@@ -63,7 +61,7 @@ def batch_convert(code_dir="src", generated_dir = "generated",
                 tutorial_links.append(colab_link)
                 new_intro = output_buffer[:output_buffer.find([*re.findall("[^-]{3}\n# Brevetti AI package installation", output_buffer), "\n# Brevetti AI package installation"][0])]
                 outro = f"""\n\nTo explore the code by examples, please run the in the notebook that can be found on colab on this link {colab_link}"""
-                open(output_file, "w").write(new_intro + outro)
+                open(output_file, "w").write(new_intro + "\n".join(md_content)  + outro)
     open("SUMMARY.md", "w").write("\n".join(summary_doc.lines.values.tolist()))
 
     tutorial_buffer = open(os.path.join("docs", "developers", "tutorials", "tutorials_template.md"), "r").read()

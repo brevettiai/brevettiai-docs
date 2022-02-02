@@ -20,9 +20,10 @@ jobs:
       uses: actions/checkout@v2
       with:
         fetch-depth: 0
-      git checkout origin/release
-      git merge ${{ github.ref }} --ff-only
-      git rm generated/. -r
+      run: |
+        git checkout release
+        git merge ${{ github.ref }} --ff-only
+        git rm generated/. -r
 
     - name: Set up Python 3.7
       uses: actions/setup-python@v2

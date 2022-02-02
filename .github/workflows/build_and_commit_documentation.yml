@@ -22,7 +22,7 @@ jobs:
     - name: Checkout relase and merge
       run: |
         git checkout release
-        git merge ${{ github.ref }} --ff-only
+        git merge ${{ github.ref }}
         git rm generated/. -r
 
     - name: Set up Python 3.7

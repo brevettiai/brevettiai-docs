@@ -16,10 +16,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout relase and merge
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v2
       with:
         fetch-depth: 0
+    - name: Checkout relase and merge
       run: |
         git checkout release
         git merge ${{ github.ref }} --ff-only

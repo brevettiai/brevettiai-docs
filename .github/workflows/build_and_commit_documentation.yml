@@ -26,7 +26,7 @@ jobs:
         git checkout release
         git merge ${{ github.ref }} --ff-only
         git rm generated/. -r
-        git checkout release -- generated\readme.md
+        git checkout release -- generated/readme.md
 
     - name: Set up Python 3.7
       uses: actions/setup-python@v2

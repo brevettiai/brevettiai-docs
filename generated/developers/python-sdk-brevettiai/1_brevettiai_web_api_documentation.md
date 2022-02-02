@@ -9,7 +9,8 @@ This enables high level access for
 
 This document shows how this api can be used to get access to datasets and create a model training job.
 
-Web access is granted with your website user, allowing you to automate tasks on the platform. In Python this is achieved through the **BrevettiAI** objec# BrevettiAI Login
+Web access is granted with your website user, allowing you to automate tasks on the platform. In Python this is achieved through the **BrevettiAI** object
+# BrevettiAI Login
 
 High level access for automation of tasks on the platform, tagging, dataset management, models, etc...
 
@@ -26,8 +27,8 @@ web = BrevettiAI()
 help(web)
 ```
 
-    2022-02-02 16:36:01.614703: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
-    2022-02-02 16:36:01.614731: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+    2022-02-02 18:04:49.898556: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
+    2022-02-02 18:04:49.898584: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
     DEBUG:h5py._conv:Creating converter from 7 to 5
     DEBUG:h5py._conv:Creating converter from 5 to 7
     DEBUG:h5py._conv:Creating converter from 7 to 5
@@ -252,7 +253,7 @@ dataset
 
 
 
-    <brevettiai.platform.dataset.Dataset at 0x7fd5b2bb4a90>
+    <brevettiai.platform.dataset.Dataset at 0x7f71cffbc350>
 
 
 
@@ -321,11 +322,11 @@ print(f"Model id: {model_def['id']}")
 print(f"Model api key: {model_def['apiKey']}")
 ```
 
-    Model url: https://platform.brevetti.ai/models/ae32ec95-f462-452f-b0aa-37a7bd59ea8e (Please check it out :)
+    Model url: https://platform.brevetti.ai/models/97c7b1ca-938d-4631-957a-c006d7f697f4 (Please check it out :)
     
     To access data and model through python SDK use the following
-    Model id: ae32ec95-f462-452f-b0aa-37a7bd59ea8e
-    Model api key: AeMVz0d03h7KQ3JkmUj2yOAM
+    Model id: 97c7b1ca-938d-4631-957a-c006d7f697f4
+    Model api key: zjUBFkqf5VD1eXe99w162OuO
 
 
 ## NB: Delete job
@@ -341,6 +342,7 @@ web.delete_model(id=model_def['id'])
 
 
     <Response [204]>
+
 
 
 

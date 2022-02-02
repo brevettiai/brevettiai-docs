@@ -1,0 +1,1 @@
+Files in the generated/ directory should never be altered as they may be overwritten using code that generates new documentation

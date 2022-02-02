@@ -27,8 +27,8 @@ web = BrevettiAI()
 help(web)
 ```
 
-    2022-02-02 18:04:49.898556: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
-    2022-02-02 18:04:49.898584: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+    2022-02-02 19:20:05.929624: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
+    2022-02-02 19:20:05.929661: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
     DEBUG:h5py._conv:Creating converter from 7 to 5
     DEBUG:h5py._conv:Creating converter from 5 to 7
     DEBUG:h5py._conv:Creating converter from 7 to 5
@@ -253,7 +253,7 @@ dataset
 
 
 
-    <brevettiai.platform.dataset.Dataset at 0x7f71cffbc350>
+    <brevettiai.platform.dataset.Dataset at 0x7f7a96154110>
 
 
 
@@ -322,11 +322,11 @@ print(f"Model id: {model_def['id']}")
 print(f"Model api key: {model_def['apiKey']}")
 ```
 
-    Model url: https://platform.brevetti.ai/models/97c7b1ca-938d-4631-957a-c006d7f697f4 (Please check it out :)
+    Model url: https://platform.brevetti.ai/models/1be7c95c-4c98-4f5e-b70c-6cb9b5df42a7 (Please check it out :)
     
     To access data and model through python SDK use the following
-    Model id: 97c7b1ca-938d-4631-957a-c006d7f697f4
-    Model api key: zjUBFkqf5VD1eXe99w162OuO
+    Model id: 1be7c95c-4c98-4f5e-b70c-6cb9b5df42a7
+    Model api key: jnehV4qrBDC8mCMns34gtLzU
 
 
 ## NB: Delete job

@@ -16,7 +16,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout relase and merge
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+      git checkout origin/release
+      git merge ${{ github.ref }} --ff-only
+      git rm generated/. -r
+
     - name: Set up Python 3.7
       uses: actions/setup-python@v2
       with:
@@ -33,9 +40,6 @@ jobs:
         job_id: ${{ secrets.DEMO_MODEL_ID }}
         api_key: ${{ secrets.DEMO_API_KEY }}
       run: |
-        git checkout release
-        git merge ${{ github.ref }} --ff-only
-        git rm generated/. -r
         python -m src.generate_docs
     - name: Add generated output
       run: |

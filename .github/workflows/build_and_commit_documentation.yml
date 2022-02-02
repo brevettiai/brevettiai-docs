@@ -48,7 +48,7 @@ jobs:
         git commit -m "Push auto generated files by Github Action"
         git push
     - name: Push changes
-      uses: ad-m/github-push-action@release
+      uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: release

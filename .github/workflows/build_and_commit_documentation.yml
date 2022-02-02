@@ -44,7 +44,7 @@ jobs:
         python -m src.generate_docs
     - name: Add generated output
       run: |
-        git add generated/.
+        git add generated/. -f
         git add SUMMARY.md
 
     - name: Setup git ssh

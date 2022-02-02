@@ -36,8 +36,8 @@ my_object_copy = SerializeableObject.from_config(config)
 print("Deserialized object config: \n", my_object_copy.get_config())
 ```
 
-    2022-02-01 12:18:18.578993: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
-    2022-02-01 12:18:18.579023: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+    2022-02-02 11:29:34.815789: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
+    2022-02-02 11:29:34.815821: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
     DEBUG:tensorflow:Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
     DEBUG:h5py._conv:Creating converter from 7 to 5
     DEBUG:h5py._conv:Creating converter from 5 to 7

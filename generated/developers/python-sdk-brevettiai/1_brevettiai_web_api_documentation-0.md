@@ -9,17 +9,14 @@ As on the web page you have 60 minutes of access before needing to log back in.
 ```python
 # Imports and setup
 from brevettiai.platform import BrevettiAI
-import os
 
-model_id = os.getenv("job_id") or input("Training job model id (can be read from url https://platform.brevetti.ai/models/{model_id})")
-api_key = os.getenv("api_key")
 web = BrevettiAI()
 
 help(web)
 ```
 
-    2022-02-01 12:18:05.226833: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
-    2022-02-01 12:18:05.226864: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+    2022-02-02 11:29:19.396697: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
+    2022-02-02 11:29:19.396727: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
     DEBUG:h5py._conv:Creating converter from 7 to 5
     DEBUG:h5py._conv:Creating converter from 5 to 7
     DEBUG:h5py._conv:Creating converter from 7 to 5
@@ -191,3 +188,8 @@ help(web)
      |  host
     
 
+
+
+```python
+?web
+```

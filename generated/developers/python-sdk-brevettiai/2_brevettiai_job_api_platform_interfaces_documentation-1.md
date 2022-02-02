@@ -38,7 +38,7 @@ job = Job.init(job_id=model_id, api_key=api_key)
     INFO:brevettiai.platform.job:Uploading output.json to s3://data.criterion.ai/ae03ff72-b7a2-444d-8fe9-623f61dc4c71/artifacts/output.json
 
 
-### Job.Settings
+## Job.Settings
 parsing settings to a training job using command line arguments
 
 
@@ -73,7 +73,7 @@ print(job.settings.custom, job.settings.custom.__dict__)
 ```
 
     {'param_1': -1.0, 'param_2': 'Param2 not provided', 'param_3': {'test_dict_serialization': 'nested2'}, 'custom': {'custom_param': 5}}
-    <__main__.MyCustomObject object at 0x7f1a5922e6d0> {'custom_param': 5}
+    <__main__.MyCustomObject object at 0x7fa3607fe410> {'custom_param': 5}
 
 
 The following will upload a serialized version of the training pipeline whenever a job is run
@@ -106,7 +106,7 @@ job.io.write_file(temp_path, "Valuable information")
 print(str(job.io.read_file(temp_path), "utf-8"))
 ```
 
-    /tmp/config-id-ae03ff72-b7a2-444d-8fe9-623f61dc4c71-zndec_cg/something_i_want_to_save_temporarily.txt
+    /tmp/config-id-ae03ff72-b7a2-444d-8fe9-623f61dc4c71-kzronpg0/something_i_want_to_save_temporarily.txt
     Valuable information
 
 

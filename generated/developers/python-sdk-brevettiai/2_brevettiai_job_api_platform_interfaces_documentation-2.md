@@ -9,7 +9,7 @@ samples = job.datasets[0].get_image_samples()
 ```
 
     INFO:brevettiai.platform.dataset:Getting image samples from dataset 'NeurIPS vials TRAIN' [https://platform.brevetti.ai/data/cb14b6e3-b4b9-45bb-955f-47aa6489a192]
-    INFO:brevettiai.platform.dataset:Contents: {('missing_cap',): 20, ('good',): 20, ('failed_cap',): 19, ('unknown',): 1}
+    INFO:brevettiai.platform.dataset:Contents: {('good',): 20, ('missing_cap',): 20, ('failed_cap',): 19, ('unknown',): 1}
 
 
 
@@ -60,7 +60,7 @@ samples.head(5)
       <td>cb14b6e3-b4b9-45bb-955f-47aa6489a192</td>
       <td>N/A</td>
       <td>https://platform.brevetti.ai/download?path=cb1...</td>
-      <td>train</td>
+      <td>devel</td>
     </tr>
     <tr>
       <th>1</th>
@@ -73,7 +73,7 @@ samples.head(5)
       <td>cb14b6e3-b4b9-45bb-955f-47aa6489a192</td>
       <td>N/A</td>
       <td>https://platform.brevetti.ai/download?path=cb1...</td>
-      <td>train</td>
+      <td>devel</td>
     </tr>
     <tr>
       <th>2</th>
@@ -112,7 +112,7 @@ samples.head(5)
       <td>cb14b6e3-b4b9-45bb-955f-47aa6489a192</td>
       <td>N/A</td>
       <td>https://platform.brevetti.ai/download?path=cb1...</td>
-      <td>devel</td>
+      <td>train</td>
     </tr>
   </tbody>
 </table>
@@ -158,10 +158,10 @@ from brevettiai.data.image import ImagePipeline, ImageAugmenter, SegmentationLoa
 ds = StratifiedSampler().get(samples, shuffle=True, batch_size=8, output_structure=("path", "folder"))
 ```
 
-    2022-02-01 12:18:25.088309: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/cv2/../../lib64:/opt/hostedtoolcache/Python/3.7.12/x64/lib
-    2022-02-01 12:18:25.088344: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
-    2022-02-01 12:18:25.088368: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az202-448): /proc/driver/nvidia/version does not exist
-    2022-02-01 12:18:25.088642: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+    2022-02-02 11:29:41.789999: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/cv2/../../lib64:/opt/hostedtoolcache/Python/3.7.12/x64/lib
+    2022-02-02 11:29:41.790037: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+    2022-02-02 11:29:41.790060: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az96-866): /proc/driver/nvidia/version does not exist
+    2022-02-02 11:29:41.790346: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
     To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
 
 
@@ -197,8 +197,8 @@ ds.get_samples_numpy(), ds.get_dataset_numpy()
 
 
 
-    (<brevettiai.data.tf_utils.NumpyStringIterator at 0x7f1a5a0c83d0>,
-     <brevettiai.data.tf_utils.NumpyStringIterator at 0x7f1a540891d0>)
+    (<brevettiai.data.tf_utils.NumpyStringIterator at 0x7fa35c5238d0>,
+     <brevettiai.data.tf_utils.NumpyStringIterator at 0x7fa35c5de490>)
 
 
 
@@ -241,7 +241,7 @@ plt.colorbar()
 
 
 
-    <matplotlib.colorbar.Colorbar at 0x7f1a4cc78c10>
+    <matplotlib.colorbar.Colorbar at 0x7fa35c1ac810>
 
 
 
@@ -261,7 +261,7 @@ plt.imshow(tile2d(x, (2,4))[...,0])
 
 
 
-    <matplotlib.image.AxesImage at 0x7f1a4c71fa50>
+    <matplotlib.image.AxesImage at 0x7fa354cf0950>
 
 
 
@@ -298,7 +298,7 @@ plt.imshow(tile2d(x[0], (2,4))[...,0])
 
 
 
-    <matplotlib.image.AxesImage at 0x7f1a4c6b8890>
+    <matplotlib.image.AxesImage at 0x7fa354c0bc50>
 
 
 

@@ -82,13 +82,13 @@ print(f"Facets visible on {job.host_name}/models/{model_id}")
 build_facets(fds, job.artifact_path("facets", dir=True), count=32)
 ```
 
-    100%|██████████| 32/32 [00:03<00:00,  9.45it/s]
+    100%|██████████| 32/32 [00:03<00:00, 10.16it/s]
 
 
     Facets visible on https://platform.brevetti.ai/models/ae03ff72-b7a2-444d-8fe9-623f61dc4c71
 
 
-    100%|██████████| 32/32 [00:00<00:00, 695.75it/s]
+    100%|██████████| 32/32 [00:00<00:00, 632.94it/s]
 
 
 

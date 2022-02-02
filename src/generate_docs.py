@@ -17,7 +17,7 @@ style_dummy = """<style scoped>
 </style>"""
 
 
-def split_file_contents(output_buffer, regex_pattern=".*#.*API:(.*)"):
+def split_file_contents(output_buffer, regex_pattern=".*#.*API: (.*)"):
     content = pd.DataFrame(data={"lines": output_buffer.split("\n")})
     content["section_head"] = content.lines.str.extract(regex_pattern)
     section_head_pos = content.index[~content["section_head"].isna()].values.tolist() + [1000000]
@@ -47,11 +47,17 @@ def batch_convert(code_dir="src", generated_dir = "generated",
 
                 summary_line = summary_doc.lines.str.extract(fr"\[(.*)\].*{output_file_key}").dropna()
                 new_lines = []
+                md_content = []
                 for ii, out_part in enumerate(output_parts):
-                    out_name = output_file.replace(".md", f"-{ii}.md")
-                    open(out_name, "w").write("\n".join(["# "+out_part[0], *out_part[1].values.tolist()[1:]]))
-                    new_lines.append("  " + summary_doc.loc[summary_line.index[0]][0].replace(summary_line.values[0,0], out_part[0]).replace(output_file_key, output_file_key.replace(".md", f"-{ii}.md")))
-                summary_doc = pd.concat((summary_doc[:summary_line.index[0]+1], pd.DataFrame(data={"lines": new_lines}), summary_doc[summary_line.index[0]+1:]), ignore_index=True)
+                    md_content.append("\n".join(["# "+out_part[0], *out_part[1].values.tolist()[1:]]))
+                    new_lines.append("  " + summary_doc.loc[summary_line.index[0]][0]\
+                                     .replace(summary_line.values[0,0], out_part[0])\
+                                     .replace(output_file_key, output_file_key + "#" + "-".join(out_part[0].strip(" ").lower().split(" "))))
+                with open(output_file, "w") as md_file:
+                    md_file.write("\n".join(md_content))
+                summary_doc = pd.concat((summary_doc[:summary_line.index[0]+1],
+                                         pd.DataFrame(data={"lines": new_lines}),
+                                         summary_doc[summary_line.index[0]+1:]), ignore_index=True)
 
                 colab_link = f"[{os.path.splitext(os.path.basename(notebook))[0].replace('_', ' ').title()}](https://githubtocolab.com/brevettiai/brevettiai-docs/blob/master/{'/'.join(notebook.split(os.path.sep))})"
                 tutorial_links.append(colab_link)

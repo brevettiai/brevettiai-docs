@@ -87,8 +87,8 @@ my_object_copy = SerializeableObject.from_config(config)
 print("Deserialized object config: \n", my_object_copy.get_config())
 ```
 
-    2022-02-02 19:20:24.254381: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
-    2022-02-02 19:20:24.254419: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+    2022-02-03 13:59:35.934576: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
+    2022-02-03 13:59:35.934611: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
     DEBUG:tensorflow:Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
     DEBUG:h5py._conv:Creating converter from 7 to 5
     DEBUG:h5py._conv:Creating converter from 5 to 7
@@ -185,7 +185,7 @@ print(job.settings.custom, job.settings.custom.__dict__)
 ```
 
     {'param_1': -1.0, 'param_2': 'Param2 not provided', 'param_3': {'test_dict_serialization': 'nested2'}, 'custom': {'custom_param': 5}}
-    <__main__.MyCustomObject object at 0x7ffaf6d5e810> {'custom_param': 5}
+    <__main__.MyCustomObject object at 0x7f76f95cbfd0> {'custom_param': 5}
 
 
 The following will upload a serialized version of the training pipeline whenever a job is run
@@ -218,7 +218,7 @@ job.io.write_file(temp_path, "Valuable information")
 print(str(job.io.read_file(temp_path), "utf-8"))
 ```
 
-    /tmp/config-id-ae03ff72-b7a2-444d-8fe9-623f61dc4c71-5bk7ofrp/something_i_want_to_save_temporarily.txt
+    /tmp/config-id-ae03ff72-b7a2-444d-8fe9-623f61dc4c71-_zosaeus/something_i_want_to_save_temporarily.txt
     Valuable information
 
 
@@ -248,7 +248,7 @@ samples = job.datasets[0].get_image_samples()
 ```
 
     INFO:brevettiai.platform.dataset:Getting image samples from dataset 'NeurIPS vials TRAIN' [https://platform.brevetti.ai/data/cb14b6e3-b4b9-45bb-955f-47aa6489a192]
-    INFO:brevettiai.platform.dataset:Contents: {('good',): 20, ('missing_cap',): 20, ('failed_cap',): 19, ('unknown',): 1}
+    INFO:brevettiai.platform.dataset:Contents: {('good',): 20, ('missing_cap',): 20, ('failed_cap',): 19}
 
 
 
@@ -312,7 +312,7 @@ samples.head(5)
       <td>cb14b6e3-b4b9-45bb-955f-47aa6489a192</td>
       <td>N/A</td>
       <td>https://platform.brevetti.ai/download?path=cb1...</td>
-      <td>train</td>
+      <td>devel</td>
     </tr>
     <tr>
       <th>2</th>
@@ -325,7 +325,7 @@ samples.head(5)
       <td>cb14b6e3-b4b9-45bb-955f-47aa6489a192</td>
       <td>N/A</td>
       <td>https://platform.brevetti.ai/download?path=cb1...</td>
-      <td>devel</td>
+      <td>train</td>
     </tr>
     <tr>
       <th>3</th>
@@ -397,10 +397,10 @@ from brevettiai.data.image import ImagePipeline, ImageAugmenter, SegmentationLoa
 ds = StratifiedSampler().get(samples, shuffle=True, batch_size=8, output_structure=("path", "folder"))
 ```
 
-    2022-02-02 19:20:30.770245: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/cv2/../../lib64:/opt/hostedtoolcache/Python/3.7.12/x64/lib
-    2022-02-02 19:20:30.770281: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
-    2022-02-02 19:20:30.770307: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az208-724): /proc/driver/nvidia/version does not exist
-    2022-02-02 19:20:30.770628: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+    2022-02-03 13:59:42.882586: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/cv2/../../lib64:/opt/hostedtoolcache/Python/3.7.12/x64/lib
+    2022-02-03 13:59:42.882624: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+    2022-02-03 13:59:42.882648: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az208-971): /proc/driver/nvidia/version does not exist
+    2022-02-03 13:59:42.882955: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
     To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
 
 
@@ -436,8 +436,8 @@ ds.get_samples_numpy(), ds.get_dataset_numpy()
 
 
 
-    (<brevettiai.data.tf_utils.NumpyStringIterator at 0x7ffaf4bbc2d0>,
-     <brevettiai.data.tf_utils.NumpyStringIterator at 0x7ffaf9788e90>)
+    (<brevettiai.data.tf_utils.NumpyStringIterator at 0x7f76fa667710>,
+     <brevettiai.data.tf_utils.NumpyStringIterator at 0x7f76f43f9b50>)
 
 
 
@@ -462,7 +462,7 @@ ds.get_dataset(structure=("path", "img", "onehot"))
 
 
 
-    <PrefetchDataset element_spec=(TensorSpec(shape=(None,), dtype=tf.string, name=None), TensorSpec(shape=(None, 64, 64, 3), dtype=tf.float32, name=None), TensorSpec(shape=(None, None, 4), dtype=tf.float32, name=None))>
+    <PrefetchDataset element_spec=(TensorSpec(shape=(None,), dtype=tf.string, name=None), TensorSpec(shape=(None, 64, 64, 3), dtype=tf.float32, name=None), TensorSpec(shape=(None, None, 3), dtype=tf.float32, name=None))>
 
 
 
@@ -480,7 +480,7 @@ plt.colorbar()
 
 
 
-    <matplotlib.colorbar.Colorbar at 0x7ffaf7c304d0>
+    <matplotlib.colorbar.Colorbar at 0x7f76f010ab10>
 
 
 
@@ -500,7 +500,7 @@ plt.imshow(tile2d(x, (2,4))[...,0])
 
 
 
-    <matplotlib.image.AxesImage at 0x7ffaf489dc50>
+    <matplotlib.image.AxesImage at 0x7f76daf02dd0>
 
 
 
@@ -537,7 +537,7 @@ plt.imshow(tile2d(x[0], (2,4))[...,0])
 
 
 
-    <matplotlib.image.AxesImage at 0x7ffaf43fb110>
+    <matplotlib.image.AxesImage at 0x7f76dacec850>
 
 
 
@@ -637,13 +637,13 @@ print(f"Facets visible on {job.host_name}/models/{model_id}")
 build_facets(fds, job.artifact_path("facets", dir=True), count=32)
 ```
 
-    100%|██████████| 32/32 [00:01<00:00, 23.41it/s]
+    100%|██████████| 32/32 [00:01<00:00, 18.94it/s]
 
 
     Facets visible on https://platform.brevetti.ai/models/ae03ff72-b7a2-444d-8fe9-623f61dc4c71
 
 
-    100%|██████████| 32/32 [00:00<00:00, 534.86it/s]
+    100%|██████████| 32/32 [00:00<00:00, 647.02it/s]
 
 
 

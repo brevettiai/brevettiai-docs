@@ -27,8 +27,8 @@ web = BrevettiAI()
 help(web)
 ```
 
-    2022-02-02 19:20:05.929624: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
-    2022-02-02 19:20:05.929661: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+    2022-02-03 13:59:20.585026: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
+    2022-02-03 13:59:20.585056: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
     DEBUG:h5py._conv:Creating converter from 7 to 5
     DEBUG:h5py._conv:Creating converter from 5 to 7
     DEBUG:h5py._conv:Creating converter from 7 to 5
@@ -125,6 +125,16 @@ help(web)
      |  
      |  get_endpoint(self, endpoint, **kwargs)
      |  
+     |  get_master_modeltype(self, id=None)
+     |      Grt type of model
+     |      :param id: model guid
+     |      :return:
+     |  
+     |  get_master_reporttype(self, id=None)
+     |      Grt type of model
+     |      :param id: model guid
+     |      :return:
+     |  
      |  get_model(self, id=None)
      |      Get model or list of all models
      |      :param id: Guid of model (available in the url), or None
@@ -190,6 +200,16 @@ help(web)
      |      :param permissionType:
      |      :return:
      |  
+     |  update_master_modeltype(self, model_type: brevettiai.platform.web_api.ModelType = None)
+     |      Grt type of model
+     |      :param id: model guid
+     |      :return:
+     |  
+     |  update_master_reporttype(self, report_type: brevettiai.platform.web_api.ReportType = None)
+     |      Grt type of model
+     |      :param id: model guid
+     |      :return:
+     |  
      |  ----------------------------------------------------------------------
      |  Data descriptors defined here:
      |  
@@ -253,7 +273,7 @@ dataset
 
 
 
-    <brevettiai.platform.dataset.Dataset at 0x7f7a96154110>
+    <brevettiai.platform.dataset.Dataset at 0x7f4bec41f090>
 
 
 
@@ -322,11 +342,11 @@ print(f"Model id: {model_def['id']}")
 print(f"Model api key: {model_def['apiKey']}")
 ```
 
-    Model url: https://platform.brevetti.ai/models/1be7c95c-4c98-4f5e-b70c-6cb9b5df42a7 (Please check it out :)
+    Model url: https://platform.brevetti.ai/models/d6c5361c-e2b5-4d9e-bc7d-05f37ca7c765 (Please check it out :)
     
     To access data and model through python SDK use the following
-    Model id: 1be7c95c-4c98-4f5e-b70c-6cb9b5df42a7
-    Model api key: jnehV4qrBDC8mCMns34gtLzU
+    Model id: d6c5361c-e2b5-4d9e-bc7d-05f37ca7c765
+    Model api key: L3Z6P5Cop8tZBp1rqS1ZR8UF
 
 
 ## NB: Delete job

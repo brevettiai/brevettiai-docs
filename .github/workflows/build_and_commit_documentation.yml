@@ -11,10 +11,10 @@ on:
   workflow_dispatch:
     brances:
       - 'master'
-      - 'development'
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'    
     steps:
     - uses: actions/checkout@v2
       with:

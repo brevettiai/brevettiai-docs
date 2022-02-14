@@ -13,38 +13,48 @@ It provides a python interface to the website, and keeps track of the resources 
 
 From the platform, a job \(model or test report\) is an input configuration with a storage space attached. The storage space freely available to use by the job, but following a few conventions, allows the platform to parse specific content for display on the model page.
 
-## Job lifecycle
 
-### Start
+##Job object
+A Job in the python code is collected into a single object containing its state and settings at runtime. you can use the Job object directly, or subclass it to add your own functionality.
+Settings may be added to a job by subclassing the Job object, and changing the settings parameter type to a settings object to a new JobSettings object.
+from brevettiai import Job, JobSettings
 
-To begin executing a job you first need do get an execution context, thereby start the job. To do this you run the application.init function. This returns a CriterionConfig object to you, which is your configuration for the job.
+```python
+class MyJobSettings(JobSettings):
+    my_custom_int_setting: int
+    
+class MyJob(Job):
+    settings: MyJobSettings
+    
+    def run():
+        print(f"My setting is {self.my_custom_setting})
+        return None
 
-```text
-from brevettiai.platform import Job
+job = MyJob.init(job_id='UUID', api_key='key')
+job.start()
+```
+
+
+
+Settings may themselves subclass JobSettings, pydantic BaseModel, pydantic dataclasses or python dataclasses. 
+resulting in a tree of settings.
+Like the job_id and apikey the settings may be set from argv using a dot notation (`--setting_name.sub_setting 42`).
+for the job above, this may be set as `--my_custom_int_setting 37`. To add information about the field,
+use the pydantic Field class as default value. 
+
+##Job lifecycle
+###Initialize
+To begin executing a job you first need do get an execution context. retrieving settings datasets, access rights, etc.
+to do this you call the init function on a brevetti Job object.
+```python
+from brevettiai import Job
 job = Job.init()
 ```
+The init function can use either arguments on the function or command line
+arguments `--job_id` and `--api_key` to find the job on the brevetti ai platform
 
-This command expects the job GUID and API key as arguments via argv or parameters on the function.
-
-Settings may be added to the job by creating a settings definition \(schema\). This schema is parsed to generate UI on the platform, and parsed by the config object, to use specific modules. Pass a `path` to a schema or a `SchemaBuilder` object to the `init` function to use apply it to the configuration.
-
-### Execute
-
-Run your application code, and use tooling for integration with the platform features.
-
-Add custom output metrics to your job.
-
-```text
-print(f"Uploading metrics and outputs to {job.host_name}")
-job.add_output_metric("My custom metric", 277)
-job.upload_job_output()
-```
-
-### Complete
-
-On completion, complete the job on the platform to signal that you are done with the job. This action is performed by calling `complete_job` on the config object you got when starting the job. You can additionally call upload\_job\_output, to serialize the configuration object and upload metrics added during the training. 
-
-```text
-job.complete_job(path_to_artifact_with_model_archive)
-```
-
+### Start
+The Job is started by running the start the start function.
+By default this will upload a job output json file to the job, call the run function, and then complete the job.
+Overwrite the `Job.run()` function to perform the job you would like,
+returning a path to where the output model file is at the end. See example in the Job object section above.

@@ -17,17 +17,17 @@ From the platform, a job \(model or test report\) is an input configuration with
 ##Job object
 A Job in the python code is collected into a single object containing its state and settings at runtime. you can use the Job object directly, or subclass it to add your own functionality.
 Settings may be added to a job by subclassing the Job object, and changing the settings parameter type to a settings object to a new JobSettings object.
-from brevettiai import Job, JobSettings
 
 ```python
+from brevettiai import Job, JobSettings
 class MyJobSettings(JobSettings):
     my_custom_int_setting: int
     
 class MyJob(Job):
     settings: MyJobSettings
     
-    def run():
-        print(f"My setting is {self.my_custom_setting})
+    def run(self):
+        print(f"My setting is {self.my_custom_setting}")
         return None
 
 job = MyJob.init(job_id='UUID', api_key='key')
@@ -42,8 +42,8 @@ Like the job_id and apikey the settings may be set from argv using a dot notatio
 for the job above, this may be set as `--my_custom_int_setting 37`. To add information about the field,
 use the pydantic Field class as default value. 
 
-##Job lifecycle
-###Initialize
+## Job lifecycle
+### Initialize
 To begin executing a job you first need do get an execution context. retrieving settings datasets, access rights, etc.
 to do this you call the init function on a brevetti Job object.
 ```python

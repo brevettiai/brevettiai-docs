@@ -25,13 +25,13 @@ A way to integrate your normal development workflows with the Brevetti AI platfo
 
 Additionally the Brevetti AI package helps you write code to train models on the platform, by providing interfaces that work with the platform when you are running experiments locally and deploy to run remotely in the cloud. \(Job API\)
 
-![Overview over how a sample application could be implemented with Criterion Core \(grey\)](../../../.gitbook/assets/criterion-core-1-.png)
+![Overview over how a sample application could be implemented with Criterion Core \(grey\)](../../../.gitbook/assets/criterion-core.png)
 
 
 
 The Brevetti AI package contains 3 parts.
 
 * Web API - A Python interface on top of the web page to automate the task you can perform on the website.
-* Job API - A lower level API for running experiments and developing model / test report code.
+* Job API - For running experiments and developing model / test report code.
 * Data-science tools - A number of prebuilt tools to help you work faster with the data. Data loading, splitting, sampling, augmentation, etc.
 

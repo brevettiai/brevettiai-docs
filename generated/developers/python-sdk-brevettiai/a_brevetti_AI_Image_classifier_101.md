@@ -34,8 +34,8 @@ def build_image_classifier(classes: list, image_shape: tuple):
     return model
 ```
 
-    2022-02-17 10:39:23.665700: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
-    2022-02-17 10:39:23.665733: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+    2022-03-03 14:10:36.738879: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
+    2022-03-03 14:10:36.738917: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 
 
 Using some default image size and classes a model generated with the above code, and we can verify that it seems to produce a valid keras model.
@@ -47,10 +47,10 @@ test_model = build_image_classifier(["good", "bad"], (224, 224, 3))
 test_model.summary()
 ```
 
-    2022-02-17 10:39:25.180370: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
-    2022-02-17 10:39:25.180400: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
-    2022-02-17 10:39:25.180417: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az241-671): /proc/driver/nvidia/version does not exist
-    2022-02-17 10:39:25.180605: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+    2022-03-03 14:10:38.417078: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
+    2022-03-03 14:10:38.417114: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+    2022-03-03 14:10:38.417132: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az214-164): /proc/driver/nvidia/version does not exist
+    2022-03-03 14:10:38.417325: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
     To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
 
 
@@ -95,32 +95,32 @@ To train and export the model, construct a training object that uses the followi
 pip install brevettiai[tfa]
 ```
 
-    Requirement already satisfied: brevettiai[tfa] in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (0.3.0)
-    Requirement already satisfied: shapely>=1.7.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (1.8.1)
-    Requirement already satisfied: altair==4.1.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (4.1.0)
-    Requirement already satisfied: tqdm>=4.62 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (4.62.3)
-    Requirement already satisfied: scikit-learn>=0.23.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (1.0.2)
-    Requirement already satisfied: cryptography<37.0.0,>=36.0.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (36.0.1)
-    Requirement already satisfied: minio<7.1,>=7.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (7.0.4)
-    Requirement already satisfied: configparser>=5.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (5.2.0)
+    Requirement already satisfied: brevettiai[tfa] in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (0.3.1)
+    Requirement already satisfied: shapely>=1.7.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (1.8.1.post1)
     Requirement already satisfied: tf2onnx>=1.9.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (1.9.3)
-    Requirement already satisfied: pydantic>=1.9.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (1.9.0)
     Requirement already satisfied: requests>=2.23 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (2.27.1)
-    Requirement already satisfied: pandas<1.2,>=1.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (1.1.5)
-    Requirement already satisfied: numpy>=1.18.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (1.21.5)
-    Requirement already satisfied: backoff>=1.10 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (1.11.1)
+    Requirement already satisfied: cryptography<37.0.0,>=36.0.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (36.0.1)
+    Requirement already satisfied: pydantic>=1.9.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (1.9.0)
     Requirement already satisfied: plotly>=4.14.3 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (5.6.0)
+    Requirement already satisfied: minio<7.1,>=7.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (7.0.4)
+    Requirement already satisfied: altair==4.1.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (4.1.0)
+    Requirement already satisfied: backoff>=1.10 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (1.11.1)
+    Requirement already satisfied: numpy>=1.18.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (1.21.5)
+    Requirement already satisfied: scikit-learn>=0.23.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (1.0.2)
+    Requirement already satisfied: tqdm>=4.62 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (4.63.0)
     Requirement already satisfied: mmh3>=3.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (3.0.0)
+    Requirement already satisfied: pandas<1.2,>=1.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (1.1.5)
+    Requirement already satisfied: configparser>=5.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (5.2.0)
     Requirement already satisfied: tensorflow_addons>=0.15.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai[tfa]) (0.16.1)
-    Requirement already satisfied: jinja2 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from altair==4.1.0->brevettiai[tfa]) (3.0.3)
-    Requirement already satisfied: entrypoints in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from altair==4.1.0->brevettiai[tfa]) (0.4)
-    Requirement already satisfied: jsonschema in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from altair==4.1.0->brevettiai[tfa]) (4.4.0)
     Requirement already satisfied: toolz in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from altair==4.1.0->brevettiai[tfa]) (0.11.2)
+    Requirement already satisfied: jsonschema in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from altair==4.1.0->brevettiai[tfa]) (4.4.0)
+    Requirement already satisfied: entrypoints in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from altair==4.1.0->brevettiai[tfa]) (0.4)
+    Requirement already satisfied: jinja2 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from altair==4.1.0->brevettiai[tfa]) (3.0.3)
     Requirement already satisfied: cffi>=1.12 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from cryptography<37.0.0,>=36.0.1->brevettiai[tfa]) (1.15.0)
     Requirement already satisfied: certifi in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from minio<7.1,>=7.0->brevettiai[tfa]) (2021.10.8)
     Requirement already satisfied: urllib3 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from minio<7.1,>=7.0->brevettiai[tfa]) (1.26.8)
-    Requirement already satisfied: pytz>=2017.2 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from pandas<1.2,>=1.1->brevettiai[tfa]) (2021.3)
     Requirement already satisfied: python-dateutil>=2.7.3 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from pandas<1.2,>=1.1->brevettiai[tfa]) (2.8.2)
+    Requirement already satisfied: pytz>=2017.2 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from pandas<1.2,>=1.1->brevettiai[tfa]) (2021.3)
     Requirement already satisfied: six in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from plotly>=4.14.3->brevettiai[tfa]) (1.16.0)
     Requirement already satisfied: tenacity>=6.2.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from plotly>=4.14.3->brevettiai[tfa]) (8.0.1)
     Requirement already satisfied: typing-extensions>=3.7.4.3 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from pydantic>=1.9.0->brevettiai[tfa]) (4.1.1)
@@ -131,14 +131,14 @@ pip install brevettiai[tfa]
     Requirement already satisfied: scipy>=1.1.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from scikit-learn>=0.23.1->brevettiai[tfa]) (1.7.3)
     Requirement already satisfied: typeguard>=2.7 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from tensorflow_addons>=0.15.0->brevettiai[tfa]) (2.13.3)
     Requirement already satisfied: flatbuffers~=1.12 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from tf2onnx>=1.9.0->brevettiai[tfa]) (1.12)
-    Requirement already satisfied: onnx>=1.4.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from tf2onnx>=1.9.0->brevettiai[tfa]) (1.10.2)
+    Requirement already satisfied: onnx>=1.4.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from tf2onnx>=1.9.0->brevettiai[tfa]) (1.11.0)
     Requirement already satisfied: pycparser in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from cffi>=1.12->cryptography<37.0.0,>=36.0.1->brevettiai[tfa]) (2.21)
-    Requirement already satisfied: protobuf in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from onnx>=1.4.1->tf2onnx>=1.9.0->brevettiai[tfa]) (3.19.4)
-    Requirement already satisfied: MarkupSafe>=2.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from jinja2->altair==4.1.0->brevettiai[tfa]) (2.0.1)
+    Requirement already satisfied: protobuf>=3.12.2 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from onnx>=1.4.1->tf2onnx>=1.9.0->brevettiai[tfa]) (3.19.4)
+    Requirement already satisfied: MarkupSafe>=2.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from jinja2->altair==4.1.0->brevettiai[tfa]) (2.1.0)
     Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from jsonschema->altair==4.1.0->brevettiai[tfa]) (0.18.1)
-    Requirement already satisfied: attrs>=17.4.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from jsonschema->altair==4.1.0->brevettiai[tfa]) (21.4.0)
-    Requirement already satisfied: importlib-metadata in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from jsonschema->altair==4.1.0->brevettiai[tfa]) (4.11.1)
+    Requirement already satisfied: importlib-metadata in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from jsonschema->altair==4.1.0->brevettiai[tfa]) (4.11.2)
     Requirement already satisfied: importlib-resources>=1.4.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from jsonschema->altair==4.1.0->brevettiai[tfa]) (5.4.0)
+    Requirement already satisfied: attrs>=17.4.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from jsonschema->altair==4.1.0->brevettiai[tfa]) (21.4.0)
     Requirement already satisfied: zipp>=3.1.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from importlib-resources>=1.4.0->jsonschema->altair==4.1.0->brevettiai[tfa]) (3.7.0)
     Note: you may need to restart the kernel to use updated packages.
 
@@ -153,7 +153,7 @@ from brevettiai.interfaces.remote_monitor import RemoteMonitor
 from brevettiai.utils.model_version import package_saved_model
 
 # Data science tools for training an image classifier model
-from brevettiai.data.image import ImagePipeline
+from brevettiai.data.image import ImageLoader, ImagePipeline
 from brevettiai.data.data_generator import DataGenerator, OneHotEncoder
 from brevettiai.interfaces.facets_atlas import build_facets
 
@@ -161,9 +161,9 @@ from typing import Optional
 from pydantic import Field
 
 class Settings(JobSettings):
-    image: Optional[ImagePipeline] = Field(default_factory=ImagePipeline,
-                                           description="Setup of image and annotation loading")
-    epochs: Optional[int] = 2
+    image: ImageLoader = Field(default_factory=ImageLoader,
+                               description="Module to facilitate loading of images")
+    epochs: int = 2
 
 class TrainingJob(Job):
     settings: Settings
@@ -174,12 +174,17 @@ class TrainingJob(Job):
         classes = samples.folder.unique()
 
         # Setup up data generator to loop through the samples
-        data_generator = DataGenerator(samples, output_structure=("img", "onehot"), shuffle=True, repeat=True,
-                                       max_epoch_samples=4, batch_size=4)\
-            .map([self.settings.image, OneHotEncoder(classes=classes, input_key="folder")])
+        # Load images as RGB images
+        self.settings.image.channels = 3
+        data_generator = DataGenerator(samples, output_structure=("img", "onehot"),
+                                       shuffle=True, repeat=True,
+                                       max_epoch_samples=4, batch_size=4).map([
+            self.settings.image,
+            OneHotEncoder(classes=classes, input_key="folder")
+        ])
 
         # Construct a keras image classifier model and train it using the data generator
-        model = build_image_classifier(classes, self.settings.image.output_shape)
+        model = build_image_classifier(classes, self.settings.image.output_shape())
         # Fit model for user specified number of epochs - remote monitor shows progress on platform
         model.fit(data_generator.get_dataset(), epochs=self.settings.epochs, steps_per_epoch=len(data_generator),
                   callbacks=[self.get_remote_monitor()])
@@ -200,8 +205,10 @@ class TrainingJob(Job):
     
     def export(self, model):
         # Save model and package it along with meta data
+        # To append metadata overwrite the get_metadata function on your job.
+        metadata = self.get_metadata()
         model.save("saved_model", overwrite=True, include_optimizer=False)
-        return package_saved_model("saved_model", model_meta={"important_model_meta": 42})
+        return package_saved_model("saved_model", model_meta=metadata)
 
 
 
@@ -222,38 +229,40 @@ api_key = os.getenv("api_key") or getpass.getpass("Training job Api Key:")
 
 job = TrainingJob.init(job_id=model_id, api_key=api_key)
 # The train function optimizes the model and returns a path to the model artifact
-model_output = job.start(complete=False) # The complete=False argument lets the platform model job remain open, after testing
+model_output = job.start(complete_job=False) # The complete_job=False argument lets the platform model job remain open, after testing
 model_output
 ```
 
+    INFO:brevettiai.platform.models.job:<class '__main__.TrainingJob'> initialized
     INFO:brevettiai.platform.models.job:Uploading output.json to s3://data.criterion.ai/ae03ff72-b7a2-444d-8fe9-623f61dc4c71/artifacts/output.json
     INFO:brevettiai.platform.models.dataset:Getting image samples from dataset 'NeurIPS vials TRAIN' [https://platform.brevetti.ai/data/cb14b6e3-b4b9-45bb-955f-47aa6489a192]
-    INFO:brevettiai.platform.models.dataset:Contents: {('good',): 20, ('missing_cap',): 20, ('failed_cap',): 19}
+    INFO:brevettiai.platform.models.dataset:Contents: {('missing_cap',): 20, ('good',): 20, ('failed_cap',): 19}
 
 
     WARNING:tensorflow:`input_shape` is undefined or non-square, or `rows` is not in [96, 128, 160, 192, 224]. Weights for input shape (224, 224) will be loaded as the default.
 
 
     WARNING:tensorflow:`input_shape` is undefined or non-square, or `rows` is not in [96, 128, 160, 192, 224]. Weights for input shape (224, 224) will be loaded as the default.
-
-
-    WARNING:tensorflow:From /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:616: calling map_fn_v2 (from tensorflow.python.ops.map_fn) with dtype is deprecated and will be removed in a future version.
-    Instructions for updating:
-    Use fn_output_signature instead
-
-
-    WARNING:tensorflow:From /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:616: calling map_fn_v2 (from tensorflow.python.ops.map_fn) with dtype is deprecated and will be removed in a future version.
-    Instructions for updating:
-    Use fn_output_signature instead
 
 
     Epoch 1/2
-    1/1 [==============================] - 5s 5s/step - loss: 11.9353 - accuracy: 0.2500
+    1/1 [==============================] - 6s 6s/step - loss: 4.7245 - accuracy: 0.2500
     Epoch 2/2
-    1/1 [==============================] - 1s 586ms/step - loss: 2.5929 - accuracy: 0.7500
+    1/1 [==============================] - 1s 613ms/step - loss: 4.1601 - accuracy: 0.5000
 
 
-    100%|██████████| 32/32 [00:00<00:00, 680.79it/s]
+    2022-03-03 14:10:54.594249: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 156905472 exceeds 10% of free system memory.
+
+
+    WARNING:tensorflow:From /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:616: calling map_fn_v2 (from tensorflow.python.ops.map_fn) with dtype is deprecated and will be removed in a future version.
+    Instructions for updating:
+    Use fn_output_signature instead
+
+
+    WARNING:tensorflow:From /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:616: calling map_fn_v2 (from tensorflow.python.ops.map_fn) with dtype is deprecated and will be removed in a future version.
+    Instructions for updating:
+    Use fn_output_signature instead
+    100%|██████████| 32/32 [00:00<00:00, 670.36it/s]
 
 
     Facets visible on https://platform.brevetti.ai/models/ae03ff72-b7a2-444d-8fe9-623f61dc4c71
@@ -262,7 +271,7 @@ model_output
 
 
 
-    <keras.engine.sequential.Sequential at 0x7f519caf3a90>
+    <keras.engine.sequential.Sequential at 0x7f3030978c50>
 
 
 

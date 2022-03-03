@@ -27,8 +27,8 @@ web = BrevettiAI()
 help(web)
 ```
 
-    2022-02-17 10:38:21.438697: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
-    2022-02-17 10:38:21.438727: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+    2022-03-03 14:09:23.335655: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
+    2022-03-03 14:09:23.335688: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
     DEBUG:h5py._conv:Creating converter from 7 to 5
     DEBUG:h5py._conv:Creating converter from 5 to 7
     DEBUG:h5py._conv:Creating converter from 7 to 5
@@ -179,6 +179,8 @@ help(web)
      |  backend
      |  
      |  host
+     |  
+     |  io
     
 
 
@@ -301,14 +303,17 @@ job = web.initialize_training(model=model, job_type=MyJob)
 print(f"Model url: {web.host}/models/{model.id} (Please check it out :)\n")
 print("To access data and model through python SDK use the following")
 print(f"Model id: {model.id}")
-print(f"Model api key: {model.api_key}")
+print(f"Model api key (invalid when job is completed, or model i deleted)): {model.api_key}")
 ```
 
-    Model url: https://platform.brevetti.ai/models/bcde7eb7-8ba5-4aa9-bbd9-fda51fa4ffb0 (Please check it out :)
+    INFO:brevettiai.platform.models.job:<class '__main__.MyJob'> initialized
+
+
+    Model url: https://platform.brevetti.ai/models/094d406d-96c4-4c7b-8cd3-1ddb139d988d (Please check it out :)
     
     To access data and model through python SDK use the following
-    Model id: bcde7eb7-8ba5-4aa9-bbd9-fda51fa4ffb0
-    Model api key: LKwBAW6eps908iDzzv72dL3E
+    Model id: 094d406d-96c4-4c7b-8cd3-1ddb139d988d
+    Model api key (invalid when job is completed, or model i deleted)): 0YgQu4PaA4ce37HX3VEg9SwO
 
 
 
@@ -316,8 +321,8 @@ print(f"Model api key: {model.api_key}")
 job.start()
 ```
 
-    INFO:brevettiai.platform.models.job:Uploading output.json to s3://data.criterion.ai/bcde7eb7-8ba5-4aa9-bbd9-fda51fa4ffb0/artifacts/output.json
-    INFO:brevettiai.platform.models.job:Uploading output.json to s3://data.criterion.ai/bcde7eb7-8ba5-4aa9-bbd9-fda51fa4ffb0/artifacts/output.json
+    INFO:brevettiai.platform.models.job:Uploading output.json to s3://data.criterion.ai/094d406d-96c4-4c7b-8cd3-1ddb139d988d/artifacts/output.json
+    INFO:brevettiai.platform.models.job:Uploading output.json to s3://data.criterion.ai/094d406d-96c4-4c7b-8cd3-1ddb139d988d/artifacts/output.json
 
 
     Run my custom code using custom parameters : {'extra': {'extra': {}}, 'multiply_factor': 3.0, 'enable': True}

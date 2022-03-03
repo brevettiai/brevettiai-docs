@@ -16,7 +16,7 @@ samples = ds.get_image_samples()
 print("Sample: ", samples.sample(1).iloc[0].to_dict())
 ```
 
-    Sample:  {'category': ('missing_cap',), 'folder': 'missing_cap', 'path': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/missing_cap/0_1543412686920.bmp', 'etag': '700811c8294e218e96ed3f1e9d11c710', 'bucket': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced', 'dataset': 'My Test Dataset', 'dataset_id': '66b31092-418b-4621-8706-7c57ce3f01ef', 'reference': 'N/A', 'url': 'https://platform.brevetti.ai/download?path=data%2FNeurIPS_2018_reduced%2Fmissing_cap%2F0_1543412686920.bmp'}
+    Sample:  {'category': ('good',), 'folder': 'good', 'path': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/34_1543412107295.bmp', 'etag': '766d48aed39a3fd11f1a6b75190325f7', 'bucket': 's3://public.data.criterion.ai/data/NeurIPS_2018_reduced', 'dataset': 'My Test Dataset', 'dataset_id': '9390a735-27b1-4df6-81f6-dec8938a8b18', 'reference': 'N/A', 'url': 'https://platform.brevetti.ai/download?path=data%2FNeurIPS_2018_reduced%2Fgood%2F34_1543412107295.bmp'}
 
 
 Samples now holds the image samples in a pandas dataframe object. We can e.g. investigate the distribution of the different classes
@@ -278,9 +278,18 @@ for sample in generator.get_dataset().take(2):
     print(sample["path"])
 ```
 
-    WARNING:tensorflow:From /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/brevettiai/data/data_generator.py:172: sample_from_datasets_v2 (from tensorflow.python.data.experimental.ops.interleave_ops) is deprecated and will be removed in a future version.
+    WARNING:tensorflow:From /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/brevettiai/data/data_generator.py:177: sample_from_datasets_v2 (from tensorflow.python.data.experimental.ops.interleave_ops) is deprecated and will be removed in a future version.
     Instructions for updating:
     Use `tf.data.Dataset.sample_from_datasets(...)`.
+
+
+    2022-03-03 14:10:18.868990: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/cv2/../../lib64:/opt/hostedtoolcache/Python/3.7.12/x64/lib
+    2022-03-03 14:10:18.869028: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+    2022-03-03 14:10:18.869048: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az214-164): /proc/driver/nvidia/version does not exist
+    2022-03-03 14:10:18.869328: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+    To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+
+
     tf.Tensor(
     [b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/0_1543413169486.bmp'
      b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/missing_cap/4_1543412687736.bmp'
@@ -291,13 +300,6 @@ for sample in generator.get_dataset().take(2):
      b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/23_1543412095468.bmp'
      b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/good/9_1543412102294.bmp'
      b's3://public.data.criterion.ai/data/NeurIPS_2018_reduced/bad_cap/2_1543413180595.bmp'], shape=(4,), dtype=string)
-
-
-    2022-02-17 10:39:07.319331: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/cv2/../../lib64:/opt/hostedtoolcache/Python/3.7.12/x64/lib
-    2022-02-17 10:39:07.319363: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
-    2022-02-17 10:39:07.319382: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az241-671): /proc/driver/nvidia/version does not exist
-    2022-02-17 10:39:07.319640: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
-    To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
 
 
 The data generator uses stratified sampling across a grouping on "folder" and with a weight determined by the square root of number of samples.

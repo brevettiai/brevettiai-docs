@@ -86,8 +86,8 @@ class MyJob(Job):
 
 ```
 
-    2022-02-17 10:38:37.888591: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
-    2022-02-17 10:38:37.888620: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+    2022-03-03 14:09:41.037203: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
+    2022-03-03 14:09:41.037240: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
     DEBUG:tensorflow:Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
     DEBUG:h5py._conv:Creating converter from 7 to 5
     DEBUG:h5py._conv:Creating converter from 5 to 7
@@ -118,10 +118,11 @@ api_key = os.getenv("api_key") or getpass.getpass("Training job Api Key:")
 
 ```python
 job = MyJob.init(job_id=model_id, api_key=api_key)
-job.start(complete=False)
+job.start(complete_job=False)
 job.settings.my_custom_int_setting
 ```
 
+    INFO:brevettiai.platform.models.job:<class '__main__.MyJob'> initialized
     INFO:brevettiai.platform.models.job:Uploading output.json to s3://data.criterion.ai/ae03ff72-b7a2-444d-8fe9-623f61dc4c71/artifacts/output.json
 
 
@@ -151,10 +152,11 @@ import sys
 sys.argv += ["--my_custom_int_setting", '10']
 
 job = MyJob.init(job_id=model_id, api_key=api_key)
-job.start(complete=False)
+job.start(complete_job=False)
 job.settings.my_custom_int_setting
 ```
 
+    INFO:brevettiai.platform.models.job:<class '__main__.MyJob'> initialized
     INFO:brevettiai.platform.models.job:Uploading output.json to s3://data.criterion.ai/ae03ff72-b7a2-444d-8fe9-623f61dc4c71/artifacts/output.json
 
 
@@ -198,7 +200,7 @@ job.io.write_file(temp_path, "Valuable information")
 print(str(job.io.read_file(temp_path), "utf-8"))
 ```
 
-    /tmp/brevettiai-job-ae03ff72-b7a2-444d-8fe9-623f61dc4c71-een1ic7p/something_i_want_to_save_temporarily.txt
+    /tmp/brevettiai-job-ae03ff72-b7a2-444d-8fe9-623f61dc4c71-3rk_oh30/something_i_want_to_save_temporarily.txt
     Valuable information
 
 
@@ -377,10 +379,10 @@ from brevettiai.data.image import ImagePipeline, ImageAugmenter, SegmentationLoa
 ds = StratifiedSampler().get(samples.drop(columns=["reference"]), shuffle=True, batch_size=8, output_structure=("path", "folder"))
 ```
 
-    2022-02-17 10:38:43.175557: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/cv2/../../lib64:/opt/hostedtoolcache/Python/3.7.12/x64/lib
-    2022-02-17 10:38:43.175585: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
-    2022-02-17 10:38:43.175606: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az241-671): /proc/driver/nvidia/version does not exist
-    2022-02-17 10:38:43.175880: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+    2022-03-03 14:09:47.097509: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/cv2/../../lib64:/opt/hostedtoolcache/Python/3.7.12/x64/lib
+    2022-03-03 14:09:47.097552: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+    2022-03-03 14:09:47.097576: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az214-164): /proc/driver/nvidia/version does not exist
+    2022-03-03 14:09:47.097870: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
     To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
 
 
@@ -416,8 +418,8 @@ ds.get_samples_numpy(), ds.get_dataset_numpy()
 
 
 
-    (<brevettiai.data.tf_utils.NumpyStringIterator at 0x7f280960cd90>,
-     <brevettiai.data.tf_utils.NumpyStringIterator at 0x7f28043243d0>)
+    (<brevettiai.data.tf_utils.NumpyStringIterator at 0x7f01504d1590>,
+     <brevettiai.data.tf_utils.NumpyStringIterator at 0x7f00c4bd3550>)
 
 
 
@@ -460,7 +462,7 @@ plt.colorbar()
 
 
 
-    <matplotlib.colorbar.Colorbar at 0x7f28660841d0>
+    <matplotlib.colorbar.Colorbar at 0x7f012908f050>
 
 
 
@@ -480,7 +482,7 @@ plt.imshow(tile2d(x, (2,4))[...,0])
 
 
 
-    <matplotlib.image.AxesImage at 0x7f2865e5c410>
+    <matplotlib.image.AxesImage at 0x7f0128e58590>
 
 
 
@@ -517,7 +519,7 @@ plt.imshow(tile2d(x[0], (2,4))[...,0])
 
 
 
-    <matplotlib.image.AxesImage at 0x7f2865a70ad0>
+    <matplotlib.image.AxesImage at 0x7f0128a6ef90>
 
 
 
@@ -614,7 +616,7 @@ build_facets(fds, job.artifact_path("facets", dir=True), count=32)
 print(f"Facets visible on {job.host_name}/models/{model_id}")
 ```
 
-    100%|██████████| 32/32 [00:02<00:00, 15.44it/s]
+    100%|██████████| 32/32 [00:02<00:00, 11.23it/s]
 
 
     Facets visible on https://platform.brevetti.ai/models/ae03ff72-b7a2-444d-8fe9-623f61dc4c71

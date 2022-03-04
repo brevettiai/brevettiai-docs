@@ -48,7 +48,8 @@ def batch_convert(code_dir="src", generated_dir = "generated",
                 summary_line = summary_doc.lines.str.extract(fr"\[(.*)\].*{output_file_key}").dropna()
                 new_lines = []
                 md_content = []
-                for ii, out_part in enumerate(output_parts):
+                # NB: dropping in-document links as they do not work with gitbook
+                for ii, out_part in enumerate(output_parts[:0]):
                     md_content.append("\n".join(["# "+out_part[0], *out_part[1].values.tolist()[1:]]))
                     new_lines.append("  " + summary_doc.loc[summary_line.index[0]][0]\
                                      .replace(summary_line.values[0,0], out_part[0])\

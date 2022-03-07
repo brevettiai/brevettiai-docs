@@ -25,7 +25,7 @@
   * [Job API](docs/developers/python-sdk-brevettiai/job-api/README.md)
     * [Job platform interfaces](docs/developers/python-sdk-brevettiai/job-api/job_interfaces.md)
   * [Model operations](docs/developers/python-sdk-brevettiai/deployment.md)
-  * [Package documentation](docs/developers/brevetti_package.md)
+  * [Package documentation](docs/developers/brevettiai_package.md)
 * [Platform web interface](docs/developers/web-api-introduction.md)
     * [Web API](generated/developers/python-sdk-brevettiai/1_brevettiai_web_api_documentation.md)
     * [Swagger](https://platform.brevetti.ai/swagger/index.html)

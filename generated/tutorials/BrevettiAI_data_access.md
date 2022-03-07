@@ -2,48 +2,48 @@
 pip install brevettiai
 ```
 
-    Requirement already satisfied: brevettiai in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (0.3.1)
+    Requirement already satisfied: brevettiai in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (0.3.2)
     Requirement already satisfied: minio<7.1,>=7.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (7.0.4)
-    Requirement already satisfied: altair==4.1.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (4.1.0)
-    Requirement already satisfied: tf2onnx>=1.9.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (1.9.3)
     Requirement already satisfied: tqdm>=4.62 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (4.63.0)
-    Requirement already satisfied: cryptography<37.0.0,>=36.0.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (36.0.1)
-    Requirement already satisfied: pydantic>=1.9.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (1.9.0)
-    Requirement already satisfied: numpy>=1.18.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (1.21.5)
-    Requirement already satisfied: pandas<1.2,>=1.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (1.1.5)
-    Requirement already satisfied: scikit-learn>=0.23.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (1.0.2)
-    Requirement already satisfied: mmh3>=3.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (3.0.0)
-    Requirement already satisfied: requests>=2.23 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (2.27.1)
-    Requirement already satisfied: backoff>=1.10 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (1.11.1)
-    Requirement already satisfied: configparser>=5.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (5.2.0)
-    Requirement already satisfied: plotly>=4.14.3 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (5.6.0)
     Requirement already satisfied: shapely>=1.7.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (1.8.1.post1)
+    Requirement already satisfied: requests>=2.23 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (2.27.1)
+    Requirement already satisfied: scikit-learn>=0.23.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (1.0.2)
+    Requirement already satisfied: numpy>=1.18.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (1.21.5)
+    Requirement already satisfied: backoff>=1.10 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (1.11.1)
+    Requirement already satisfied: cryptography>=36.0.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (36.0.1)
+    Requirement already satisfied: pydantic>=1.9.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (1.9.0)
+    Requirement already satisfied: tf2onnx>=1.9.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (1.9.3)
+    Requirement already satisfied: configparser>=5.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (5.2.0)
+    Requirement already satisfied: mmh3>=3.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (3.0.0)
+    Requirement already satisfied: plotly>=4.14.3 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (5.6.0)
+    Requirement already satisfied: pandas<1.2,>=1.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (1.1.5)
+    Requirement already satisfied: altair==4.1.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from brevettiai) (4.1.0)
     Requirement already satisfied: toolz in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from altair==4.1.0->brevettiai) (0.11.2)
     Requirement already satisfied: entrypoints in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from altair==4.1.0->brevettiai) (0.4)
     Requirement already satisfied: jinja2 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from altair==4.1.0->brevettiai) (3.0.3)
     Requirement already satisfied: jsonschema in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from altair==4.1.0->brevettiai) (4.4.0)
-    Requirement already satisfied: cffi>=1.12 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from cryptography<37.0.0,>=36.0.1->brevettiai) (1.15.0)
+    Requirement already satisfied: cffi>=1.12 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from cryptography>=36.0.1->brevettiai) (1.15.0)
     Requirement already satisfied: certifi in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from minio<7.1,>=7.0->brevettiai) (2021.10.8)
     Requirement already satisfied: urllib3 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from minio<7.1,>=7.0->brevettiai) (1.26.8)
     Requirement already satisfied: pytz>=2017.2 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from pandas<1.2,>=1.1->brevettiai) (2021.3)
     Requirement already satisfied: python-dateutil>=2.7.3 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from pandas<1.2,>=1.1->brevettiai) (2.8.2)
-    Requirement already satisfied: six in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from plotly>=4.14.3->brevettiai) (1.16.0)
     Requirement already satisfied: tenacity>=6.2.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from plotly>=4.14.3->brevettiai) (8.0.1)
+    Requirement already satisfied: six in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from plotly>=4.14.3->brevettiai) (1.16.0)
     Requirement already satisfied: typing-extensions>=3.7.4.3 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from pydantic>=1.9.0->brevettiai) (4.1.1)
     Requirement already satisfied: charset-normalizer~=2.0.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from requests>=2.23->brevettiai) (2.0.12)
     Requirement already satisfied: idna<4,>=2.5 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from requests>=2.23->brevettiai) (3.3)
-    Requirement already satisfied: scipy>=1.1.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from scikit-learn>=0.23.1->brevettiai) (1.7.3)
-    Requirement already satisfied: threadpoolctl>=2.0.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from scikit-learn>=0.23.1->brevettiai) (3.1.0)
     Requirement already satisfied: joblib>=0.11 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from scikit-learn>=0.23.1->brevettiai) (1.1.0)
-    Requirement already satisfied: onnx>=1.4.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from tf2onnx>=1.9.0->brevettiai) (1.11.0)
+    Requirement already satisfied: threadpoolctl>=2.0.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from scikit-learn>=0.23.1->brevettiai) (3.1.0)
+    Requirement already satisfied: scipy>=1.1.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from scikit-learn>=0.23.1->brevettiai) (1.7.3)
     Requirement already satisfied: flatbuffers~=1.12 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from tf2onnx>=1.9.0->brevettiai) (1.12)
-    Requirement already satisfied: pycparser in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from cffi>=1.12->cryptography<37.0.0,>=36.0.1->brevettiai) (2.21)
+    Requirement already satisfied: onnx>=1.4.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from tf2onnx>=1.9.0->brevettiai) (1.11.0)
+    Requirement already satisfied: pycparser in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from cffi>=1.12->cryptography>=36.0.1->brevettiai) (2.21)
     Requirement already satisfied: protobuf>=3.12.2 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from onnx>=1.4.1->tf2onnx>=1.9.0->brevettiai) (3.19.4)
     Requirement already satisfied: MarkupSafe>=2.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from jinja2->altair==4.1.0->brevettiai) (2.1.0)
-    Requirement already satisfied: importlib-resources>=1.4.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from jsonschema->altair==4.1.0->brevettiai) (5.4.0)
+    Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from jsonschema->altair==4.1.0->brevettiai) (0.18.1)
     Requirement already satisfied: importlib-metadata in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from jsonschema->altair==4.1.0->brevettiai) (4.11.2)
     Requirement already satisfied: attrs>=17.4.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from jsonschema->altair==4.1.0->brevettiai) (21.4.0)
-    Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from jsonschema->altair==4.1.0->brevettiai) (0.18.1)
+    Requirement already satisfied: importlib-resources>=1.4.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from jsonschema->altair==4.1.0->brevettiai) (5.4.0)
     Requirement already satisfied: zipp>=3.1.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from importlib-resources>=1.4.0->jsonschema->altair==4.1.0->brevettiai) (3.7.0)
     Note: you may need to restart the kernel to use updated packages.
 
@@ -66,8 +66,8 @@ job = Job.init(job_id=model_id, api_key=api_key)
 job.start(complete_job=False)
 ```
 
-    2022-03-07 13:53:48.559462: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
-    2022-03-07 13:53:48.559497: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+    2022-03-07 14:20:11.756539: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.12/x64/lib
+    2022-03-07 14:20:11.756577: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
     INFO:brevettiai.platform.models.job:<class 'brevettiai.platform.models.job.Job'> initialized
     INFO:brevettiai.platform.models.job:Uploading output.json to s3://data.criterion.ai/ae03ff72-b7a2-444d-8fe9-623f61dc4c71/artifacts/output.json
 
@@ -83,7 +83,7 @@ samples.head(5)
 
     INFO:brevettiai.platform.models.dataset:Getting image samples from dataset 'NeurIPS vials TRAIN' [https://platform.brevetti.ai/data/cb14b6e3-b4b9-45bb-955f-47aa6489a192]
     INFO:brevettiai.platform.models.dataset:Getting annotations from dataset 'NeurIPS vials TRAIN' [https://platform.brevetti.ai/data/cb14b6e3-b4b9-45bb-955f-47aa6489a192] with filter: None
-    INFO:brevettiai.platform.models.dataset:Contents: {('good',): 3, ('failed_cap',): 2, ('missing_cap',): 2}
+    INFO:brevettiai.platform.models.dataset:Contents: {('good',): 3, ('missing_cap',): 2, ('failed_cap',): 2}
 
 
 

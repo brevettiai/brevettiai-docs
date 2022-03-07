@@ -70,7 +70,7 @@ description = ""
 authors = [""]
 
 [tool.poetry.dependencies]
-python = ">=3.7,<3.11"
+python = "^3.7"
 brevettiai = {path = "../core", extras = ["cv2", "tf", "tfa"], develop = true}
 
 [tool.poetry.dev-dependencies]

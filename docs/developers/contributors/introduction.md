@@ -5,13 +5,13 @@ The *contributors* section describes how a *data scientist* should use available
 # Coding guidelines
 
 ## Coding style
-* Refer to [Google Python Stule Guide](https://google.github.io/styleguide/pyguide.html) 
+* Refer to [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html) 
 * Comments: Add comments to make the code readable. **NB: Elaborate!**
 * Use PEP-8 to guide you in writing beautiful code. Read and apply the PyCharm tips found here: [Code Quality Assistance Tips and Tricks, or How to Make Your Code Look Pretty?](https://www.jetbrains.com/help/pycharm/tutorial-code-quality-assistance-tips-and-tricks.html)
 * Create a serializable training pipeline by deriving the objects from `pydantic.BaseModel` or
 `pydantic.dataclasses.dataclass`. Add them to the job settings to ensure parameters are available on the platform.
 
-# Code managment: git branches and releases
+# Code management: git branches and releases
 When building new features to the code base, use the JIRA task to create a new feature branch.
 
 Then follow the [Smart commands](https://confluence.atlassian.com/bitbucketserver/use-smart-commits-802599018.html) guidelines:
@@ -37,7 +37,7 @@ Example
   * MINOR version when you add functionality in a backwards compatible manner, and
   * PATCH version when you make backwards compatible bug fixes.
   * Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format
-* [The bibucket pipeline tests and manages the release](https://bitbucket.org/criterionai/core/addon/pipelines/)
+* [The bitbucket pipeline tests and manages the release](https://bitbucket.org/criterionai/core/addon/pipelines/)
 * [Push the updated documentation](https://github.com/brevettiai/brevettiai-docs/actions/workflows/build_and_commit_documentation.yml)
 
 

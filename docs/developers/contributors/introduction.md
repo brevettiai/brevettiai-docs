@@ -8,6 +8,7 @@ The *contributors* section describes how a *data scientist* should use available
 * Refer to [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html) 
 * Comments: Add comments to make the code readable. **NB: Elaborate!**
 * Use PEP-8 to guide you in writing beautiful code. Read and apply the PyCharm tips found here: [Code Quality Assistance Tips and Tricks, or How to Make Your Code Look Pretty?](https://www.jetbrains.com/help/pycharm/tutorial-code-quality-assistance-tips-and-tricks.html)
+* Use Google style docstrings to enhance readability. <br> In PyCharm: Settings-> Integrated Tools -> Docstring format: **Google**
 * Create a serializable training pipeline by deriving the objects from `pydantic.BaseModel` or
 `pydantic.dataclasses.dataclass`. Add them to the job settings to ensure parameters are available on the platform.
 

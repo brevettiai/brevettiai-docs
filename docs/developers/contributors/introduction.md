@@ -21,13 +21,13 @@ Example
 * JRA-34 #comment corrected indent issue
 
 ## brevettiai merge feature branches to development
-* [Ensure that bitbucket pipeline tests passes](https://bitbucket.org/criterionai/core/addon/pipelines/)
+* [Ensure that bitbucket pipeline tests passes](https://bitbucket.org/criterionai/core/addon/pipelines/home)
 * Create pull request
 * Have a reviewer approve the pull request
 * test that documentation works after the merge: [test_documentation_notebooks](https://github.com/brevettiai/brevettiai-docs/actions/workflows/test_documentation_notebooks.yml)
 
 ## brevettiai merge to master requirements
-* [Ensure that bitbucket pipeline tests passes](https://bitbucket.org/criterionai/core/addon/pipelines/)
+* [Ensure that bitbucket pipeline tests passes](https://bitbucket.org/criterionai/core/addon/pipelines/home)
 * test that documentation works: [test_documentation_notebooks](https://github.com/brevettiai/brevettiai-docs/actions/workflows/test_documentation_notebooks.yml)
 * merge fast-forward into master
 

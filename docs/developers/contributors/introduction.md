@@ -40,6 +40,8 @@ Example
   * Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format
 * [The bitbucket pipeline tests and manages the release](https://bitbucket.org/criterionai/core/addon/pipelines/)
 * [Push the updated documentation](https://github.com/brevettiai/brevettiai-docs/actions/workflows/build_and_commit_documentation.yml)
+* **The code documentation** See and edit the python package documentation by installing pdoc3 and using this command, from your main source directory and listing the paths to the modules you want to document
+<code> pdoc --http :8888 core/brevettiai telescope </code>
 
 
 ## Brevettiai development environment setup

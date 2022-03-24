@@ -25,7 +25,7 @@
   * [Job API](docs/developers/python-sdk-brevettiai/job-api/README.md)
     * [Job platform interfaces](docs/developers/python-sdk-brevettiai/job-api/job_interfaces.md)
   * [Model operations](docs/developers/python-sdk-brevettiai/deployment.md)
-  * [Package documentation](https://s3.eu-west-1.amazonaws.com/public.data.criterion.ai/documentation/brevettiai%200.3.4/index.html)
+  * [Package documentation](https://s3.eu-west-1.amazonaws.com/public.data.criterion.ai/documentation/brevettiai%200.3.5/index.html)
 * [Platform web interface](docs/developers/web-api-introduction.md)
     * [Web API](generated/developers/python-sdk-brevettiai/1_brevettiai_web_api_documentation.md)
     * [Swagger](https://platform.brevetti.ai/swagger/index.html)

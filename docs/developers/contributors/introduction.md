@@ -21,6 +21,7 @@ Example
 * JRA-34 #comment corrected indent issue
 
 ## brevettiai merge feature branches to development
+* Remember to write tests of added features
 * [Ensure that bitbucket pipeline tests passes](https://bitbucket.org/criterionai/core/addon/pipelines/home)
 * Create pull request
 * Have a reviewer approve the pull request

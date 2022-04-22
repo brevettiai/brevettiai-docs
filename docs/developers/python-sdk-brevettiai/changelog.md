@@ -6,16 +6,12 @@ description: >-
 
 # Changelog
 
-## 1.0
-
-* Cleanup of core apis
-  * Rename of package from criterion\_core to brevettiai
-  * Move platform interface code to brevettiai.platform
-  * Move criterion\_core.applications to brevettiai.interfaces containing interfaces to external elements
-  * Renaming of CriterionConfig to Job
-  * Renaming of TfDataset to DataGenerator
-* New settings API
-  * extend vue\_schema\_utils.VueSettingsModule to get a settings object with a to\_schema function for schema generation.
+## 0.4.1
+* Introduce cache path environment variable: `BREVETTI_AI_CACHE`
+* Move cache path 1 level up (`[cache_path]/cache/s3` -> `[cache_path]/s3`)
+* Add Tensorboard collector tooling brevettiai `poetry run python -m brevettiai.utils.tensorboard_collector -h`
+* Allow ImageProcessor to change shape and channel numbers
+* Minor bug fixes
 
 
 
